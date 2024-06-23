@@ -14,9 +14,6 @@ dependencies = [
 authors = [
     {name = "2esword"}
 ]
-classifiers = [
-    "License :: MIT License"
-]
 
 [project.urls]
 Repository = "https://github.com/2esword/pp7stubs"
