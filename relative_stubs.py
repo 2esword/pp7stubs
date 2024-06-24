@@ -5,8 +5,8 @@
 #   This script search for a directory named
 #   stubs, read all .py and .pyi files and  
 #   rewrite them with the changes in import
-
-
+#   to another directory named mod_stubs
+#
 
 import os
 import re
