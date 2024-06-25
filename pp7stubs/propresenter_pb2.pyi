@@ -1,6 +1,6 @@
-from . import action_pb2 as _action_pb2
-from . import applicationInfo_pb2 as _applicationInfo_pb2
-from . import playlist_pb2 as _playlist_pb2
+import action_pb2 as _action_pb2
+import applicationInfo_pb2 as _applicationInfo_pb2
+import playlist_pb2 as _playlist_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

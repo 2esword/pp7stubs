@@ -1,10 +1,10 @@
-from . import action_pb2 as _action_pb2
-from . import cue_pb2 as _cue_pb2
-from . import graphicsData_pb2 as _graphicsData_pb2
-from . import groups_pb2 as _groups_pb2
-from . import labels_pb2 as _labels_pb2
-from . import proClockSource_pb2 as _proClockSource_pb2
-from . import url_pb2 as _url_pb2
+import action_pb2 as _action_pb2
+import cue_pb2 as _cue_pb2
+import graphicsData_pb2 as _graphicsData_pb2
+import groups_pb2 as _groups_pb2
+import labels_pb2 as _labels_pb2
+import proClockSource_pb2 as _proClockSource_pb2
+import url_pb2 as _url_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -47,40 +47,8 @@ class Preferences(_message.Message):
         def __init__(self, enable_at_launch: bool = ..., show_performance_stats: bool = ..., ignore_background_colors: bool = ..., clock_source: _Optional[_Union[_proClockSource_pb2.ProClockSource, _Mapping]] = ..., show_keynote_and_powerpoint: bool = ..., disable_blackmagic_sync_groups: bool = ..., use_directx_rendering: bool = ...) -> None: ...
     class Import(_message.Message):
         __slots__ = ("foreground_scaling", "foreground_is_blurred", "background_scaling", "background_is_blurred", "image", "video", "audio")
-        class ScaleBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            SCALE_BEHAVIOR_FIT: _ClassVar[Preferences.Import.ScaleBehavior]
-            SCALE_BEHAVIOR_FILL: _ClassVar[Preferences.Import.ScaleBehavior]
-            SCALE_BEHAVIOR_STRETCH: _ClassVar[Preferences.Import.ScaleBehavior]
-            SCALE_BEHAVIOR_CUSTOM: _ClassVar[Preferences.Import.ScaleBehavior]
-        SCALE_BEHAVIOR_FIT: Preferences.Import.ScaleBehavior
-        SCALE_BEHAVIOR_FILL: Preferences.Import.ScaleBehavior
-        SCALE_BEHAVIOR_STRETCH: Preferences.Import.ScaleBehavior
-        SCALE_BEHAVIOR_CUSTOM: Preferences.Import.ScaleBehavior
         class Image(_message.Message):
             __slots__ = ("layer_type", "duration", "next_behavior")
-            class LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                LAYER_TYPE_BACKGROUND: _ClassVar[Preferences.Import.Image.LayerType]
-                LAYER_TYPE_FOREGROUND: _ClassVar[Preferences.Import.Image.LayerType]
-                LAYER_TYPE_FILL: _ClassVar[Preferences.Import.Image.LayerType]
-                LAYER_TYPE_INPUT: _ClassVar[Preferences.Import.Image.LayerType]
-            LAYER_TYPE_BACKGROUND: Preferences.Import.Image.LayerType
-            LAYER_TYPE_FOREGROUND: Preferences.Import.Image.LayerType
-            LAYER_TYPE_FILL: Preferences.Import.Image.LayerType
-            LAYER_TYPE_INPUT: Preferences.Import.Image.LayerType
-            class CompletionTargetType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                COMPLETION_TARGET_TYPE_NONE: _ClassVar[Preferences.Import.Image.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_NEXT: _ClassVar[Preferences.Import.Image.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_RANDOM: _ClassVar[Preferences.Import.Image.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_CUE: _ClassVar[Preferences.Import.Image.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_FIRST: _ClassVar[Preferences.Import.Image.CompletionTargetType]
-            COMPLETION_TARGET_TYPE_NONE: Preferences.Import.Image.CompletionTargetType
-            COMPLETION_TARGET_TYPE_NEXT: Preferences.Import.Image.CompletionTargetType
-            COMPLETION_TARGET_TYPE_RANDOM: Preferences.Import.Image.CompletionTargetType
-            COMPLETION_TARGET_TYPE_CUE: Preferences.Import.Image.CompletionTargetType
-            COMPLETION_TARGET_TYPE_FIRST: Preferences.Import.Image.CompletionTargetType
             class Duration(_message.Message):
                 __slots__ = ("none", "time", "random")
                 class None(_message.Message):
@@ -108,94 +76,28 @@ class Preferences(_message.Message):
             LAYER_TYPE_FIELD_NUMBER: _ClassVar[int]
             DURATION_FIELD_NUMBER: _ClassVar[int]
             NEXT_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
-            layer_type: Preferences.Import.Image.LayerType
+            layer_type: _action_pb2.Action.LayerType
             duration: Preferences.Import.Image.Duration
-            next_behavior: Preferences.Import.Image.CompletionTargetType
-            def __init__(self, layer_type: _Optional[_Union[Preferences.Import.Image.LayerType, str]] = ..., duration: _Optional[_Union[Preferences.Import.Image.Duration, _Mapping]] = ..., next_behavior: _Optional[_Union[Preferences.Import.Image.CompletionTargetType, str]] = ...) -> None: ...
+            next_behavior: _cue_pb2.Cue.CompletionTargetType
+            def __init__(self, layer_type: _Optional[_Union[_action_pb2.Action.LayerType, str]] = ..., duration: _Optional[_Union[Preferences.Import.Image.Duration, _Mapping]] = ..., next_behavior: _Optional[_Union[_cue_pb2.Cue.CompletionTargetType, str]] = ...) -> None: ...
         class Video(_message.Message):
             __slots__ = ("layer_type", "playback_behavior", "end_behavior", "next_behavior")
-            class LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                LAYER_TYPE_BACKGROUND: _ClassVar[Preferences.Import.Video.LayerType]
-                LAYER_TYPE_FOREGROUND: _ClassVar[Preferences.Import.Video.LayerType]
-                LAYER_TYPE_FILL: _ClassVar[Preferences.Import.Video.LayerType]
-                LAYER_TYPE_INPUT: _ClassVar[Preferences.Import.Video.LayerType]
-            LAYER_TYPE_BACKGROUND: Preferences.Import.Video.LayerType
-            LAYER_TYPE_FOREGROUND: Preferences.Import.Video.LayerType
-            LAYER_TYPE_FILL: Preferences.Import.Video.LayerType
-            LAYER_TYPE_INPUT: Preferences.Import.Video.LayerType
-            class PlaybackBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                PLAYBACK_BEHAVIOR_STOP: _ClassVar[Preferences.Import.Video.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP: _ClassVar[Preferences.Import.Video.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: _ClassVar[Preferences.Import.Video.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: _ClassVar[Preferences.Import.Video.PlaybackBehavior]
-            PLAYBACK_BEHAVIOR_STOP: Preferences.Import.Video.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP: Preferences.Import.Video.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: Preferences.Import.Video.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: Preferences.Import.Video.PlaybackBehavior
-            class EndBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                END_BEHAVIOR_STOP: _ClassVar[Preferences.Import.Video.EndBehavior]
-                END_BEHAVIOR_STOP_ON_BLACK: _ClassVar[Preferences.Import.Video.EndBehavior]
-                END_BEHAVIOR_STOP_ON_CLEAR: _ClassVar[Preferences.Import.Video.EndBehavior]
-                END_BEHAVIOR_FADE_TO_BLACK: _ClassVar[Preferences.Import.Video.EndBehavior]
-                END_BEHAVIOR_FADE_TO_CLEAR: _ClassVar[Preferences.Import.Video.EndBehavior]
-            END_BEHAVIOR_STOP: Preferences.Import.Video.EndBehavior
-            END_BEHAVIOR_STOP_ON_BLACK: Preferences.Import.Video.EndBehavior
-            END_BEHAVIOR_STOP_ON_CLEAR: Preferences.Import.Video.EndBehavior
-            END_BEHAVIOR_FADE_TO_BLACK: Preferences.Import.Video.EndBehavior
-            END_BEHAVIOR_FADE_TO_CLEAR: Preferences.Import.Video.EndBehavior
-            class CompletionTargetType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                COMPLETION_TARGET_TYPE_NONE: _ClassVar[Preferences.Import.Video.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_NEXT: _ClassVar[Preferences.Import.Video.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_RANDOM: _ClassVar[Preferences.Import.Video.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_CUE: _ClassVar[Preferences.Import.Video.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_FIRST: _ClassVar[Preferences.Import.Video.CompletionTargetType]
-            COMPLETION_TARGET_TYPE_NONE: Preferences.Import.Video.CompletionTargetType
-            COMPLETION_TARGET_TYPE_NEXT: Preferences.Import.Video.CompletionTargetType
-            COMPLETION_TARGET_TYPE_RANDOM: Preferences.Import.Video.CompletionTargetType
-            COMPLETION_TARGET_TYPE_CUE: Preferences.Import.Video.CompletionTargetType
-            COMPLETION_TARGET_TYPE_FIRST: Preferences.Import.Video.CompletionTargetType
             LAYER_TYPE_FIELD_NUMBER: _ClassVar[int]
             PLAYBACK_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
             END_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
             NEXT_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
-            layer_type: Preferences.Import.Video.LayerType
-            playback_behavior: Preferences.Import.Video.PlaybackBehavior
-            end_behavior: Preferences.Import.Video.EndBehavior
-            next_behavior: Preferences.Import.Video.CompletionTargetType
-            def __init__(self, layer_type: _Optional[_Union[Preferences.Import.Video.LayerType, str]] = ..., playback_behavior: _Optional[_Union[Preferences.Import.Video.PlaybackBehavior, str]] = ..., end_behavior: _Optional[_Union[Preferences.Import.Video.EndBehavior, str]] = ..., next_behavior: _Optional[_Union[Preferences.Import.Video.CompletionTargetType, str]] = ...) -> None: ...
+            layer_type: _action_pb2.Action.LayerType
+            playback_behavior: _graphicsData_pb2.Media.TransportProperties.PlaybackBehavior
+            end_behavior: _graphicsData_pb2.Media.VideoProperties.EndBehavior
+            next_behavior: _cue_pb2.Cue.CompletionTargetType
+            def __init__(self, layer_type: _Optional[_Union[_action_pb2.Action.LayerType, str]] = ..., playback_behavior: _Optional[_Union[_graphicsData_pb2.Media.TransportProperties.PlaybackBehavior, str]] = ..., end_behavior: _Optional[_Union[_graphicsData_pb2.Media.VideoProperties.EndBehavior, str]] = ..., next_behavior: _Optional[_Union[_cue_pb2.Cue.CompletionTargetType, str]] = ...) -> None: ...
         class Audio(_message.Message):
             __slots__ = ("playback_behavior", "next_behavior")
-            class PlaybackBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                PLAYBACK_BEHAVIOR_STOP: _ClassVar[Preferences.Import.Audio.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP: _ClassVar[Preferences.Import.Audio.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: _ClassVar[Preferences.Import.Audio.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: _ClassVar[Preferences.Import.Audio.PlaybackBehavior]
-            PLAYBACK_BEHAVIOR_STOP: Preferences.Import.Audio.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP: Preferences.Import.Audio.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: Preferences.Import.Audio.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: Preferences.Import.Audio.PlaybackBehavior
-            class CompletionTargetType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                COMPLETION_TARGET_TYPE_NONE: _ClassVar[Preferences.Import.Audio.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_NEXT: _ClassVar[Preferences.Import.Audio.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_RANDOM: _ClassVar[Preferences.Import.Audio.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_CUE: _ClassVar[Preferences.Import.Audio.CompletionTargetType]
-                COMPLETION_TARGET_TYPE_FIRST: _ClassVar[Preferences.Import.Audio.CompletionTargetType]
-            COMPLETION_TARGET_TYPE_NONE: Preferences.Import.Audio.CompletionTargetType
-            COMPLETION_TARGET_TYPE_NEXT: Preferences.Import.Audio.CompletionTargetType
-            COMPLETION_TARGET_TYPE_RANDOM: Preferences.Import.Audio.CompletionTargetType
-            COMPLETION_TARGET_TYPE_CUE: Preferences.Import.Audio.CompletionTargetType
-            COMPLETION_TARGET_TYPE_FIRST: Preferences.Import.Audio.CompletionTargetType
             PLAYBACK_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
             NEXT_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
-            playback_behavior: Preferences.Import.Audio.PlaybackBehavior
-            next_behavior: Preferences.Import.Audio.CompletionTargetType
-            def __init__(self, playback_behavior: _Optional[_Union[Preferences.Import.Audio.PlaybackBehavior, str]] = ..., next_behavior: _Optional[_Union[Preferences.Import.Audio.CompletionTargetType, str]] = ...) -> None: ...
+            playback_behavior: _graphicsData_pb2.Media.TransportProperties.PlaybackBehavior
+            next_behavior: _cue_pb2.Cue.CompletionTargetType
+            def __init__(self, playback_behavior: _Optional[_Union[_graphicsData_pb2.Media.TransportProperties.PlaybackBehavior, str]] = ..., next_behavior: _Optional[_Union[_cue_pb2.Cue.CompletionTargetType, str]] = ...) -> None: ...
         FOREGROUND_SCALING_FIELD_NUMBER: _ClassVar[int]
         FOREGROUND_IS_BLURRED_FIELD_NUMBER: _ClassVar[int]
         BACKGROUND_SCALING_FIELD_NUMBER: _ClassVar[int]
@@ -203,14 +105,14 @@ class Preferences(_message.Message):
         IMAGE_FIELD_NUMBER: _ClassVar[int]
         VIDEO_FIELD_NUMBER: _ClassVar[int]
         AUDIO_FIELD_NUMBER: _ClassVar[int]
-        foreground_scaling: Preferences.Import.ScaleBehavior
+        foreground_scaling: _graphicsData_pb2.Media.ScaleBehavior
         foreground_is_blurred: bool
-        background_scaling: Preferences.Import.ScaleBehavior
+        background_scaling: _graphicsData_pb2.Media.ScaleBehavior
         background_is_blurred: bool
         image: Preferences.Import.Image
         video: Preferences.Import.Video
         audio: Preferences.Import.Audio
-        def __init__(self, foreground_scaling: _Optional[_Union[Preferences.Import.ScaleBehavior, str]] = ..., foreground_is_blurred: bool = ..., background_scaling: _Optional[_Union[Preferences.Import.ScaleBehavior, str]] = ..., background_is_blurred: bool = ..., image: _Optional[_Union[Preferences.Import.Image, _Mapping]] = ..., video: _Optional[_Union[Preferences.Import.Video, _Mapping]] = ..., audio: _Optional[_Union[Preferences.Import.Audio, _Mapping]] = ...) -> None: ...
+        def __init__(self, foreground_scaling: _Optional[_Union[_graphicsData_pb2.Media.ScaleBehavior, str]] = ..., foreground_is_blurred: bool = ..., background_scaling: _Optional[_Union[_graphicsData_pb2.Media.ScaleBehavior, str]] = ..., background_is_blurred: bool = ..., image: _Optional[_Union[Preferences.Import.Image, _Mapping]] = ..., video: _Optional[_Union[Preferences.Import.Video, _Mapping]] = ..., audio: _Optional[_Union[Preferences.Import.Audio, _Mapping]] = ...) -> None: ...
     class Groups(_message.Message):
         __slots__ = ("groups", "labels")
         GROUPS_FIELD_NUMBER: _ClassVar[int]
@@ -322,34 +224,6 @@ class Preferences(_message.Message):
             __slots__ = ("automatically_relink", "paths")
             class Path(_message.Message):
                 __slots__ = ("enable", "name", "path", "url_root")
-                class Root(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    ROOT_UNKNOWN: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_BOOT_VOLUME: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_USER_HOME: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_USER_DOCUMENTS: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_USER_DOWNLOADS: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_USER_MUSIC: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_USER_PICTURES: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_USER_VIDEOS: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_USER_DESKTOP: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_USER_APP_SUPPORT: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_SHARED: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_SHOW: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                    ROOT_CURRENT_RESOURCE: _ClassVar[Preferences.Advanced.SearchPaths.Path.Root]
-                ROOT_UNKNOWN: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_BOOT_VOLUME: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_USER_HOME: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_USER_DOCUMENTS: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_USER_DOWNLOADS: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_USER_MUSIC: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_USER_PICTURES: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_USER_VIDEOS: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_USER_DESKTOP: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_USER_APP_SUPPORT: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_SHARED: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_SHOW: Preferences.Advanced.SearchPaths.Path.Root
-                ROOT_CURRENT_RESOURCE: Preferences.Advanced.SearchPaths.Path.Root
                 ENABLE_FIELD_NUMBER: _ClassVar[int]
                 NAME_FIELD_NUMBER: _ClassVar[int]
                 PATH_FIELD_NUMBER: _ClassVar[int]
@@ -357,8 +231,8 @@ class Preferences(_message.Message):
                 enable: bool
                 name: str
                 path: str
-                url_root: Preferences.Advanced.SearchPaths.Path.Root
-                def __init__(self, enable: bool = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., url_root: _Optional[_Union[Preferences.Advanced.SearchPaths.Path.Root, str]] = ...) -> None: ...
+                url_root: _url_pb2.URL.LocalRelativePath.Root
+                def __init__(self, enable: bool = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., url_root: _Optional[_Union[_url_pb2.URL.LocalRelativePath.Root, str]] = ...) -> None: ...
             AUTOMATICALLY_RELINK_FIELD_NUMBER: _ClassVar[int]
             PATHS_FIELD_NUMBER: _ClassVar[int]
             automatically_relink: bool

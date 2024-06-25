@@ -1,7 +1,7 @@
-from . import action_pb2 as _action_pb2
-from . import cue_pb2 as _cue_pb2
-from . import presentation_pb2 as _presentation_pb2
-from . import uuid_pb2 as _uuid_pb2
+import action_pb2 as _action_pb2
+import cue_pb2 as _cue_pb2
+import presentation_pb2 as _presentation_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TriggerSource(_message.Message):
-    __slots__ = ("library_location", "playlist_location")
+    __slots__ = ("library_location", "playlist_location", "media_playlist_location", "audio_playlist_location")
     class Library(_message.Message):
         __slots__ = ("path", "presentation_name")
         PATH_FIELD_NUMBER: _ClassVar[int]
@@ -28,28 +28,20 @@ class TriggerSource(_message.Message):
         def __init__(self, identifier: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., item_identifier: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ...) -> None: ...
     LIBRARY_LOCATION_FIELD_NUMBER: _ClassVar[int]
     PLAYLIST_LOCATION_FIELD_NUMBER: _ClassVar[int]
+    MEDIA_PLAYLIST_LOCATION_FIELD_NUMBER: _ClassVar[int]
+    AUDIO_PLAYLIST_LOCATION_FIELD_NUMBER: _ClassVar[int]
     library_location: TriggerSource.Library
     playlist_location: TriggerSource.Playlist
-    def __init__(self, library_location: _Optional[_Union[TriggerSource.Library, _Mapping]] = ..., playlist_location: _Optional[_Union[TriggerSource.Playlist, _Mapping]] = ...) -> None: ...
+    media_playlist_location: TriggerSource.Playlist
+    audio_playlist_location: TriggerSource.Playlist
+    def __init__(self, library_location: _Optional[_Union[TriggerSource.Library, _Mapping]] = ..., playlist_location: _Optional[_Union[TriggerSource.Playlist, _Mapping]] = ..., media_playlist_location: _Optional[_Union[TriggerSource.Playlist, _Mapping]] = ..., audio_playlist_location: _Optional[_Union[TriggerSource.Playlist, _Mapping]] = ...) -> None: ...
 
 class TimedPlayback(_message.Message):
     __slots__ = ("sequence", "timing")
     class Sequence(_message.Message):
         __slots__ = ("sequence", "content_destination", "presentation")
-        class ContentDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            CONTENT_DESTINATION_GLOBAL: _ClassVar[TimedPlayback.Sequence.ContentDestination]
-            CONTENT_DESTINATION_ANNOUNCEMENTS: _ClassVar[TimedPlayback.Sequence.ContentDestination]
-        CONTENT_DESTINATION_GLOBAL: TimedPlayback.Sequence.ContentDestination
-        CONTENT_DESTINATION_ANNOUNCEMENTS: TimedPlayback.Sequence.ContentDestination
         class SequenceItem(_message.Message):
             __slots__ = ("identifier", "time", "trigger_source", "content_destination", "end_time", "cue", "action")
-            class ContentDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                CONTENT_DESTINATION_GLOBAL: _ClassVar[TimedPlayback.Sequence.SequenceItem.ContentDestination]
-                CONTENT_DESTINATION_ANNOUNCEMENTS: _ClassVar[TimedPlayback.Sequence.SequenceItem.ContentDestination]
-            CONTENT_DESTINATION_GLOBAL: TimedPlayback.Sequence.SequenceItem.ContentDestination
-            CONTENT_DESTINATION_ANNOUNCEMENTS: TimedPlayback.Sequence.SequenceItem.ContentDestination
             IDENTIFIER_FIELD_NUMBER: _ClassVar[int]
             TIME_FIELD_NUMBER: _ClassVar[int]
             TRIGGER_SOURCE_FIELD_NUMBER: _ClassVar[int]
@@ -60,18 +52,18 @@ class TimedPlayback(_message.Message):
             identifier: _uuid_pb2.UUID
             time: float
             trigger_source: TriggerSource
-            content_destination: TimedPlayback.Sequence.SequenceItem.ContentDestination
+            content_destination: _action_pb2.Action.ContentDestination
             end_time: float
             cue: _cue_pb2.Cue
             action: _action_pb2.Action
-            def __init__(self, identifier: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., time: _Optional[float] = ..., trigger_source: _Optional[_Union[TriggerSource, _Mapping]] = ..., content_destination: _Optional[_Union[TimedPlayback.Sequence.SequenceItem.ContentDestination, str]] = ..., end_time: _Optional[float] = ..., cue: _Optional[_Union[_cue_pb2.Cue, _Mapping]] = ..., action: _Optional[_Union[_action_pb2.Action, _Mapping]] = ...) -> None: ...
+            def __init__(self, identifier: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., time: _Optional[float] = ..., trigger_source: _Optional[_Union[TriggerSource, _Mapping]] = ..., content_destination: _Optional[_Union[_action_pb2.Action.ContentDestination, str]] = ..., end_time: _Optional[float] = ..., cue: _Optional[_Union[_cue_pb2.Cue, _Mapping]] = ..., action: _Optional[_Union[_action_pb2.Action, _Mapping]] = ...) -> None: ...
         SEQUENCE_FIELD_NUMBER: _ClassVar[int]
         CONTENT_DESTINATION_FIELD_NUMBER: _ClassVar[int]
         PRESENTATION_FIELD_NUMBER: _ClassVar[int]
         sequence: _containers.RepeatedCompositeFieldContainer[TimedPlayback.Sequence.SequenceItem]
-        content_destination: TimedPlayback.Sequence.ContentDestination
+        content_destination: _action_pb2.Action.ContentDestination
         presentation: _presentation_pb2.Presentation
-        def __init__(self, sequence: _Optional[_Iterable[_Union[TimedPlayback.Sequence.SequenceItem, _Mapping]]] = ..., content_destination: _Optional[_Union[TimedPlayback.Sequence.ContentDestination, str]] = ..., presentation: _Optional[_Union[_presentation_pb2.Presentation, _Mapping]] = ...) -> None: ...
+        def __init__(self, sequence: _Optional[_Iterable[_Union[TimedPlayback.Sequence.SequenceItem, _Mapping]]] = ..., content_destination: _Optional[_Union[_action_pb2.Action.ContentDestination, str]] = ..., presentation: _Optional[_Union[_presentation_pb2.Presentation, _Mapping]] = ...) -> None: ...
     class Timing(_message.Message):
         __slots__ = ("layer_transport", "smpte_timecode", "internal")
         class LayerTransport(_message.Message):

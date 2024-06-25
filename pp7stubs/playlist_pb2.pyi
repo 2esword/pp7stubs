@@ -1,11 +1,11 @@
-from . import action_pb2 as _action_pb2
-from . import color_pb2 as _color_pb2
-from . import cue_pb2 as _cue_pb2
-from . import hotKey_pb2 as _hotKey_pb2
-from . import musicKeyScale_pb2 as _musicKeyScale_pb2
-from . import planningCenter_pb2 as _planningCenter_pb2
-from . import url_pb2 as _url_pb2
-from . import uuid_pb2 as _uuid_pb2
+import action_pb2 as _action_pb2
+import color_pb2 as _color_pb2
+import cue_pb2 as _cue_pb2
+import hotKey_pb2 as _hotKey_pb2
+import musicKeyScale_pb2 as _musicKeyScale_pb2
+import planningCenter_pb2 as _planningCenter_pb2
+import url_pb2 as _url_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -118,21 +118,15 @@ class PlaylistItem(_message.Message):
         def __init__(self, color: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, _Mapping]]] = ...) -> None: ...
     class Presentation(_message.Message):
         __slots__ = ("document_path", "arrangement", "content_destination", "user_music_key")
-        class ContentDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            CONTENT_DESTINATION_GLOBAL: _ClassVar[PlaylistItem.Presentation.ContentDestination]
-            CONTENT_DESTINATION_ANNOUNCEMENTS: _ClassVar[PlaylistItem.Presentation.ContentDestination]
-        CONTENT_DESTINATION_GLOBAL: PlaylistItem.Presentation.ContentDestination
-        CONTENT_DESTINATION_ANNOUNCEMENTS: PlaylistItem.Presentation.ContentDestination
         DOCUMENT_PATH_FIELD_NUMBER: _ClassVar[int]
         ARRANGEMENT_FIELD_NUMBER: _ClassVar[int]
         CONTENT_DESTINATION_FIELD_NUMBER: _ClassVar[int]
         USER_MUSIC_KEY_FIELD_NUMBER: _ClassVar[int]
         document_path: _url_pb2.URL
         arrangement: _uuid_pb2.UUID
-        content_destination: PlaylistItem.Presentation.ContentDestination
+        content_destination: _action_pb2.Action.ContentDestination
         user_music_key: _musicKeyScale_pb2.MusicKeyScale
-        def __init__(self, document_path: _Optional[_Union[_url_pb2.URL, _Mapping]] = ..., arrangement: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., content_destination: _Optional[_Union[PlaylistItem.Presentation.ContentDestination, str]] = ..., user_music_key: _Optional[_Union[_musicKeyScale_pb2.MusicKeyScale, _Mapping]] = ...) -> None: ...
+        def __init__(self, document_path: _Optional[_Union[_url_pb2.URL, _Mapping]] = ..., arrangement: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., content_destination: _Optional[_Union[_action_pb2.Action.ContentDestination, str]] = ..., user_music_key: _Optional[_Union[_musicKeyScale_pb2.MusicKeyScale, _Mapping]] = ...) -> None: ...
     class PlanningCenter(_message.Message):
         __slots__ = ("item", "linked_data")
         ITEM_FIELD_NUMBER: _ClassVar[int]

@@ -7,6 +7,18 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class TriggerMediaInformation(_message.Message):
     __slots__ = ("source_type", "video", "image", "audio", "live_video")
+    class CompletionTarget(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        COMPLETION_TARGET_NONE: _ClassVar[TriggerMediaInformation.CompletionTarget]
+        COMPLETION_TARGET_NEXT: _ClassVar[TriggerMediaInformation.CompletionTarget]
+        COMPLETION_TARGET_RANDOM: _ClassVar[TriggerMediaInformation.CompletionTarget]
+        COMPLETION_TARGET_CUE: _ClassVar[TriggerMediaInformation.CompletionTarget]
+        COMPLETION_TARGET_FIRST: _ClassVar[TriggerMediaInformation.CompletionTarget]
+    COMPLETION_TARGET_NONE: TriggerMediaInformation.CompletionTarget
+    COMPLETION_TARGET_NEXT: TriggerMediaInformation.CompletionTarget
+    COMPLETION_TARGET_RANDOM: TriggerMediaInformation.CompletionTarget
+    COMPLETION_TARGET_CUE: TriggerMediaInformation.CompletionTarget
+    COMPLETION_TARGET_FIRST: TriggerMediaInformation.CompletionTarget
     class SourceType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         SOURCE_TYPE_LOCAL: _ClassVar[TriggerMediaInformation.SourceType]
@@ -133,18 +145,6 @@ class TriggerMediaInformation(_message.Message):
         PLAYBACK_BEHAVIOR_LOOP: TriggerMediaInformation.Video.PlaybackBehavior
         PLAYBACK_BEHAVIOR_LOOP_FOR_PLAY_COUNT: TriggerMediaInformation.Video.PlaybackBehavior
         PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: TriggerMediaInformation.Video.PlaybackBehavior
-        class CompletionTarget(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            COMPLETION_TARGET_NONE: _ClassVar[TriggerMediaInformation.Video.CompletionTarget]
-            COMPLETION_TARGET_NEXT: _ClassVar[TriggerMediaInformation.Video.CompletionTarget]
-            COMPLETION_TARGET_RANDOM: _ClassVar[TriggerMediaInformation.Video.CompletionTarget]
-            COMPLETION_TARGET_CUE: _ClassVar[TriggerMediaInformation.Video.CompletionTarget]
-            COMPLETION_TARGET_FIRST: _ClassVar[TriggerMediaInformation.Video.CompletionTarget]
-        COMPLETION_TARGET_NONE: TriggerMediaInformation.Video.CompletionTarget
-        COMPLETION_TARGET_NEXT: TriggerMediaInformation.Video.CompletionTarget
-        COMPLETION_TARGET_RANDOM: TriggerMediaInformation.Video.CompletionTarget
-        COMPLETION_TARGET_CUE: TriggerMediaInformation.Video.CompletionTarget
-        COMPLETION_TARGET_FIRST: TriggerMediaInformation.Video.CompletionTarget
         VISUAL_MEDIA_FIELD_NUMBER: _ClassVar[int]
         PLAYBACK_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
         COMPLETION_TARGET_FIELD_NUMBER: _ClassVar[int]
@@ -155,13 +155,13 @@ class TriggerMediaInformation(_message.Message):
         TRANSPORT_FIELD_NUMBER: _ClassVar[int]
         visual_media: TriggerMediaInformation.VisualMedia
         playback_behavior: TriggerMediaInformation.Video.PlaybackBehavior
-        completion_target: TriggerMediaInformation.Video.CompletionTarget
+        completion_target: TriggerMediaInformation.CompletionTarget
         soft_loop_enabled: bool
         soft_loop_duration: float
         frame_rate: float
         audio_channel_count: int
         transport: TriggerMediaInformation.Transport
-        def __init__(self, visual_media: _Optional[_Union[TriggerMediaInformation.VisualMedia, _Mapping]] = ..., playback_behavior: _Optional[_Union[TriggerMediaInformation.Video.PlaybackBehavior, str]] = ..., completion_target: _Optional[_Union[TriggerMediaInformation.Video.CompletionTarget, str]] = ..., soft_loop_enabled: bool = ..., soft_loop_duration: _Optional[float] = ..., frame_rate: _Optional[float] = ..., audio_channel_count: _Optional[int] = ..., transport: _Optional[_Union[TriggerMediaInformation.Transport, _Mapping]] = ...) -> None: ...
+        def __init__(self, visual_media: _Optional[_Union[TriggerMediaInformation.VisualMedia, _Mapping]] = ..., playback_behavior: _Optional[_Union[TriggerMediaInformation.Video.PlaybackBehavior, str]] = ..., completion_target: _Optional[_Union[TriggerMediaInformation.CompletionTarget, str]] = ..., soft_loop_enabled: bool = ..., soft_loop_duration: _Optional[float] = ..., frame_rate: _Optional[float] = ..., audio_channel_count: _Optional[int] = ..., transport: _Optional[_Union[TriggerMediaInformation.Transport, _Mapping]] = ...) -> None: ...
     class Audio(_message.Message):
         __slots__ = ("behavior", "playback_behavior", "transition", "audio_channel_count", "transport")
         class Behavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -191,25 +191,13 @@ class TriggerMediaInformation(_message.Message):
         def __init__(self, behavior: _Optional[_Union[TriggerMediaInformation.Audio.Behavior, str]] = ..., playback_behavior: _Optional[_Union[TriggerMediaInformation.Audio.PlaybackBehavior, str]] = ..., transition: _Optional[_Union[TriggerMediaInformation.Transition, _Mapping]] = ..., audio_channel_count: _Optional[int] = ..., transport: _Optional[_Union[TriggerMediaInformation.Transport, _Mapping]] = ...) -> None: ...
     class Image(_message.Message):
         __slots__ = ("visual_media", "transition", "completion_target")
-        class CompletionTarget(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            COMPLETION_TARGET_NONE: _ClassVar[TriggerMediaInformation.Image.CompletionTarget]
-            COMPLETION_TARGET_NEXT: _ClassVar[TriggerMediaInformation.Image.CompletionTarget]
-            COMPLETION_TARGET_RANDOM: _ClassVar[TriggerMediaInformation.Image.CompletionTarget]
-            COMPLETION_TARGET_CUE: _ClassVar[TriggerMediaInformation.Image.CompletionTarget]
-            COMPLETION_TARGET_FIRST: _ClassVar[TriggerMediaInformation.Image.CompletionTarget]
-        COMPLETION_TARGET_NONE: TriggerMediaInformation.Image.CompletionTarget
-        COMPLETION_TARGET_NEXT: TriggerMediaInformation.Image.CompletionTarget
-        COMPLETION_TARGET_RANDOM: TriggerMediaInformation.Image.CompletionTarget
-        COMPLETION_TARGET_CUE: TriggerMediaInformation.Image.CompletionTarget
-        COMPLETION_TARGET_FIRST: TriggerMediaInformation.Image.CompletionTarget
         VISUAL_MEDIA_FIELD_NUMBER: _ClassVar[int]
         TRANSITION_FIELD_NUMBER: _ClassVar[int]
         COMPLETION_TARGET_FIELD_NUMBER: _ClassVar[int]
         visual_media: TriggerMediaInformation.VisualMedia
         transition: TriggerMediaInformation.Transition
-        completion_target: TriggerMediaInformation.Image.CompletionTarget
-        def __init__(self, visual_media: _Optional[_Union[TriggerMediaInformation.VisualMedia, _Mapping]] = ..., transition: _Optional[_Union[TriggerMediaInformation.Transition, _Mapping]] = ..., completion_target: _Optional[_Union[TriggerMediaInformation.Image.CompletionTarget, str]] = ...) -> None: ...
+        completion_target: TriggerMediaInformation.CompletionTarget
+        def __init__(self, visual_media: _Optional[_Union[TriggerMediaInformation.VisualMedia, _Mapping]] = ..., transition: _Optional[_Union[TriggerMediaInformation.Transition, _Mapping]] = ..., completion_target: _Optional[_Union[TriggerMediaInformation.CompletionTarget, str]] = ...) -> None: ...
     class LiveVideo(_message.Message):
         __slots__ = ("visual_media", "frame_rate", "audio_channel_count")
         VISUAL_MEDIA_FIELD_NUMBER: _ClassVar[int]

@@ -1,4 +1,4 @@
-from . import analyticsMultiTracks_pb2 as _analyticsMultiTracks_pb2
+import analyticsMultiTracks_pb2 as _analyticsMultiTracks_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -15,6 +15,14 @@ class Startup(_message.Message):
         def __init__(self, number_presets: _Optional[int] = ...) -> None: ...
     class ScreenConfiguration(_message.Message):
         __slots__ = ("summary", "output", "single", "mirrored", "edge_blend", "grouped")
+        class ScreenType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            SCREEN_TYPE_UNKNOWN: _ClassVar[Startup.ScreenConfiguration.ScreenType]
+            SCREEN_TYPE_AUDIENCE: _ClassVar[Startup.ScreenConfiguration.ScreenType]
+            SCREEN_TYPE_STAGE: _ClassVar[Startup.ScreenConfiguration.ScreenType]
+        SCREEN_TYPE_UNKNOWN: Startup.ScreenConfiguration.ScreenType
+        SCREEN_TYPE_AUDIENCE: Startup.ScreenConfiguration.ScreenType
+        SCREEN_TYPE_STAGE: Startup.ScreenConfiguration.ScreenType
         class Summary(_message.Message):
             __slots__ = ("total_screens", "audience_screen_count", "stage_screen_count")
             TOTAL_SCREENS_FIELD_NUMBER: _ClassVar[int]
@@ -87,72 +95,40 @@ class Startup(_message.Message):
             def __init__(self, proscreen_type: _Optional[_Union[Startup.ScreenConfiguration.Output.ProScreenType, str]] = ..., output_type: _Optional[_Union[Startup.ScreenConfiguration.Output.OutputType, str]] = ..., color_correction_enabled: bool = ..., corner_pin_enabled: bool = ..., alignment: _Optional[_Union[Startup.ScreenConfiguration.Output.Alignment, str]] = ..., width: _Optional[int] = ..., height: _Optional[int] = ..., screen: _Optional[_Union[Startup.ScreenConfiguration.Screen, _Mapping]] = ...) -> None: ...
         class Single(_message.Message):
             __slots__ = ("screen_type", "screen_color_enabled")
-            class ScreenType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                SCREEN_TYPE_UNKNOWN: _ClassVar[Startup.ScreenConfiguration.Single.ScreenType]
-                SCREEN_TYPE_AUDIENCE: _ClassVar[Startup.ScreenConfiguration.Single.ScreenType]
-                SCREEN_TYPE_STAGE: _ClassVar[Startup.ScreenConfiguration.Single.ScreenType]
-            SCREEN_TYPE_UNKNOWN: Startup.ScreenConfiguration.Single.ScreenType
-            SCREEN_TYPE_AUDIENCE: Startup.ScreenConfiguration.Single.ScreenType
-            SCREEN_TYPE_STAGE: Startup.ScreenConfiguration.Single.ScreenType
             SCREEN_TYPE_FIELD_NUMBER: _ClassVar[int]
             SCREEN_COLOR_ENABLED_FIELD_NUMBER: _ClassVar[int]
-            screen_type: Startup.ScreenConfiguration.Single.ScreenType
+            screen_type: Startup.ScreenConfiguration.ScreenType
             screen_color_enabled: bool
-            def __init__(self, screen_type: _Optional[_Union[Startup.ScreenConfiguration.Single.ScreenType, str]] = ..., screen_color_enabled: bool = ...) -> None: ...
+            def __init__(self, screen_type: _Optional[_Union[Startup.ScreenConfiguration.ScreenType, str]] = ..., screen_color_enabled: bool = ...) -> None: ...
         class Mirrored(_message.Message):
             __slots__ = ("screen_type", "screen_color_enabled", "count")
-            class ScreenType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                SCREEN_TYPE_UNKNOWN: _ClassVar[Startup.ScreenConfiguration.Mirrored.ScreenType]
-                SCREEN_TYPE_AUDIENCE: _ClassVar[Startup.ScreenConfiguration.Mirrored.ScreenType]
-                SCREEN_TYPE_STAGE: _ClassVar[Startup.ScreenConfiguration.Mirrored.ScreenType]
-            SCREEN_TYPE_UNKNOWN: Startup.ScreenConfiguration.Mirrored.ScreenType
-            SCREEN_TYPE_AUDIENCE: Startup.ScreenConfiguration.Mirrored.ScreenType
-            SCREEN_TYPE_STAGE: Startup.ScreenConfiguration.Mirrored.ScreenType
             SCREEN_TYPE_FIELD_NUMBER: _ClassVar[int]
             SCREEN_COLOR_ENABLED_FIELD_NUMBER: _ClassVar[int]
             COUNT_FIELD_NUMBER: _ClassVar[int]
-            screen_type: Startup.ScreenConfiguration.Mirrored.ScreenType
+            screen_type: Startup.ScreenConfiguration.ScreenType
             screen_color_enabled: bool
             count: int
-            def __init__(self, screen_type: _Optional[_Union[Startup.ScreenConfiguration.Mirrored.ScreenType, str]] = ..., screen_color_enabled: bool = ..., count: _Optional[int] = ...) -> None: ...
+            def __init__(self, screen_type: _Optional[_Union[Startup.ScreenConfiguration.ScreenType, str]] = ..., screen_color_enabled: bool = ..., count: _Optional[int] = ...) -> None: ...
         class EdgeBlend(_message.Message):
             __slots__ = ("screen_type", "screen_color_enabled", "count")
-            class ScreenType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                SCREEN_TYPE_UNKNOWN: _ClassVar[Startup.ScreenConfiguration.EdgeBlend.ScreenType]
-                SCREEN_TYPE_AUDIENCE: _ClassVar[Startup.ScreenConfiguration.EdgeBlend.ScreenType]
-                SCREEN_TYPE_STAGE: _ClassVar[Startup.ScreenConfiguration.EdgeBlend.ScreenType]
-            SCREEN_TYPE_UNKNOWN: Startup.ScreenConfiguration.EdgeBlend.ScreenType
-            SCREEN_TYPE_AUDIENCE: Startup.ScreenConfiguration.EdgeBlend.ScreenType
-            SCREEN_TYPE_STAGE: Startup.ScreenConfiguration.EdgeBlend.ScreenType
             SCREEN_TYPE_FIELD_NUMBER: _ClassVar[int]
             SCREEN_COLOR_ENABLED_FIELD_NUMBER: _ClassVar[int]
             COUNT_FIELD_NUMBER: _ClassVar[int]
-            screen_type: Startup.ScreenConfiguration.EdgeBlend.ScreenType
+            screen_type: Startup.ScreenConfiguration.ScreenType
             screen_color_enabled: bool
             count: int
-            def __init__(self, screen_type: _Optional[_Union[Startup.ScreenConfiguration.EdgeBlend.ScreenType, str]] = ..., screen_color_enabled: bool = ..., count: _Optional[int] = ...) -> None: ...
+            def __init__(self, screen_type: _Optional[_Union[Startup.ScreenConfiguration.ScreenType, str]] = ..., screen_color_enabled: bool = ..., count: _Optional[int] = ...) -> None: ...
         class Grouped(_message.Message):
             __slots__ = ("screen_type", "screen_color_enabled", "columns", "rows")
-            class ScreenType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                SCREEN_TYPE_UNKNOWN: _ClassVar[Startup.ScreenConfiguration.Grouped.ScreenType]
-                SCREEN_TYPE_AUDIENCE: _ClassVar[Startup.ScreenConfiguration.Grouped.ScreenType]
-                SCREEN_TYPE_STAGE: _ClassVar[Startup.ScreenConfiguration.Grouped.ScreenType]
-            SCREEN_TYPE_UNKNOWN: Startup.ScreenConfiguration.Grouped.ScreenType
-            SCREEN_TYPE_AUDIENCE: Startup.ScreenConfiguration.Grouped.ScreenType
-            SCREEN_TYPE_STAGE: Startup.ScreenConfiguration.Grouped.ScreenType
             SCREEN_TYPE_FIELD_NUMBER: _ClassVar[int]
             SCREEN_COLOR_ENABLED_FIELD_NUMBER: _ClassVar[int]
             COLUMNS_FIELD_NUMBER: _ClassVar[int]
             ROWS_FIELD_NUMBER: _ClassVar[int]
-            screen_type: Startup.ScreenConfiguration.Grouped.ScreenType
+            screen_type: Startup.ScreenConfiguration.ScreenType
             screen_color_enabled: bool
             columns: int
             rows: int
-            def __init__(self, screen_type: _Optional[_Union[Startup.ScreenConfiguration.Grouped.ScreenType, str]] = ..., screen_color_enabled: bool = ..., columns: _Optional[int] = ..., rows: _Optional[int] = ...) -> None: ...
+            def __init__(self, screen_type: _Optional[_Union[Startup.ScreenConfiguration.ScreenType, str]] = ..., screen_color_enabled: bool = ..., columns: _Optional[int] = ..., rows: _Optional[int] = ...) -> None: ...
         class Screen(_message.Message):
             __slots__ = ("alpha_key_mode", "alpha_device")
             class AlphaKeyMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):

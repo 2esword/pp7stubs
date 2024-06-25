@@ -1,10 +1,10 @@
-from . import alignmentGuide_pb2 as _alignmentGuide_pb2
-from . import color_pb2 as _color_pb2
-from . import effects_pb2 as _effects_pb2
-from . import graphicsData_pb2 as _graphicsData_pb2
-from . import timers_pb2 as _timers_pb2
-from . import url_pb2 as _url_pb2
-from . import uuid_pb2 as _uuid_pb2
+import alignmentGuide_pb2 as _alignmentGuide_pb2
+import color_pb2 as _color_pb2
+import effects_pb2 as _effects_pb2
+import graphicsData_pb2 as _graphicsData_pb2
+import timers_pb2 as _timers_pb2
+import url_pb2 as _url_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -25,6 +25,16 @@ class Slide(_message.Message):
         TEXT_REVEAL_TYPE_NONE: Slide.Element.TextRevealType
         TEXT_REVEAL_TYPE_BULLET: Slide.Element.TextRevealType
         TEXT_REVEAL_TYPE_UNDERLINE: Slide.Element.TextRevealType
+        class Info(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            INFO_NONE: _ClassVar[Slide.Element.Info]
+            INFO_IS_TEMPLATE_ELEMENT: _ClassVar[Slide.Element.Info]
+            INFO_IS_TEXT_ELEMENT: _ClassVar[Slide.Element.Info]
+            INFO_IS_TEXT_TICKER: _ClassVar[Slide.Element.Info]
+        INFO_NONE: Slide.Element.Info
+        INFO_IS_TEMPLATE_ELEMENT: Slide.Element.Info
+        INFO_IS_TEXT_ELEMENT: Slide.Element.Info
+        INFO_IS_TEXT_TICKER: Slide.Element.Info
         class Build(_message.Message):
             __slots__ = ("uuid", "elementUUID", "start", "delayTime", "transition")
             class Start(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -50,27 +60,37 @@ class Slide(_message.Message):
             def __init__(self, uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., elementUUID: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., start: _Optional[_Union[Slide.Element.Build.Start, str]] = ..., delayTime: _Optional[float] = ..., transition: _Optional[_Union[_effects_pb2.Transition, _Mapping]] = ...) -> None: ...
         class ChildBuild(_message.Message):
             __slots__ = ("uuid", "start", "delayTime", "index")
-            class Start(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                START_ON_CLICK: _ClassVar[Slide.Element.ChildBuild.Start]
-                START_WITH_PREVIOUS: _ClassVar[Slide.Element.ChildBuild.Start]
-                START_AFTER_PREVIOUS: _ClassVar[Slide.Element.ChildBuild.Start]
-                START_WITH_SLIDE: _ClassVar[Slide.Element.ChildBuild.Start]
-            START_ON_CLICK: Slide.Element.ChildBuild.Start
-            START_WITH_PREVIOUS: Slide.Element.ChildBuild.Start
-            START_AFTER_PREVIOUS: Slide.Element.ChildBuild.Start
-            START_WITH_SLIDE: Slide.Element.ChildBuild.Start
             UUID_FIELD_NUMBER: _ClassVar[int]
             START_FIELD_NUMBER: _ClassVar[int]
             DELAYTIME_FIELD_NUMBER: _ClassVar[int]
             INDEX_FIELD_NUMBER: _ClassVar[int]
             uuid: _uuid_pb2.UUID
-            start: Slide.Element.ChildBuild.Start
+            start: Slide.Element.Build.Start
             delayTime: float
             index: int
-            def __init__(self, uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., start: _Optional[_Union[Slide.Element.ChildBuild.Start, str]] = ..., delayTime: _Optional[float] = ..., index: _Optional[int] = ...) -> None: ...
+            def __init__(self, uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., start: _Optional[_Union[Slide.Element.Build.Start, str]] = ..., delayTime: _Optional[float] = ..., index: _Optional[int] = ...) -> None: ...
         class DataLink(_message.Message):
             __slots__ = ("ticker", "alternate_text", "timer_text", "clock_text", "chord_chart", "output_screen", "pco_live", "alternate_fill", "visibility_link", "slide_text", "stage_message", "video_countdown", "slide_image", "ccli_text", "group_name", "group_color", "presentation_notes", "playlist_item", "auto_advance_time_remaining", "capture_status_text", "capture_status_color", "slide_count", "audio_countdown", "presentation", "slide_Label_Text", "slide_Label_Color", "rss_feed", "file_feed", "chord_pro_chart", "playback_marker_text", "playback_marker_color", "timecode_text", "timecode_status")
+            class SlideSourceType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                __slots__ = ()
+                SLIDE_SOURCE_TYPE_CURRENT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideSourceType]
+                SLIDE_SOURCE_TYPE_NEXT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideSourceType]
+            SLIDE_SOURCE_TYPE_CURRENT_SLIDE: Slide.Element.DataLink.SlideSourceType
+            SLIDE_SOURCE_TYPE_NEXT_SLIDE: Slide.Element.DataLink.SlideSourceType
+            class GroupSourceType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                __slots__ = ()
+                GROUP_SOURCE_TYPE_CURRENT_SLIDE: _ClassVar[Slide.Element.DataLink.GroupSourceType]
+                GROUP_SOURCE_TYPE_NEXT_SLIDE: _ClassVar[Slide.Element.DataLink.GroupSourceType]
+                GROUP_SOURCE_TYPE_NEXT_GROUP: _ClassVar[Slide.Element.DataLink.GroupSourceType]
+            GROUP_SOURCE_TYPE_CURRENT_SLIDE: Slide.Element.DataLink.GroupSourceType
+            GROUP_SOURCE_TYPE_NEXT_SLIDE: Slide.Element.DataLink.GroupSourceType
+            GROUP_SOURCE_TYPE_NEXT_GROUP: Slide.Element.DataLink.GroupSourceType
+            class SlideLabelSource(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                __slots__ = ()
+                SLIDE_LABEL_SOURCE_CURRENT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideLabelSource]
+                SLIDE_LABEL_SOURCE_NEXT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideLabelSource]
+            SLIDE_LABEL_SOURCE_CURRENT_SLIDE: Slide.Element.DataLink.SlideLabelSource
+            SLIDE_LABEL_SOURCE_NEXT_SLIDE: Slide.Element.DataLink.SlideLabelSource
             class RSSFeed(_message.Message):
                 __slots__ = ("url", "content", "text_delimiter")
                 class ContentType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -348,12 +368,6 @@ class Slide(_message.Message):
                 def __init__(self, visibility_criterion: _Optional[_Union[Slide.Element.DataLink.VisibilityLink.VisibilityCriterion, str]] = ..., conditions: _Optional[_Iterable[_Union[Slide.Element.DataLink.VisibilityLink.Condition, _Mapping]]] = ...) -> None: ...
             class SlideText(_message.Message):
                 __slots__ = ("source_slide", "source_option", "preserve_notes_format", "name_to_match", "element_text_transform")
-                class SlideSourceType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    SLIDE_SOURCE_TYPE_CURRENT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideText.SlideSourceType]
-                    SLIDE_SOURCE_TYPE_NEXT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideText.SlideSourceType]
-                SLIDE_SOURCE_TYPE_CURRENT_SLIDE: Slide.Element.DataLink.SlideText.SlideSourceType
-                SLIDE_SOURCE_TYPE_NEXT_SLIDE: Slide.Element.DataLink.SlideText.SlideSourceType
                 class TextSourceOption(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
                     __slots__ = ()
                     TEXT_SOURCE_OPTION_TEXT: _ClassVar[Slide.Element.DataLink.SlideText.TextSourceOption]
@@ -362,38 +376,22 @@ class Slide(_message.Message):
                 TEXT_SOURCE_OPTION_TEXT: Slide.Element.DataLink.SlideText.TextSourceOption
                 TEXT_SOURCE_OPTION_NOTES: Slide.Element.DataLink.SlideText.TextSourceOption
                 TEXT_SOURCE_OPTION_ELEMENT_MATCHING_NAME: Slide.Element.DataLink.SlideText.TextSourceOption
-                class TextTransformOption(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    TEXT_TRANSFORM_OPTION_NONE: _ClassVar[Slide.Element.DataLink.SlideText.TextTransformOption]
-                    TEXT_TRANSFORM_OPTION_REMOVE_LINE_RETURNS: _ClassVar[Slide.Element.DataLink.SlideText.TextTransformOption]
-                    TEXT_TRANSFORM_OPTION_ONE_WORD_PER_LINE: _ClassVar[Slide.Element.DataLink.SlideText.TextTransformOption]
-                    TEXT_TRANSFORM_OPTION_ONE_CHARACTER_PER_LINE: _ClassVar[Slide.Element.DataLink.SlideText.TextTransformOption]
-                TEXT_TRANSFORM_OPTION_NONE: Slide.Element.DataLink.SlideText.TextTransformOption
-                TEXT_TRANSFORM_OPTION_REMOVE_LINE_RETURNS: Slide.Element.DataLink.SlideText.TextTransformOption
-                TEXT_TRANSFORM_OPTION_ONE_WORD_PER_LINE: Slide.Element.DataLink.SlideText.TextTransformOption
-                TEXT_TRANSFORM_OPTION_ONE_CHARACTER_PER_LINE: Slide.Element.DataLink.SlideText.TextTransformOption
                 SOURCE_SLIDE_FIELD_NUMBER: _ClassVar[int]
                 SOURCE_OPTION_FIELD_NUMBER: _ClassVar[int]
                 PRESERVE_NOTES_FORMAT_FIELD_NUMBER: _ClassVar[int]
                 NAME_TO_MATCH_FIELD_NUMBER: _ClassVar[int]
                 ELEMENT_TEXT_TRANSFORM_FIELD_NUMBER: _ClassVar[int]
-                source_slide: Slide.Element.DataLink.SlideText.SlideSourceType
+                source_slide: Slide.Element.DataLink.SlideSourceType
                 source_option: Slide.Element.DataLink.SlideText.TextSourceOption
                 preserve_notes_format: bool
                 name_to_match: str
-                element_text_transform: Slide.Element.DataLink.SlideText.TextTransformOption
-                def __init__(self, source_slide: _Optional[_Union[Slide.Element.DataLink.SlideText.SlideSourceType, str]] = ..., source_option: _Optional[_Union[Slide.Element.DataLink.SlideText.TextSourceOption, str]] = ..., preserve_notes_format: bool = ..., name_to_match: _Optional[str] = ..., element_text_transform: _Optional[_Union[Slide.Element.DataLink.SlideText.TextTransformOption, str]] = ...) -> None: ...
+                element_text_transform: Slide.Element.DataLink.AlternateElementText.TextTransformOption
+                def __init__(self, source_slide: _Optional[_Union[Slide.Element.DataLink.SlideSourceType, str]] = ..., source_option: _Optional[_Union[Slide.Element.DataLink.SlideText.TextSourceOption, str]] = ..., preserve_notes_format: bool = ..., name_to_match: _Optional[str] = ..., element_text_transform: _Optional[_Union[Slide.Element.DataLink.AlternateElementText.TextTransformOption, str]] = ...) -> None: ...
             class SlideImage(_message.Message):
                 __slots__ = ("source_slide",)
-                class SlideSourceType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    SLIDE_SOURCE_TYPE_CURRENT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideImage.SlideSourceType]
-                    SLIDE_SOURCE_TYPE_NEXT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideImage.SlideSourceType]
-                SLIDE_SOURCE_TYPE_CURRENT_SLIDE: Slide.Element.DataLink.SlideImage.SlideSourceType
-                SLIDE_SOURCE_TYPE_NEXT_SLIDE: Slide.Element.DataLink.SlideImage.SlideSourceType
                 SOURCE_SLIDE_FIELD_NUMBER: _ClassVar[int]
-                source_slide: Slide.Element.DataLink.SlideImage.SlideSourceType
-                def __init__(self, source_slide: _Optional[_Union[Slide.Element.DataLink.SlideImage.SlideSourceType, str]] = ...) -> None: ...
+                source_slide: Slide.Element.DataLink.SlideSourceType
+                def __init__(self, source_slide: _Optional[_Union[Slide.Element.DataLink.SlideSourceType, str]] = ...) -> None: ...
             class StageMessage(_message.Message):
                 __slots__ = ("should_flash", "flash_color")
                 SHOULD_FLASH_FIELD_NUMBER: _ClassVar[int]
@@ -433,52 +431,24 @@ class Slide(_message.Message):
                 def __init__(self, timer_format: _Optional[_Union[_timers_pb2.Timer.Format, _Mapping]] = ..., timer_format_string: _Optional[str] = ..., color_triggers: _Optional[_Iterable[_Union[Slide.Element.DataLink.ColorTrigger, _Mapping]]] = ..., ignore_looping_audio: bool = ...) -> None: ...
             class GroupName(_message.Message):
                 __slots__ = ("groupSource",)
-                class GroupSourceType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    GROUP_SOURCE_TYPE_CURRENT_SLIDE: _ClassVar[Slide.Element.DataLink.GroupName.GroupSourceType]
-                    GROUP_SOURCE_TYPE_NEXT_SLIDE: _ClassVar[Slide.Element.DataLink.GroupName.GroupSourceType]
-                    GROUP_SOURCE_TYPE_NEXT_GROUP: _ClassVar[Slide.Element.DataLink.GroupName.GroupSourceType]
-                GROUP_SOURCE_TYPE_CURRENT_SLIDE: Slide.Element.DataLink.GroupName.GroupSourceType
-                GROUP_SOURCE_TYPE_NEXT_SLIDE: Slide.Element.DataLink.GroupName.GroupSourceType
-                GROUP_SOURCE_TYPE_NEXT_GROUP: Slide.Element.DataLink.GroupName.GroupSourceType
                 GROUPSOURCE_FIELD_NUMBER: _ClassVar[int]
-                groupSource: Slide.Element.DataLink.GroupName.GroupSourceType
-                def __init__(self, groupSource: _Optional[_Union[Slide.Element.DataLink.GroupName.GroupSourceType, str]] = ...) -> None: ...
+                groupSource: Slide.Element.DataLink.GroupSourceType
+                def __init__(self, groupSource: _Optional[_Union[Slide.Element.DataLink.GroupSourceType, str]] = ...) -> None: ...
             class GroupColor(_message.Message):
                 __slots__ = ("groupSource",)
-                class GroupSourceType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    GROUP_SOURCE_TYPE_CURRENT_SLIDE: _ClassVar[Slide.Element.DataLink.GroupColor.GroupSourceType]
-                    GROUP_SOURCE_TYPE_NEXT_SLIDE: _ClassVar[Slide.Element.DataLink.GroupColor.GroupSourceType]
-                    GROUP_SOURCE_TYPE_NEXT_GROUP: _ClassVar[Slide.Element.DataLink.GroupColor.GroupSourceType]
-                GROUP_SOURCE_TYPE_CURRENT_SLIDE: Slide.Element.DataLink.GroupColor.GroupSourceType
-                GROUP_SOURCE_TYPE_NEXT_SLIDE: Slide.Element.DataLink.GroupColor.GroupSourceType
-                GROUP_SOURCE_TYPE_NEXT_GROUP: Slide.Element.DataLink.GroupColor.GroupSourceType
                 GROUPSOURCE_FIELD_NUMBER: _ClassVar[int]
-                groupSource: Slide.Element.DataLink.GroupColor.GroupSourceType
-                def __init__(self, groupSource: _Optional[_Union[Slide.Element.DataLink.GroupColor.GroupSourceType, str]] = ...) -> None: ...
+                groupSource: Slide.Element.DataLink.GroupSourceType
+                def __init__(self, groupSource: _Optional[_Union[Slide.Element.DataLink.GroupSourceType, str]] = ...) -> None: ...
             class SlideLabelText(_message.Message):
                 __slots__ = ("slide_label_source",)
-                class SlideLabelSource(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    SLIDE_LABEL_SOURCE_CURRENT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideLabelText.SlideLabelSource]
-                    SLIDE_LABEL_SOURCE_NEXT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideLabelText.SlideLabelSource]
-                SLIDE_LABEL_SOURCE_CURRENT_SLIDE: Slide.Element.DataLink.SlideLabelText.SlideLabelSource
-                SLIDE_LABEL_SOURCE_NEXT_SLIDE: Slide.Element.DataLink.SlideLabelText.SlideLabelSource
                 SLIDE_LABEL_SOURCE_FIELD_NUMBER: _ClassVar[int]
-                slide_label_source: Slide.Element.DataLink.SlideLabelText.SlideLabelSource
-                def __init__(self, slide_label_source: _Optional[_Union[Slide.Element.DataLink.SlideLabelText.SlideLabelSource, str]] = ...) -> None: ...
+                slide_label_source: Slide.Element.DataLink.SlideLabelSource
+                def __init__(self, slide_label_source: _Optional[_Union[Slide.Element.DataLink.SlideLabelSource, str]] = ...) -> None: ...
             class SlideLabelColor(_message.Message):
                 __slots__ = ("slide_label_source",)
-                class SlideLabelSource(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    SLIDE_LABEL_SOURCE_CURRENT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideLabelColor.SlideLabelSource]
-                    SLIDE_LABEL_SOURCE_NEXT_SLIDE: _ClassVar[Slide.Element.DataLink.SlideLabelColor.SlideLabelSource]
-                SLIDE_LABEL_SOURCE_CURRENT_SLIDE: Slide.Element.DataLink.SlideLabelColor.SlideLabelSource
-                SLIDE_LABEL_SOURCE_NEXT_SLIDE: Slide.Element.DataLink.SlideLabelColor.SlideLabelSource
                 SLIDE_LABEL_SOURCE_FIELD_NUMBER: _ClassVar[int]
-                slide_label_source: Slide.Element.DataLink.SlideLabelColor.SlideLabelSource
-                def __init__(self, slide_label_source: _Optional[_Union[Slide.Element.DataLink.SlideLabelColor.SlideLabelSource, str]] = ...) -> None: ...
+                slide_label_source: Slide.Element.DataLink.SlideLabelSource
+                def __init__(self, slide_label_source: _Optional[_Union[Slide.Element.DataLink.SlideLabelSource, str]] = ...) -> None: ...
             class PresentationNotes(_message.Message):
                 __slots__ = ()
                 def __init__(self) -> None: ...
@@ -558,14 +528,6 @@ class Slide(_message.Message):
                 def __init__(self, slideCountSourceType: _Optional[_Union[Slide.Element.DataLink.SlideCount.SlideCountSourceType, str]] = ...) -> None: ...
             class PlaybackMarkerIdentifier(_message.Message):
                 __slots__ = ("destination", "type", "name")
-                class Destination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    PLAYBACK_MARKER_DESTINATION_PRESENTATION: _ClassVar[Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination]
-                    PLAYBACK_MARKER_DESTINATION_ANNOUNCEMENT: _ClassVar[Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination]
-                    PLAYBACK_MARKER_DESTINATION_AUDIO: _ClassVar[Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination]
-                PLAYBACK_MARKER_DESTINATION_PRESENTATION: Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination
-                PLAYBACK_MARKER_DESTINATION_ANNOUNCEMENT: Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination
-                PLAYBACK_MARKER_DESTINATION_AUDIO: Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination
                 class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
                     __slots__ = ()
                     PLAYBACK_MARKER_IDENTIFIER_FIRST: _ClassVar[Slide.Element.DataLink.PlaybackMarkerIdentifier.Type]
@@ -578,6 +540,14 @@ class Slide(_message.Message):
                 PLAYBACK_MARKER_IDENTIFIER_NEXT: Slide.Element.DataLink.PlaybackMarkerIdentifier.Type
                 PLAYBACK_MARKER_IDENTIFIER_LAST: Slide.Element.DataLink.PlaybackMarkerIdentifier.Type
                 PLAYBACK_MARKER_IDENTIFIER_NAME: Slide.Element.DataLink.PlaybackMarkerIdentifier.Type
+                class Destination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                    __slots__ = ()
+                    PLAYBACK_MARKER_DESTINATION_PRESENTATION: _ClassVar[Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination]
+                    PLAYBACK_MARKER_DESTINATION_ANNOUNCEMENT: _ClassVar[Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination]
+                    PLAYBACK_MARKER_DESTINATION_AUDIO: _ClassVar[Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination]
+                PLAYBACK_MARKER_DESTINATION_PRESENTATION: Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination
+                PLAYBACK_MARKER_DESTINATION_ANNOUNCEMENT: Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination
+                PLAYBACK_MARKER_DESTINATION_AUDIO: Slide.Element.DataLink.PlaybackMarkerIdentifier.Destination
                 DESTINATION_FIELD_NUMBER: _ClassVar[int]
                 TYPE_FIELD_NUMBER: _ClassVar[int]
                 NAME_FIELD_NUMBER: _ClassVar[int]

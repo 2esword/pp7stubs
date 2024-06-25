@@ -1,7 +1,7 @@
-from . import applicationInfo_pb2 as _applicationInfo_pb2
-from . import collectionElementType_pb2 as _collectionElementType_pb2
-from . import uuid_pb2 as _uuid_pb2
-from . import slide_pb2 as _slide_pb2
+import applicationInfo_pb2 as _applicationInfo_pb2
+import collectionElementType_pb2 as _collectionElementType_pb2
+import uuid_pb2 as _uuid_pb2
+import slide_pb2 as _slide_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

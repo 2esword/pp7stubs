@@ -1,9 +1,9 @@
-from . import alphaType_pb2 as _alphaType_pb2
-from . import color_pb2 as _color_pb2
-from . import digitalAudio_pb2 as _digitalAudio_pb2
-from . import graphicsData_pb2 as _graphicsData_pb2
-from . import url_pb2 as _url_pb2
-from . import uuid_pb2 as _uuid_pb2
+import alphaType_pb2 as _alphaType_pb2
+import color_pb2 as _color_pb2
+import digitalAudio_pb2 as _digitalAudio_pb2
+import graphicsData_pb2 as _graphicsData_pb2
+import url_pb2 as _url_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -22,14 +22,6 @@ class VideoInput(_message.Message):
     AUDIO_DEVICE_TYPE_DEFAULT: VideoInput.AudioDeviceType
     AUDIO_DEVICE_TYPE_NONE: VideoInput.AudioDeviceType
     AUDIO_DEVICE_TYPE_ALTERNATE: VideoInput.AudioDeviceType
-    class AlphaType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALPHA_TYPE_UNKNOWN: _ClassVar[VideoInput.AlphaType]
-        ALPHA_TYPE_STRAIGHT: _ClassVar[VideoInput.AlphaType]
-        ALPHA_TYPE_PREMULTIPLIED: _ClassVar[VideoInput.AlphaType]
-    ALPHA_TYPE_UNKNOWN: VideoInput.AlphaType
-    ALPHA_TYPE_STRAIGHT: VideoInput.AlphaType
-    ALPHA_TYPE_PREMULTIPLIED: VideoInput.AlphaType
     class SettingsDocument(_message.Message):
         __slots__ = ("inputs",)
         INPUTS_FIELD_NUMBER: _ClassVar[int]
@@ -50,10 +42,10 @@ class VideoInput(_message.Message):
     display_color: _color_pb2.Color
     thumbnail_path: _url_pb2.URL
     audio_type: VideoInput.AudioDeviceType
-    alpha_type: VideoInput.AlphaType
+    alpha_type: _alphaType_pb2.AlphaType
     audio_device: _digitalAudio_pb2.DigitalAudio.Device
     video_device: _graphicsData_pb2.Media.VideoDevice
-    def __init__(self, uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., user_description: _Optional[str] = ..., video_input_device: _Optional[_Union[_graphicsData_pb2.Media.VideoDevice, _Mapping]] = ..., display_color: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., thumbnail_path: _Optional[_Union[_url_pb2.URL, _Mapping]] = ..., audio_type: _Optional[_Union[VideoInput.AudioDeviceType, str]] = ..., alpha_type: _Optional[_Union[VideoInput.AlphaType, str]] = ..., audio_device: _Optional[_Union[_digitalAudio_pb2.DigitalAudio.Device, _Mapping]] = ..., video_device: _Optional[_Union[_graphicsData_pb2.Media.VideoDevice, _Mapping]] = ...) -> None: ...
+    def __init__(self, uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., user_description: _Optional[str] = ..., video_input_device: _Optional[_Union[_graphicsData_pb2.Media.VideoDevice, _Mapping]] = ..., display_color: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., thumbnail_path: _Optional[_Union[_url_pb2.URL, _Mapping]] = ..., audio_type: _Optional[_Union[VideoInput.AudioDeviceType, str]] = ..., alpha_type: _Optional[_Union[_alphaType_pb2.AlphaType, str]] = ..., audio_device: _Optional[_Union[_digitalAudio_pb2.DigitalAudio.Device, _Mapping]] = ..., video_device: _Optional[_Union[_graphicsData_pb2.Media.VideoDevice, _Mapping]] = ...) -> None: ...
 
 class AudioInput(_message.Message):
     __slots__ = ("uuid", "user_description", "behavior_mode", "audio_device", "video_device")

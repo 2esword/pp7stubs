@@ -1,6 +1,6 @@
-from . import digitalAudio_pb2 as _digitalAudio_pb2
-from . import url_pb2 as _url_pb2
-from . import uuid_pb2 as _uuid_pb2
+import digitalAudio_pb2 as _digitalAudio_pb2
+import url_pb2 as _url_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -31,60 +31,68 @@ class Recording(_message.Message):
         def __init__(self, id: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., name: _Optional[str] = ..., streams: _Optional[_Iterable[_Union[Recording.Stream, _Mapping]]] = ...) -> None: ...
     class Stream(_message.Message):
         __slots__ = ("id", "encoder", "destinations", "audio_map", "isAudioCustomMapped", "output_screen")
+        class Container(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            CONTAINER_UNKNOWN: _ClassVar[Recording.Stream.Container]
+            CONTAINER_MOV: _ClassVar[Recording.Stream.Container]
+            CONTAINER_MP4: _ClassVar[Recording.Stream.Container]
+        CONTAINER_UNKNOWN: Recording.Stream.Container
+        CONTAINER_MOV: Recording.Stream.Container
+        CONTAINER_MP4: Recording.Stream.Container
+        class Codec(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            CODEC_AUTOMATIC: _ClassVar[Recording.Stream.Codec]
+            CODEC_H264: _ClassVar[Recording.Stream.Codec]
+            CODEC_H265: _ClassVar[Recording.Stream.Codec]
+            CODEC_PRORES_422_PROXY: _ClassVar[Recording.Stream.Codec]
+            CODEC_PRORES_422_LT: _ClassVar[Recording.Stream.Codec]
+            CODEC_PRORES_422: _ClassVar[Recording.Stream.Codec]
+            CODEC_PRORES_422_HQ: _ClassVar[Recording.Stream.Codec]
+            CODEC_PRORES_4444: _ClassVar[Recording.Stream.Codec]
+            CODEC_PRORES_4444_XQ: _ClassVar[Recording.Stream.Codec]
+            CODEC_HAP: _ClassVar[Recording.Stream.Codec]
+            CODEC_HAP_ALPHA: _ClassVar[Recording.Stream.Codec]
+            CODEC_HAP_Q: _ClassVar[Recording.Stream.Codec]
+            CODEC_HAP_Q_ALPHA: _ClassVar[Recording.Stream.Codec]
+            CODEC_NOTCH: _ClassVar[Recording.Stream.Codec]
+            CODEC_H264_SOFTWARE: _ClassVar[Recording.Stream.Codec]
+            CODEC_H265_SOFTWARE: _ClassVar[Recording.Stream.Codec]
+        CODEC_AUTOMATIC: Recording.Stream.Codec
+        CODEC_H264: Recording.Stream.Codec
+        CODEC_H265: Recording.Stream.Codec
+        CODEC_PRORES_422_PROXY: Recording.Stream.Codec
+        CODEC_PRORES_422_LT: Recording.Stream.Codec
+        CODEC_PRORES_422: Recording.Stream.Codec
+        CODEC_PRORES_422_HQ: Recording.Stream.Codec
+        CODEC_PRORES_4444: Recording.Stream.Codec
+        CODEC_PRORES_4444_XQ: Recording.Stream.Codec
+        CODEC_HAP: Recording.Stream.Codec
+        CODEC_HAP_ALPHA: Recording.Stream.Codec
+        CODEC_HAP_Q: Recording.Stream.Codec
+        CODEC_HAP_Q_ALPHA: Recording.Stream.Codec
+        CODEC_NOTCH: Recording.Stream.Codec
+        CODEC_H264_SOFTWARE: Recording.Stream.Codec
+        CODEC_H265_SOFTWARE: Recording.Stream.Codec
+        class FrameRate(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            FRAME_RATE_UNKNOWN: _ClassVar[Recording.Stream.FrameRate]
+            FRAME_RATE_24: _ClassVar[Recording.Stream.FrameRate]
+            FRAME_RATE_25: _ClassVar[Recording.Stream.FrameRate]
+            FRAME_RATE_29_97: _ClassVar[Recording.Stream.FrameRate]
+            FRAME_RATE_30: _ClassVar[Recording.Stream.FrameRate]
+            FRAME_RATE_50: _ClassVar[Recording.Stream.FrameRate]
+            FRAME_RATE_59_94: _ClassVar[Recording.Stream.FrameRate]
+            FRAME_RATE_60: _ClassVar[Recording.Stream.FrameRate]
+        FRAME_RATE_UNKNOWN: Recording.Stream.FrameRate
+        FRAME_RATE_24: Recording.Stream.FrameRate
+        FRAME_RATE_25: Recording.Stream.FrameRate
+        FRAME_RATE_29_97: Recording.Stream.FrameRate
+        FRAME_RATE_30: Recording.Stream.FrameRate
+        FRAME_RATE_50: Recording.Stream.FrameRate
+        FRAME_RATE_59_94: Recording.Stream.FrameRate
+        FRAME_RATE_60: Recording.Stream.FrameRate
         class Encoder(_message.Message):
             __slots__ = ("codec", "video_width", "video_height", "is_interlaced", "frameRate", "video_bitrate", "audio_bitrate")
-            class Codec(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                CODEC_AUTOMATIC: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_H264: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_H265: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_PRORES_422_PROXY: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_PRORES_422_LT: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_PRORES_422: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_PRORES_422_HQ: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_PRORES_4444: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_PRORES_4444_XQ: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_HAP: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_HAP_ALPHA: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_HAP_Q: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_HAP_Q_ALPHA: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_NOTCH: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_H264_SOFTWARE: _ClassVar[Recording.Stream.Encoder.Codec]
-                CODEC_H265_SOFTWARE: _ClassVar[Recording.Stream.Encoder.Codec]
-            CODEC_AUTOMATIC: Recording.Stream.Encoder.Codec
-            CODEC_H264: Recording.Stream.Encoder.Codec
-            CODEC_H265: Recording.Stream.Encoder.Codec
-            CODEC_PRORES_422_PROXY: Recording.Stream.Encoder.Codec
-            CODEC_PRORES_422_LT: Recording.Stream.Encoder.Codec
-            CODEC_PRORES_422: Recording.Stream.Encoder.Codec
-            CODEC_PRORES_422_HQ: Recording.Stream.Encoder.Codec
-            CODEC_PRORES_4444: Recording.Stream.Encoder.Codec
-            CODEC_PRORES_4444_XQ: Recording.Stream.Encoder.Codec
-            CODEC_HAP: Recording.Stream.Encoder.Codec
-            CODEC_HAP_ALPHA: Recording.Stream.Encoder.Codec
-            CODEC_HAP_Q: Recording.Stream.Encoder.Codec
-            CODEC_HAP_Q_ALPHA: Recording.Stream.Encoder.Codec
-            CODEC_NOTCH: Recording.Stream.Encoder.Codec
-            CODEC_H264_SOFTWARE: Recording.Stream.Encoder.Codec
-            CODEC_H265_SOFTWARE: Recording.Stream.Encoder.Codec
-            class FrameRate(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                FRAME_RATE_UNKNOWN: _ClassVar[Recording.Stream.Encoder.FrameRate]
-                FRAME_RATE_24: _ClassVar[Recording.Stream.Encoder.FrameRate]
-                FRAME_RATE_25: _ClassVar[Recording.Stream.Encoder.FrameRate]
-                FRAME_RATE_29_97: _ClassVar[Recording.Stream.Encoder.FrameRate]
-                FRAME_RATE_30: _ClassVar[Recording.Stream.Encoder.FrameRate]
-                FRAME_RATE_50: _ClassVar[Recording.Stream.Encoder.FrameRate]
-                FRAME_RATE_59_94: _ClassVar[Recording.Stream.Encoder.FrameRate]
-                FRAME_RATE_60: _ClassVar[Recording.Stream.Encoder.FrameRate]
-            FRAME_RATE_UNKNOWN: Recording.Stream.Encoder.FrameRate
-            FRAME_RATE_24: Recording.Stream.Encoder.FrameRate
-            FRAME_RATE_25: Recording.Stream.Encoder.FrameRate
-            FRAME_RATE_29_97: Recording.Stream.Encoder.FrameRate
-            FRAME_RATE_30: Recording.Stream.Encoder.FrameRate
-            FRAME_RATE_50: Recording.Stream.Encoder.FrameRate
-            FRAME_RATE_59_94: Recording.Stream.Encoder.FrameRate
-            FRAME_RATE_60: Recording.Stream.Encoder.FrameRate
             CODEC_FIELD_NUMBER: _ClassVar[int]
             VIDEO_WIDTH_FIELD_NUMBER: _ClassVar[int]
             VIDEO_HEIGHT_FIELD_NUMBER: _ClassVar[int]
@@ -92,14 +100,14 @@ class Recording(_message.Message):
             FRAMERATE_FIELD_NUMBER: _ClassVar[int]
             VIDEO_BITRATE_FIELD_NUMBER: _ClassVar[int]
             AUDIO_BITRATE_FIELD_NUMBER: _ClassVar[int]
-            codec: Recording.Stream.Encoder.Codec
+            codec: Recording.Stream.Codec
             video_width: int
             video_height: int
             is_interlaced: bool
-            frameRate: Recording.Stream.Encoder.FrameRate
+            frameRate: Recording.Stream.FrameRate
             video_bitrate: int
             audio_bitrate: int
-            def __init__(self, codec: _Optional[_Union[Recording.Stream.Encoder.Codec, str]] = ..., video_width: _Optional[int] = ..., video_height: _Optional[int] = ..., is_interlaced: bool = ..., frameRate: _Optional[_Union[Recording.Stream.Encoder.FrameRate, str]] = ..., video_bitrate: _Optional[int] = ..., audio_bitrate: _Optional[int] = ...) -> None: ...
+            def __init__(self, codec: _Optional[_Union[Recording.Stream.Codec, str]] = ..., video_width: _Optional[int] = ..., video_height: _Optional[int] = ..., is_interlaced: bool = ..., frameRate: _Optional[_Union[Recording.Stream.FrameRate, str]] = ..., video_bitrate: _Optional[int] = ..., audio_bitrate: _Optional[int] = ...) -> None: ...
         class OutputScreenSource(_message.Message):
             __slots__ = ("screen_id", "screen_name")
             SCREEN_ID_FIELD_NUMBER: _ClassVar[int]
@@ -109,19 +117,11 @@ class Recording(_message.Message):
             def __init__(self, screen_id: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., screen_name: _Optional[str] = ...) -> None: ...
         class DiskDestination(_message.Message):
             __slots__ = ("location", "container")
-            class Container(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                CONTAINER_UNKNOWN: _ClassVar[Recording.Stream.DiskDestination.Container]
-                CONTAINER_MOV: _ClassVar[Recording.Stream.DiskDestination.Container]
-                CONTAINER_MP4: _ClassVar[Recording.Stream.DiskDestination.Container]
-            CONTAINER_UNKNOWN: Recording.Stream.DiskDestination.Container
-            CONTAINER_MOV: Recording.Stream.DiskDestination.Container
-            CONTAINER_MP4: Recording.Stream.DiskDestination.Container
             LOCATION_FIELD_NUMBER: _ClassVar[int]
             CONTAINER_FIELD_NUMBER: _ClassVar[int]
             location: _url_pb2.URL
-            container: Recording.Stream.DiskDestination.Container
-            def __init__(self, location: _Optional[_Union[_url_pb2.URL, _Mapping]] = ..., container: _Optional[_Union[Recording.Stream.DiskDestination.Container, str]] = ...) -> None: ...
+            container: Recording.Stream.Container
+            def __init__(self, location: _Optional[_Union[_url_pb2.URL, _Mapping]] = ..., container: _Optional[_Union[Recording.Stream.Container, str]] = ...) -> None: ...
         class RTMPDestination(_message.Message):
             __slots__ = ("address", "key")
             ADDRESS_FIELD_NUMBER: _ClassVar[int]

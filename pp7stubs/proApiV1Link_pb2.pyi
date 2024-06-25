@@ -1,5 +1,5 @@
-from . import rvtimestamp_pb2 as _rvtimestamp_pb2
-from . import uuid_pb2 as _uuid_pb2
+import rvtimestamp_pb2 as _rvtimestamp_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -18,6 +18,14 @@ class API_v1_GroupMember(_message.Message):
 
 class API_v1_GroupMemberStatus(_message.Message):
     __slots__ = ("ip", "port", "name", "platform", "os_version", "host_description", "api_version", "connection_status")
+    class API_v1_GroupMemberStatus_ConnectionStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        CONNECTION_STATUS_UNKNOWN: _ClassVar[API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus]
+        CONNECTION_STATUS_CONNECTED: _ClassVar[API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus]
+        CONNECTION_STATUS_DISCONNECTED: _ClassVar[API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus]
+    CONNECTION_STATUS_UNKNOWN: API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus
+    CONNECTION_STATUS_CONNECTED: API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus
+    CONNECTION_STATUS_DISCONNECTED: API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus
     class API_v1_GroupMemberStatus_Platform(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         PLATFORM_UNKNOWN: _ClassVar[API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_Platform]
@@ -28,14 +36,6 @@ class API_v1_GroupMemberStatus(_message.Message):
     PLATFORM_MACOS: API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_Platform
     PLATFORM_WIN32: API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_Platform
     PLATFORM_WEB: API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_Platform
-    class API_v1_GroupMemberStatus_ConnectionStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        CONNECTION_STATUS_UNKNOWN: _ClassVar[API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus]
-        CONNECTION_STATUS_CONNECTED: _ClassVar[API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus]
-        CONNECTION_STATUS_DISCONNECTED: _ClassVar[API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus]
-    CONNECTION_STATUS_UNKNOWN: API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus
-    CONNECTION_STATUS_CONNECTED: API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus
-    CONNECTION_STATUS_DISCONNECTED: API_v1_GroupMemberStatus.API_v1_GroupMemberStatus_ConnectionStatus
     IP_FIELD_NUMBER: _ClassVar[int]
     PORT_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]

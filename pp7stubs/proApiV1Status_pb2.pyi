@@ -1,5 +1,5 @@
-from . import proApiV1Identifier_pb2 as _proApiV1Identifier_pb2
-from . import proApiV1Size_pb2 as _proApiV1Size_pb2
+import proApiV1Identifier_pb2 as _proApiV1Identifier_pb2
+import proApiV1Size_pb2 as _proApiV1Size_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -7,6 +7,13 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class API_v1_ScreenType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    audience: _ClassVar[API_v1_ScreenType]
+    stage: _ClassVar[API_v1_ScreenType]
+audience: API_v1_ScreenType
+stage: API_v1_ScreenType
 
 class API_v1_SlideDisplayDetails(_message.Message):
     __slots__ = ("text", "notes", "uuid")
@@ -20,19 +27,13 @@ class API_v1_SlideDisplayDetails(_message.Message):
 
 class API_v1_ScreenConfig(_message.Message):
     __slots__ = ("id", "size", "screen_type")
-    class API_v1_ScreenType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        audience: _ClassVar[API_v1_ScreenConfig.API_v1_ScreenType]
-        stage: _ClassVar[API_v1_ScreenConfig.API_v1_ScreenType]
-    audience: API_v1_ScreenConfig.API_v1_ScreenType
-    stage: API_v1_ScreenConfig.API_v1_ScreenType
     ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SCREEN_TYPE_FIELD_NUMBER: _ClassVar[int]
     id: _proApiV1Identifier_pb2.API_v1_Identifier
     size: _proApiV1Size_pb2.API_v1_Size
-    screen_type: API_v1_ScreenConfig.API_v1_ScreenType
-    def __init__(self, id: _Optional[_Union[_proApiV1Identifier_pb2.API_v1_Identifier, _Mapping]] = ..., size: _Optional[_Union[_proApiV1Size_pb2.API_v1_Size, _Mapping]] = ..., screen_type: _Optional[_Union[API_v1_ScreenConfig.API_v1_ScreenType, str]] = ...) -> None: ...
+    screen_type: API_v1_ScreenType
+    def __init__(self, id: _Optional[_Union[_proApiV1Identifier_pb2.API_v1_Identifier, _Mapping]] = ..., size: _Optional[_Union[_proApiV1Size_pb2.API_v1_Size, _Mapping]] = ..., screen_type: _Optional[_Union[API_v1_ScreenType, str]] = ...) -> None: ...
 
 class API_v1_Status_Request(_message.Message):
     __slots__ = ("get_layers", "get_stage_screens", "put_stage_screens", "get_audience_screens", "put_audience_screens", "get_screens", "get_slide")

@@ -1,5 +1,5 @@
-from . import applicationInfo_pb2 as _applicationInfo_pb2
-from . import template_pb2 as _template_pb2
+import applicationInfo_pb2 as _applicationInfo_pb2
+import template_pb2 as _template_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -34,31 +34,31 @@ class CCLIDocument(_message.Message):
 
 class CopyrightLayout(_message.Message):
     __slots__ = ("tokens",)
+    class TokenType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        Text: _ClassVar[CopyrightLayout.TokenType]
+        Artist: _ClassVar[CopyrightLayout.TokenType]
+        Author: _ClassVar[CopyrightLayout.TokenType]
+        Publisher: _ClassVar[CopyrightLayout.TokenType]
+        Title: _ClassVar[CopyrightLayout.TokenType]
+        CopyrightYear: _ClassVar[CopyrightLayout.TokenType]
+        LicenseNumber: _ClassVar[CopyrightLayout.TokenType]
+        SongNumber: _ClassVar[CopyrightLayout.TokenType]
+    Text: CopyrightLayout.TokenType
+    Artist: CopyrightLayout.TokenType
+    Author: CopyrightLayout.TokenType
+    Publisher: CopyrightLayout.TokenType
+    Title: CopyrightLayout.TokenType
+    CopyrightYear: CopyrightLayout.TokenType
+    LicenseNumber: CopyrightLayout.TokenType
+    SongNumber: CopyrightLayout.TokenType
     class Token(_message.Message):
         __slots__ = ("token_type", "text")
-        class TokenType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            Text: _ClassVar[CopyrightLayout.Token.TokenType]
-            Artist: _ClassVar[CopyrightLayout.Token.TokenType]
-            Author: _ClassVar[CopyrightLayout.Token.TokenType]
-            Publisher: _ClassVar[CopyrightLayout.Token.TokenType]
-            Title: _ClassVar[CopyrightLayout.Token.TokenType]
-            CopyrightYear: _ClassVar[CopyrightLayout.Token.TokenType]
-            LicenseNumber: _ClassVar[CopyrightLayout.Token.TokenType]
-            SongNumber: _ClassVar[CopyrightLayout.Token.TokenType]
-        Text: CopyrightLayout.Token.TokenType
-        Artist: CopyrightLayout.Token.TokenType
-        Author: CopyrightLayout.Token.TokenType
-        Publisher: CopyrightLayout.Token.TokenType
-        Title: CopyrightLayout.Token.TokenType
-        CopyrightYear: CopyrightLayout.Token.TokenType
-        LicenseNumber: CopyrightLayout.Token.TokenType
-        SongNumber: CopyrightLayout.Token.TokenType
         TOKEN_TYPE_FIELD_NUMBER: _ClassVar[int]
         TEXT_FIELD_NUMBER: _ClassVar[int]
-        token_type: CopyrightLayout.Token.TokenType
+        token_type: CopyrightLayout.TokenType
         text: str
-        def __init__(self, token_type: _Optional[_Union[CopyrightLayout.Token.TokenType, str]] = ..., text: _Optional[str] = ...) -> None: ...
+        def __init__(self, token_type: _Optional[_Union[CopyrightLayout.TokenType, str]] = ..., text: _Optional[str] = ...) -> None: ...
     TOKENS_FIELD_NUMBER: _ClassVar[int]
     tokens: _containers.RepeatedCompositeFieldContainer[CopyrightLayout.Token]
     def __init__(self, tokens: _Optional[_Iterable[_Union[CopyrightLayout.Token, _Mapping]]] = ...) -> None: ...

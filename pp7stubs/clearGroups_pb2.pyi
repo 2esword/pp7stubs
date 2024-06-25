@@ -1,7 +1,7 @@
-from . import action_pb2 as _action_pb2
-from . import applicationInfo_pb2 as _applicationInfo_pb2
-from . import color_pb2 as _color_pb2
-from . import uuid_pb2 as _uuid_pb2
+import action_pb2 as _action_pb2
+import applicationInfo_pb2 as _applicationInfo_pb2
+import color_pb2 as _color_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -82,12 +82,6 @@ class ClearGroupsDocument(_message.Message):
         ImageTypeAudio: ClearGroupsDocument.ClearGroup.ImageType
         ImageTypeCloud: ClearGroupsDocument.ClearGroup.ImageType
         ImageTypeExclamation: ClearGroupsDocument.ClearGroup.ImageType
-        class ContentDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            CONTENT_DESTINATION_GLOBAL: _ClassVar[ClearGroupsDocument.ClearGroup.ContentDestination]
-            CONTENT_DESTINATION_ANNOUNCEMENTS: _ClassVar[ClearGroupsDocument.ClearGroup.ContentDestination]
-        CONTENT_DESTINATION_GLOBAL: ClearGroupsDocument.ClearGroup.ContentDestination
-        CONTENT_DESTINATION_ANNOUNCEMENTS: ClearGroupsDocument.ClearGroup.ContentDestination
         UUID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         LAYER_TARGETS_FIELD_NUMBER: _ClassVar[int]
@@ -106,9 +100,9 @@ class ClearGroupsDocument(_message.Message):
         image_type: ClearGroupsDocument.ClearGroup.ImageType
         is_icon_tinted: bool
         icon_tint_color: _color_pb2.Color
-        timeline_targets: _containers.RepeatedScalarFieldContainer[ClearGroupsDocument.ClearGroup.ContentDestination]
+        timeline_targets: _containers.RepeatedScalarFieldContainer[_action_pb2.Action.ContentDestination]
         clear_presentation_next_slide: bool
-        def __init__(self, uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., name: _Optional[str] = ..., layer_targets: _Optional[_Iterable[_Union[_action_pb2.Action.ClearType, _Mapping]]] = ..., is_hidden_in_preview: bool = ..., image_data: _Optional[bytes] = ..., image_type: _Optional[_Union[ClearGroupsDocument.ClearGroup.ImageType, str]] = ..., is_icon_tinted: bool = ..., icon_tint_color: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., timeline_targets: _Optional[_Iterable[_Union[ClearGroupsDocument.ClearGroup.ContentDestination, str]]] = ..., clear_presentation_next_slide: bool = ...) -> None: ...
+        def __init__(self, uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., name: _Optional[str] = ..., layer_targets: _Optional[_Iterable[_Union[_action_pb2.Action.ClearType, _Mapping]]] = ..., is_hidden_in_preview: bool = ..., image_data: _Optional[bytes] = ..., image_type: _Optional[_Union[ClearGroupsDocument.ClearGroup.ImageType, str]] = ..., is_icon_tinted: bool = ..., icon_tint_color: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., timeline_targets: _Optional[_Iterable[_Union[_action_pb2.Action.ContentDestination, str]]] = ..., clear_presentation_next_slide: bool = ...) -> None: ...
     APPLICATION_INFO_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
     application_info: _applicationInfo_pb2.ApplicationInfo

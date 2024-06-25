@@ -1,8 +1,8 @@
-from . import alignmentGuide_pb2 as _alignmentGuide_pb2
-from . import effects_pb2 as _effects_pb2
-from . import graphicsData_pb2 as _graphicsData_pb2
-from . import slide_pb2 as _slide_pb2
-from . import url_pb2 as _url_pb2
+import alignmentGuide_pb2 as _alignmentGuide_pb2
+import effects_pb2 as _effects_pb2
+import graphicsData_pb2 as _graphicsData_pb2
+import slide_pb2 as _slide_pb2
+import url_pb2 as _url_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

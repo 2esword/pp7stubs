@@ -1,4 +1,4 @@
-from . import proApiV1Identifier_pb2 as _proApiV1Identifier_pb2
+import proApiV1Identifier_pb2 as _proApiV1Identifier_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -6,6 +6,28 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class API_v1_TimerState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    stopped: _ClassVar[API_v1_TimerState]
+    running: _ClassVar[API_v1_TimerState]
+    complete: _ClassVar[API_v1_TimerState]
+    overrunning: _ClassVar[API_v1_TimerState]
+    overran: _ClassVar[API_v1_TimerState]
+
+class API_v1_TimerOperation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    start: _ClassVar[API_v1_TimerOperation]
+    stop: _ClassVar[API_v1_TimerOperation]
+    reset: _ClassVar[API_v1_TimerOperation]
+stopped: API_v1_TimerState
+running: API_v1_TimerState
+complete: API_v1_TimerState
+overrunning: API_v1_TimerState
+overran: API_v1_TimerState
+start: API_v1_TimerOperation
+stop: API_v1_TimerOperation
+reset: API_v1_TimerOperation
 
 class API_v1_TimerFormat(_message.Message):
     __slots__ = ("hour", "minute", "second", "millisecond")
@@ -33,28 +55,24 @@ class API_v1_TimerFormat(_message.Message):
 
 class API_v1_TimerValue(_message.Message):
     __slots__ = ("id", "time", "state")
-    class API_v1_TimerState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        stopped: _ClassVar[API_v1_TimerValue.API_v1_TimerState]
-        running: _ClassVar[API_v1_TimerValue.API_v1_TimerState]
-        complete: _ClassVar[API_v1_TimerValue.API_v1_TimerState]
-        overrunning: _ClassVar[API_v1_TimerValue.API_v1_TimerState]
-        overran: _ClassVar[API_v1_TimerValue.API_v1_TimerState]
-    stopped: API_v1_TimerValue.API_v1_TimerState
-    running: API_v1_TimerValue.API_v1_TimerState
-    complete: API_v1_TimerValue.API_v1_TimerState
-    overrunning: API_v1_TimerValue.API_v1_TimerState
-    overran: API_v1_TimerValue.API_v1_TimerState
     ID_FIELD_NUMBER: _ClassVar[int]
     TIME_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     id: _proApiV1Identifier_pb2.API_v1_Identifier
     time: str
-    state: API_v1_TimerValue.API_v1_TimerState
-    def __init__(self, id: _Optional[_Union[_proApiV1Identifier_pb2.API_v1_Identifier, _Mapping]] = ..., time: _Optional[str] = ..., state: _Optional[_Union[API_v1_TimerValue.API_v1_TimerState, str]] = ...) -> None: ...
+    state: API_v1_TimerState
+    def __init__(self, id: _Optional[_Union[_proApiV1Identifier_pb2.API_v1_Identifier, _Mapping]] = ..., time: _Optional[str] = ..., state: _Optional[_Union[API_v1_TimerState, str]] = ...) -> None: ...
 
 class API_v1_Timer(_message.Message):
     __slots__ = ("id", "allows_overrun", "countdown", "count_down_to_time", "elapsed")
+    class API_v1_TimePeriod(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        am: _ClassVar[API_v1_Timer.API_v1_TimePeriod]
+        pm: _ClassVar[API_v1_Timer.API_v1_TimePeriod]
+        is_24_hour: _ClassVar[API_v1_Timer.API_v1_TimePeriod]
+    am: API_v1_Timer.API_v1_TimePeriod
+    pm: API_v1_Timer.API_v1_TimePeriod
+    is_24_hour: API_v1_Timer.API_v1_TimePeriod
     class API_v1_Timer_Countdown(_message.Message):
         __slots__ = ("duration",)
         DURATION_FIELD_NUMBER: _ClassVar[int]
@@ -62,19 +80,11 @@ class API_v1_Timer(_message.Message):
         def __init__(self, duration: _Optional[int] = ...) -> None: ...
     class API_v1_Timer_CountdownToTime(_message.Message):
         __slots__ = ("time_of_day", "period")
-        class API_v1_TimePeriod(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            am: _ClassVar[API_v1_Timer.API_v1_Timer_CountdownToTime.API_v1_TimePeriod]
-            pm: _ClassVar[API_v1_Timer.API_v1_Timer_CountdownToTime.API_v1_TimePeriod]
-            is_24_hour: _ClassVar[API_v1_Timer.API_v1_Timer_CountdownToTime.API_v1_TimePeriod]
-        am: API_v1_Timer.API_v1_Timer_CountdownToTime.API_v1_TimePeriod
-        pm: API_v1_Timer.API_v1_Timer_CountdownToTime.API_v1_TimePeriod
-        is_24_hour: API_v1_Timer.API_v1_Timer_CountdownToTime.API_v1_TimePeriod
         TIME_OF_DAY_FIELD_NUMBER: _ClassVar[int]
         PERIOD_FIELD_NUMBER: _ClassVar[int]
         time_of_day: int
-        period: API_v1_Timer.API_v1_Timer_CountdownToTime.API_v1_TimePeriod
-        def __init__(self, time_of_day: _Optional[int] = ..., period: _Optional[_Union[API_v1_Timer.API_v1_Timer_CountdownToTime.API_v1_TimePeriod, str]] = ...) -> None: ...
+        period: API_v1_Timer.API_v1_TimePeriod
+        def __init__(self, time_of_day: _Optional[int] = ..., period: _Optional[_Union[API_v1_Timer.API_v1_TimePeriod, str]] = ...) -> None: ...
     class API_v1_Timer_Elapsed(_message.Message):
         __slots__ = ("start_time", "end_time", "has_end_time")
         START_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -119,17 +129,9 @@ class API_v1_Timer_Request(_message.Message):
         def __init__(self) -> None: ...
     class AllTimersOperation(_message.Message):
         __slots__ = ("operation",)
-        class API_v1_TimerOperation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            start: _ClassVar[API_v1_Timer_Request.AllTimersOperation.API_v1_TimerOperation]
-            stop: _ClassVar[API_v1_Timer_Request.AllTimersOperation.API_v1_TimerOperation]
-            reset: _ClassVar[API_v1_Timer_Request.AllTimersOperation.API_v1_TimerOperation]
-        start: API_v1_Timer_Request.AllTimersOperation.API_v1_TimerOperation
-        stop: API_v1_Timer_Request.AllTimersOperation.API_v1_TimerOperation
-        reset: API_v1_Timer_Request.AllTimersOperation.API_v1_TimerOperation
         OPERATION_FIELD_NUMBER: _ClassVar[int]
-        operation: API_v1_Timer_Request.AllTimersOperation.API_v1_TimerOperation
-        def __init__(self, operation: _Optional[_Union[API_v1_Timer_Request.AllTimersOperation.API_v1_TimerOperation, str]] = ...) -> None: ...
+        operation: API_v1_TimerOperation
+        def __init__(self, operation: _Optional[_Union[API_v1_TimerOperation, str]] = ...) -> None: ...
     class GetTimer(_message.Message):
         __slots__ = ("id",)
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -149,36 +151,20 @@ class API_v1_Timer_Request(_message.Message):
         def __init__(self, id: _Optional[str] = ...) -> None: ...
     class TimerOperation(_message.Message):
         __slots__ = ("id", "operation")
-        class API_v1_TimerOperation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            start: _ClassVar[API_v1_Timer_Request.TimerOperation.API_v1_TimerOperation]
-            stop: _ClassVar[API_v1_Timer_Request.TimerOperation.API_v1_TimerOperation]
-            reset: _ClassVar[API_v1_Timer_Request.TimerOperation.API_v1_TimerOperation]
-        start: API_v1_Timer_Request.TimerOperation.API_v1_TimerOperation
-        stop: API_v1_Timer_Request.TimerOperation.API_v1_TimerOperation
-        reset: API_v1_Timer_Request.TimerOperation.API_v1_TimerOperation
         ID_FIELD_NUMBER: _ClassVar[int]
         OPERATION_FIELD_NUMBER: _ClassVar[int]
         id: str
-        operation: API_v1_Timer_Request.TimerOperation.API_v1_TimerOperation
-        def __init__(self, id: _Optional[str] = ..., operation: _Optional[_Union[API_v1_Timer_Request.TimerOperation.API_v1_TimerOperation, str]] = ...) -> None: ...
+        operation: API_v1_TimerOperation
+        def __init__(self, id: _Optional[str] = ..., operation: _Optional[_Union[API_v1_TimerOperation, str]] = ...) -> None: ...
     class PutTimerOperation(_message.Message):
         __slots__ = ("id", "operation", "timer")
-        class API_v1_TimerOperation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            start: _ClassVar[API_v1_Timer_Request.PutTimerOperation.API_v1_TimerOperation]
-            stop: _ClassVar[API_v1_Timer_Request.PutTimerOperation.API_v1_TimerOperation]
-            reset: _ClassVar[API_v1_Timer_Request.PutTimerOperation.API_v1_TimerOperation]
-        start: API_v1_Timer_Request.PutTimerOperation.API_v1_TimerOperation
-        stop: API_v1_Timer_Request.PutTimerOperation.API_v1_TimerOperation
-        reset: API_v1_Timer_Request.PutTimerOperation.API_v1_TimerOperation
         ID_FIELD_NUMBER: _ClassVar[int]
         OPERATION_FIELD_NUMBER: _ClassVar[int]
         TIMER_FIELD_NUMBER: _ClassVar[int]
         id: str
-        operation: API_v1_Timer_Request.PutTimerOperation.API_v1_TimerOperation
+        operation: API_v1_TimerOperation
         timer: API_v1_Timer
-        def __init__(self, id: _Optional[str] = ..., operation: _Optional[_Union[API_v1_Timer_Request.PutTimerOperation.API_v1_TimerOperation, str]] = ..., timer: _Optional[_Union[API_v1_Timer, _Mapping]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., operation: _Optional[_Union[API_v1_TimerOperation, str]] = ..., timer: _Optional[_Union[API_v1_Timer, _Mapping]] = ...) -> None: ...
     class TimerIncrement(_message.Message):
         __slots__ = ("id", "amount")
         ID_FIELD_NUMBER: _ClassVar[int]

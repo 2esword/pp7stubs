@@ -1,12 +1,12 @@
-from . import alphaType_pb2 as _alphaType_pb2
-from . import color_pb2 as _color_pb2
-from . import digitalAudio_pb2 as _digitalAudio_pb2
-from . import effects_pb2 as _effects_pb2
-from . import fileProperties_pb2 as _fileProperties_pb2
-from . import font_pb2 as _font_pb2
-from . import intRange_pb2 as _intRange_pb2
-from . import url_pb2 as _url_pb2
-from . import uuid_pb2 as _uuid_pb2
+import alphaType_pb2 as _alphaType_pb2
+import color_pb2 as _color_pb2
+import digitalAudio_pb2 as _digitalAudio_pb2
+import effects_pb2 as _effects_pb2
+import fileProperties_pb2 as _fileProperties_pb2
+import font_pb2 as _font_pb2
+import intRange_pb2 as _intRange_pb2
+import url_pb2 as _url_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -399,6 +399,18 @@ class Graphics(_message.Message):
             CAPITALIZATION_SMALL_CAPS: Graphics.Text.Attributes.Capitalization
             CAPITALIZATION_TITLE_CASE: Graphics.Text.Attributes.Capitalization
             CAPITALIZATION_START_CASE: Graphics.Text.Attributes.Capitalization
+            class Alignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                __slots__ = ()
+                ALIGNMENT_LEFT: _ClassVar[Graphics.Text.Attributes.Alignment]
+                ALIGNMENT_RIGHT: _ClassVar[Graphics.Text.Attributes.Alignment]
+                ALIGNMENT_CENTER: _ClassVar[Graphics.Text.Attributes.Alignment]
+                ALIGNMENT_JUSTIFIED: _ClassVar[Graphics.Text.Attributes.Alignment]
+                ALIGNMENT_NATURAL: _ClassVar[Graphics.Text.Attributes.Alignment]
+            ALIGNMENT_LEFT: Graphics.Text.Attributes.Alignment
+            ALIGNMENT_RIGHT: Graphics.Text.Attributes.Alignment
+            ALIGNMENT_CENTER: Graphics.Text.Attributes.Alignment
+            ALIGNMENT_JUSTIFIED: Graphics.Text.Attributes.Alignment
+            ALIGNMENT_NATURAL: Graphics.Text.Attributes.Alignment
             class Underline(_message.Message):
                 __slots__ = ("style", "pattern", "by_word")
                 class Style(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -432,37 +444,13 @@ class Graphics(_message.Message):
                 def __init__(self, style: _Optional[_Union[Graphics.Text.Attributes.Underline.Style, str]] = ..., pattern: _Optional[_Union[Graphics.Text.Attributes.Underline.Pattern, str]] = ..., by_word: bool = ...) -> None: ...
             class Paragraph(_message.Message):
                 __slots__ = ("alignment", "first_line_head_indent", "head_indent", "tail_indent", "line_height_multiple", "maximum_line_height", "minimum_line_height", "line_spacing", "paragraph_spacing", "paragraph_spacing_before", "tab_stops", "default_tab_interval", "text_list", "text_lists")
-                class Alignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    ALIGNMENT_LEFT: _ClassVar[Graphics.Text.Attributes.Paragraph.Alignment]
-                    ALIGNMENT_RIGHT: _ClassVar[Graphics.Text.Attributes.Paragraph.Alignment]
-                    ALIGNMENT_CENTER: _ClassVar[Graphics.Text.Attributes.Paragraph.Alignment]
-                    ALIGNMENT_JUSTIFIED: _ClassVar[Graphics.Text.Attributes.Paragraph.Alignment]
-                    ALIGNMENT_NATURAL: _ClassVar[Graphics.Text.Attributes.Paragraph.Alignment]
-                ALIGNMENT_LEFT: Graphics.Text.Attributes.Paragraph.Alignment
-                ALIGNMENT_RIGHT: Graphics.Text.Attributes.Paragraph.Alignment
-                ALIGNMENT_CENTER: Graphics.Text.Attributes.Paragraph.Alignment
-                ALIGNMENT_JUSTIFIED: Graphics.Text.Attributes.Paragraph.Alignment
-                ALIGNMENT_NATURAL: Graphics.Text.Attributes.Paragraph.Alignment
                 class TabStop(_message.Message):
                     __slots__ = ("location", "alignment")
-                    class Alignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                        __slots__ = ()
-                        ALIGNMENT_LEFT: _ClassVar[Graphics.Text.Attributes.Paragraph.TabStop.Alignment]
-                        ALIGNMENT_RIGHT: _ClassVar[Graphics.Text.Attributes.Paragraph.TabStop.Alignment]
-                        ALIGNMENT_CENTER: _ClassVar[Graphics.Text.Attributes.Paragraph.TabStop.Alignment]
-                        ALIGNMENT_JUSTIFIED: _ClassVar[Graphics.Text.Attributes.Paragraph.TabStop.Alignment]
-                        ALIGNMENT_NATURAL: _ClassVar[Graphics.Text.Attributes.Paragraph.TabStop.Alignment]
-                    ALIGNMENT_LEFT: Graphics.Text.Attributes.Paragraph.TabStop.Alignment
-                    ALIGNMENT_RIGHT: Graphics.Text.Attributes.Paragraph.TabStop.Alignment
-                    ALIGNMENT_CENTER: Graphics.Text.Attributes.Paragraph.TabStop.Alignment
-                    ALIGNMENT_JUSTIFIED: Graphics.Text.Attributes.Paragraph.TabStop.Alignment
-                    ALIGNMENT_NATURAL: Graphics.Text.Attributes.Paragraph.TabStop.Alignment
                     LOCATION_FIELD_NUMBER: _ClassVar[int]
                     ALIGNMENT_FIELD_NUMBER: _ClassVar[int]
                     location: float
-                    alignment: Graphics.Text.Attributes.Paragraph.TabStop.Alignment
-                    def __init__(self, location: _Optional[float] = ..., alignment: _Optional[_Union[Graphics.Text.Attributes.Paragraph.TabStop.Alignment, str]] = ...) -> None: ...
+                    alignment: Graphics.Text.Attributes.Alignment
+                    def __init__(self, location: _Optional[float] = ..., alignment: _Optional[_Union[Graphics.Text.Attributes.Alignment, str]] = ...) -> None: ...
                 class TextList(_message.Message):
                     __slots__ = ("is_enabled", "number_type", "prefix", "postfix", "starting_number")
                     class NumberType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -516,7 +504,7 @@ class Graphics(_message.Message):
                 DEFAULT_TAB_INTERVAL_FIELD_NUMBER: _ClassVar[int]
                 TEXT_LIST_FIELD_NUMBER: _ClassVar[int]
                 TEXT_LISTS_FIELD_NUMBER: _ClassVar[int]
-                alignment: Graphics.Text.Attributes.Paragraph.Alignment
+                alignment: Graphics.Text.Attributes.Alignment
                 first_line_head_indent: float
                 head_indent: float
                 tail_indent: float
@@ -530,21 +518,9 @@ class Graphics(_message.Message):
                 default_tab_interval: float
                 text_list: Graphics.Text.Attributes.Paragraph.TextList
                 text_lists: _containers.RepeatedCompositeFieldContainer[Graphics.Text.Attributes.Paragraph.TextList]
-                def __init__(self, alignment: _Optional[_Union[Graphics.Text.Attributes.Paragraph.Alignment, str]] = ..., first_line_head_indent: _Optional[float] = ..., head_indent: _Optional[float] = ..., tail_indent: _Optional[float] = ..., line_height_multiple: _Optional[float] = ..., maximum_line_height: _Optional[float] = ..., minimum_line_height: _Optional[float] = ..., line_spacing: _Optional[float] = ..., paragraph_spacing: _Optional[float] = ..., paragraph_spacing_before: _Optional[float] = ..., tab_stops: _Optional[_Iterable[_Union[Graphics.Text.Attributes.Paragraph.TabStop, _Mapping]]] = ..., default_tab_interval: _Optional[float] = ..., text_list: _Optional[_Union[Graphics.Text.Attributes.Paragraph.TextList, _Mapping]] = ..., text_lists: _Optional[_Iterable[_Union[Graphics.Text.Attributes.Paragraph.TextList, _Mapping]]] = ...) -> None: ...
+                def __init__(self, alignment: _Optional[_Union[Graphics.Text.Attributes.Alignment, str]] = ..., first_line_head_indent: _Optional[float] = ..., head_indent: _Optional[float] = ..., tail_indent: _Optional[float] = ..., line_height_multiple: _Optional[float] = ..., maximum_line_height: _Optional[float] = ..., minimum_line_height: _Optional[float] = ..., line_spacing: _Optional[float] = ..., paragraph_spacing: _Optional[float] = ..., paragraph_spacing_before: _Optional[float] = ..., tab_stops: _Optional[_Iterable[_Union[Graphics.Text.Attributes.Paragraph.TabStop, _Mapping]]] = ..., default_tab_interval: _Optional[float] = ..., text_list: _Optional[_Union[Graphics.Text.Attributes.Paragraph.TextList, _Mapping]] = ..., text_lists: _Optional[_Iterable[_Union[Graphics.Text.Attributes.Paragraph.TextList, _Mapping]]] = ...) -> None: ...
             class CustomAttribute(_message.Message):
                 __slots__ = ("range", "capitalization", "original_font_size", "font_scale_factor", "text_gradient_fill", "should_preserve_foreground_color", "chord", "cut_out_fill", "media_fill", "background_effect")
-                class Capitalization(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    CAPITALIZATION_NONE: _ClassVar[Graphics.Text.Attributes.CustomAttribute.Capitalization]
-                    CAPITALIZATION_ALL_CAPS: _ClassVar[Graphics.Text.Attributes.CustomAttribute.Capitalization]
-                    CAPITALIZATION_SMALL_CAPS: _ClassVar[Graphics.Text.Attributes.CustomAttribute.Capitalization]
-                    CAPITALIZATION_TITLE_CASE: _ClassVar[Graphics.Text.Attributes.CustomAttribute.Capitalization]
-                    CAPITALIZATION_START_CASE: _ClassVar[Graphics.Text.Attributes.CustomAttribute.Capitalization]
-                CAPITALIZATION_NONE: Graphics.Text.Attributes.CustomAttribute.Capitalization
-                CAPITALIZATION_ALL_CAPS: Graphics.Text.Attributes.CustomAttribute.Capitalization
-                CAPITALIZATION_SMALL_CAPS: Graphics.Text.Attributes.CustomAttribute.Capitalization
-                CAPITALIZATION_TITLE_CASE: Graphics.Text.Attributes.CustomAttribute.Capitalization
-                CAPITALIZATION_START_CASE: Graphics.Text.Attributes.CustomAttribute.Capitalization
                 RANGE_FIELD_NUMBER: _ClassVar[int]
                 CAPITALIZATION_FIELD_NUMBER: _ClassVar[int]
                 ORIGINAL_FONT_SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -556,7 +532,7 @@ class Graphics(_message.Message):
                 MEDIA_FILL_FIELD_NUMBER: _ClassVar[int]
                 BACKGROUND_EFFECT_FIELD_NUMBER: _ClassVar[int]
                 range: _intRange_pb2.IntRange
-                capitalization: Graphics.Text.Attributes.CustomAttribute.Capitalization
+                capitalization: Graphics.Text.Attributes.Capitalization
                 original_font_size: float
                 font_scale_factor: float
                 text_gradient_fill: Graphics.Text.GradientFill
@@ -565,7 +541,7 @@ class Graphics(_message.Message):
                 cut_out_fill: Graphics.Text.CutOutFill
                 media_fill: Graphics.Text.MediaFill
                 background_effect: Graphics.BackgroundEffect
-                def __init__(self, range: _Optional[_Union[_intRange_pb2.IntRange, _Mapping]] = ..., capitalization: _Optional[_Union[Graphics.Text.Attributes.CustomAttribute.Capitalization, str]] = ..., original_font_size: _Optional[float] = ..., font_scale_factor: _Optional[float] = ..., text_gradient_fill: _Optional[_Union[Graphics.Text.GradientFill, _Mapping]] = ..., should_preserve_foreground_color: bool = ..., chord: _Optional[str] = ..., cut_out_fill: _Optional[_Union[Graphics.Text.CutOutFill, _Mapping]] = ..., media_fill: _Optional[_Union[Graphics.Text.MediaFill, _Mapping]] = ..., background_effect: _Optional[_Union[Graphics.BackgroundEffect, _Mapping]] = ...) -> None: ...
+                def __init__(self, range: _Optional[_Union[_intRange_pb2.IntRange, _Mapping]] = ..., capitalization: _Optional[_Union[Graphics.Text.Attributes.Capitalization, str]] = ..., original_font_size: _Optional[float] = ..., font_scale_factor: _Optional[float] = ..., text_gradient_fill: _Optional[_Union[Graphics.Text.GradientFill, _Mapping]] = ..., should_preserve_foreground_color: bool = ..., chord: _Optional[str] = ..., cut_out_fill: _Optional[_Union[Graphics.Text.CutOutFill, _Mapping]] = ..., media_fill: _Optional[_Union[Graphics.Text.MediaFill, _Mapping]] = ..., background_effect: _Optional[_Union[Graphics.BackgroundEffect, _Mapping]] = ...) -> None: ...
             FONT_FIELD_NUMBER: _ClassVar[int]
             CAPITALIZATION_FIELD_NUMBER: _ClassVar[int]
             UNDERLINE_STYLE_FIELD_NUMBER: _ClassVar[int]
@@ -628,6 +604,36 @@ class Graphics(_message.Message):
 
 class Media(_message.Message):
     __slots__ = ("uuid", "url", "metadata", "audio", "image", "video", "live_video", "web_content")
+    class ScaleBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        SCALE_BEHAVIOR_FIT: _ClassVar[Media.ScaleBehavior]
+        SCALE_BEHAVIOR_FILL: _ClassVar[Media.ScaleBehavior]
+        SCALE_BEHAVIOR_STRETCH: _ClassVar[Media.ScaleBehavior]
+        SCALE_BEHAVIOR_CUSTOM: _ClassVar[Media.ScaleBehavior]
+    SCALE_BEHAVIOR_FIT: Media.ScaleBehavior
+    SCALE_BEHAVIOR_FILL: Media.ScaleBehavior
+    SCALE_BEHAVIOR_STRETCH: Media.ScaleBehavior
+    SCALE_BEHAVIOR_CUSTOM: Media.ScaleBehavior
+    class ScaleAlignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        SCALE_ALIGNMENT_MIDDLE_CENTER: _ClassVar[Media.ScaleAlignment]
+        SCALE_ALIGNMENT_TOP_LEFT: _ClassVar[Media.ScaleAlignment]
+        SCALE_ALIGNMENT_TOP_CENTER: _ClassVar[Media.ScaleAlignment]
+        SCALE_ALIGNMENT_TOP_RIGHT: _ClassVar[Media.ScaleAlignment]
+        SCALE_ALIGNMENT_MIDDLE_RIGHT: _ClassVar[Media.ScaleAlignment]
+        SCALE_ALIGNMENT_BOTTOM_RIGHT: _ClassVar[Media.ScaleAlignment]
+        SCALE_ALIGNMENT_BOTTOM_CENTER: _ClassVar[Media.ScaleAlignment]
+        SCALE_ALIGNMENT_BOTTOM_LEFT: _ClassVar[Media.ScaleAlignment]
+        SCALE_ALIGNMENT_MIDDLE_LEFT: _ClassVar[Media.ScaleAlignment]
+    SCALE_ALIGNMENT_MIDDLE_CENTER: Media.ScaleAlignment
+    SCALE_ALIGNMENT_TOP_LEFT: Media.ScaleAlignment
+    SCALE_ALIGNMENT_TOP_CENTER: Media.ScaleAlignment
+    SCALE_ALIGNMENT_TOP_RIGHT: Media.ScaleAlignment
+    SCALE_ALIGNMENT_MIDDLE_RIGHT: Media.ScaleAlignment
+    SCALE_ALIGNMENT_BOTTOM_RIGHT: Media.ScaleAlignment
+    SCALE_ALIGNMENT_BOTTOM_CENTER: Media.ScaleAlignment
+    SCALE_ALIGNMENT_BOTTOM_LEFT: Media.ScaleAlignment
+    SCALE_ALIGNMENT_MIDDLE_LEFT: Media.ScaleAlignment
     class Metadata(_message.Message):
         __slots__ = ("manufacture_name", "manufacture_url", "information", "artist", "format")
         MANUFACTURE_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -764,36 +770,6 @@ class Media(_message.Message):
         def __init__(self, play_rate: _Optional[float] = ..., in_point: _Optional[float] = ..., out_point: _Optional[float] = ..., fade_in_duration: _Optional[float] = ..., fade_out_duration: _Optional[float] = ..., should_fade_in: bool = ..., should_fade_out: bool = ..., end_point: _Optional[float] = ..., playback_behavior: _Optional[_Union[Media.TransportProperties.PlaybackBehavior, str]] = ..., loop_time: _Optional[float] = ..., times_to_loop: _Optional[int] = ..., retrigger: _Optional[_Union[Media.TransportProperties.RetriggerSetting, str]] = ...) -> None: ...
     class DrawingProperties(_message.Message):
         __slots__ = ("scale_behavior", "is_blurred", "scale_alignment", "flipped_horizontally", "flipped_vertically", "natural_size", "custom_image_rotation", "custom_image_bounds", "custom_image_aspect_locked", "alpha_inverted", "native_rotation", "selected_effect_preset_uuid", "effects", "crop_enable", "crop_insets", "alpha_type")
-        class ScaleBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            SCALE_BEHAVIOR_FIT: _ClassVar[Media.DrawingProperties.ScaleBehavior]
-            SCALE_BEHAVIOR_FILL: _ClassVar[Media.DrawingProperties.ScaleBehavior]
-            SCALE_BEHAVIOR_STRETCH: _ClassVar[Media.DrawingProperties.ScaleBehavior]
-            SCALE_BEHAVIOR_CUSTOM: _ClassVar[Media.DrawingProperties.ScaleBehavior]
-        SCALE_BEHAVIOR_FIT: Media.DrawingProperties.ScaleBehavior
-        SCALE_BEHAVIOR_FILL: Media.DrawingProperties.ScaleBehavior
-        SCALE_BEHAVIOR_STRETCH: Media.DrawingProperties.ScaleBehavior
-        SCALE_BEHAVIOR_CUSTOM: Media.DrawingProperties.ScaleBehavior
-        class ScaleAlignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            SCALE_ALIGNMENT_MIDDLE_CENTER: _ClassVar[Media.DrawingProperties.ScaleAlignment]
-            SCALE_ALIGNMENT_TOP_LEFT: _ClassVar[Media.DrawingProperties.ScaleAlignment]
-            SCALE_ALIGNMENT_TOP_CENTER: _ClassVar[Media.DrawingProperties.ScaleAlignment]
-            SCALE_ALIGNMENT_TOP_RIGHT: _ClassVar[Media.DrawingProperties.ScaleAlignment]
-            SCALE_ALIGNMENT_MIDDLE_RIGHT: _ClassVar[Media.DrawingProperties.ScaleAlignment]
-            SCALE_ALIGNMENT_BOTTOM_RIGHT: _ClassVar[Media.DrawingProperties.ScaleAlignment]
-            SCALE_ALIGNMENT_BOTTOM_CENTER: _ClassVar[Media.DrawingProperties.ScaleAlignment]
-            SCALE_ALIGNMENT_BOTTOM_LEFT: _ClassVar[Media.DrawingProperties.ScaleAlignment]
-            SCALE_ALIGNMENT_MIDDLE_LEFT: _ClassVar[Media.DrawingProperties.ScaleAlignment]
-        SCALE_ALIGNMENT_MIDDLE_CENTER: Media.DrawingProperties.ScaleAlignment
-        SCALE_ALIGNMENT_TOP_LEFT: Media.DrawingProperties.ScaleAlignment
-        SCALE_ALIGNMENT_TOP_CENTER: Media.DrawingProperties.ScaleAlignment
-        SCALE_ALIGNMENT_TOP_RIGHT: Media.DrawingProperties.ScaleAlignment
-        SCALE_ALIGNMENT_MIDDLE_RIGHT: Media.DrawingProperties.ScaleAlignment
-        SCALE_ALIGNMENT_BOTTOM_RIGHT: Media.DrawingProperties.ScaleAlignment
-        SCALE_ALIGNMENT_BOTTOM_CENTER: Media.DrawingProperties.ScaleAlignment
-        SCALE_ALIGNMENT_BOTTOM_LEFT: Media.DrawingProperties.ScaleAlignment
-        SCALE_ALIGNMENT_MIDDLE_LEFT: Media.DrawingProperties.ScaleAlignment
         class NativeRotationType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             NATIVE_ROTATION_TYPE_ROTATE_STANDARD: _ClassVar[Media.DrawingProperties.NativeRotationType]
@@ -804,14 +780,6 @@ class Media(_message.Message):
         NATIVE_ROTATION_TYPE_ROTATE_90: Media.DrawingProperties.NativeRotationType
         NATIVE_ROTATION_TYPE_ROTATE_180: Media.DrawingProperties.NativeRotationType
         NATIVE_ROTATION_TYPE_ROTATE_270: Media.DrawingProperties.NativeRotationType
-        class AlphaType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            ALPHA_TYPE_UNKNOWN: _ClassVar[Media.DrawingProperties.AlphaType]
-            ALPHA_TYPE_STRAIGHT: _ClassVar[Media.DrawingProperties.AlphaType]
-            ALPHA_TYPE_PREMULTIPLIED: _ClassVar[Media.DrawingProperties.AlphaType]
-        ALPHA_TYPE_UNKNOWN: Media.DrawingProperties.AlphaType
-        ALPHA_TYPE_STRAIGHT: Media.DrawingProperties.AlphaType
-        ALPHA_TYPE_PREMULTIPLIED: Media.DrawingProperties.AlphaType
         SCALE_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
         IS_BLURRED_FIELD_NUMBER: _ClassVar[int]
         SCALE_ALIGNMENT_FIELD_NUMBER: _ClassVar[int]
@@ -828,9 +796,9 @@ class Media(_message.Message):
         CROP_ENABLE_FIELD_NUMBER: _ClassVar[int]
         CROP_INSETS_FIELD_NUMBER: _ClassVar[int]
         ALPHA_TYPE_FIELD_NUMBER: _ClassVar[int]
-        scale_behavior: Media.DrawingProperties.ScaleBehavior
+        scale_behavior: Media.ScaleBehavior
         is_blurred: bool
-        scale_alignment: Media.DrawingProperties.ScaleAlignment
+        scale_alignment: Media.ScaleAlignment
         flipped_horizontally: bool
         flipped_vertically: bool
         natural_size: Graphics.Size
@@ -843,20 +811,10 @@ class Media(_message.Message):
         effects: _containers.RepeatedCompositeFieldContainer[_effects_pb2.Effect]
         crop_enable: bool
         crop_insets: Graphics.EdgeInsets
-        alpha_type: Media.DrawingProperties.AlphaType
-        def __init__(self, scale_behavior: _Optional[_Union[Media.DrawingProperties.ScaleBehavior, str]] = ..., is_blurred: bool = ..., scale_alignment: _Optional[_Union[Media.DrawingProperties.ScaleAlignment, str]] = ..., flipped_horizontally: bool = ..., flipped_vertically: bool = ..., natural_size: _Optional[_Union[Graphics.Size, _Mapping]] = ..., custom_image_rotation: _Optional[float] = ..., custom_image_bounds: _Optional[_Union[Graphics.Rect, _Mapping]] = ..., custom_image_aspect_locked: bool = ..., alpha_inverted: bool = ..., native_rotation: _Optional[_Union[Media.DrawingProperties.NativeRotationType, str]] = ..., selected_effect_preset_uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., effects: _Optional[_Iterable[_Union[_effects_pb2.Effect, _Mapping]]] = ..., crop_enable: bool = ..., crop_insets: _Optional[_Union[Graphics.EdgeInsets, _Mapping]] = ..., alpha_type: _Optional[_Union[Media.DrawingProperties.AlphaType, str]] = ...) -> None: ...
+        alpha_type: _alphaType_pb2.AlphaType
+        def __init__(self, scale_behavior: _Optional[_Union[Media.ScaleBehavior, str]] = ..., is_blurred: bool = ..., scale_alignment: _Optional[_Union[Media.ScaleAlignment, str]] = ..., flipped_horizontally: bool = ..., flipped_vertically: bool = ..., natural_size: _Optional[_Union[Graphics.Size, _Mapping]] = ..., custom_image_rotation: _Optional[float] = ..., custom_image_bounds: _Optional[_Union[Graphics.Rect, _Mapping]] = ..., custom_image_aspect_locked: bool = ..., alpha_inverted: bool = ..., native_rotation: _Optional[_Union[Media.DrawingProperties.NativeRotationType, str]] = ..., selected_effect_preset_uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., effects: _Optional[_Iterable[_Union[_effects_pb2.Effect, _Mapping]]] = ..., crop_enable: bool = ..., crop_insets: _Optional[_Union[Graphics.EdgeInsets, _Mapping]] = ..., alpha_type: _Optional[_Union[_alphaType_pb2.AlphaType, str]] = ...) -> None: ...
     class VideoProperties(_message.Message):
         __slots__ = ("frame_rate", "field_type", "thumbnail_position", "end_behavior", "soft_loop", "soft_loop_duration")
-        class FieldType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            FIELD_TYPE_UNKNOWN: _ClassVar[Media.VideoProperties.FieldType]
-            FIELD_TYPE_PROGRESSIVE: _ClassVar[Media.VideoProperties.FieldType]
-            FIELD_TYPE_INTERLACED_UPPER_FIRST: _ClassVar[Media.VideoProperties.FieldType]
-            FIELD_TYPE_INTERLACED_LOWER_FIRST: _ClassVar[Media.VideoProperties.FieldType]
-        FIELD_TYPE_UNKNOWN: Media.VideoProperties.FieldType
-        FIELD_TYPE_PROGRESSIVE: Media.VideoProperties.FieldType
-        FIELD_TYPE_INTERLACED_UPPER_FIRST: Media.VideoProperties.FieldType
-        FIELD_TYPE_INTERLACED_LOWER_FIRST: Media.VideoProperties.FieldType
         class EndBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             END_BEHAVIOR_STOP: _ClassVar[Media.VideoProperties.EndBehavior]
@@ -869,6 +827,16 @@ class Media(_message.Message):
         END_BEHAVIOR_STOP_ON_CLEAR: Media.VideoProperties.EndBehavior
         END_BEHAVIOR_FADE_TO_BLACK: Media.VideoProperties.EndBehavior
         END_BEHAVIOR_FADE_TO_CLEAR: Media.VideoProperties.EndBehavior
+        class FieldType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            FIELD_TYPE_UNKNOWN: _ClassVar[Media.VideoProperties.FieldType]
+            FIELD_TYPE_PROGRESSIVE: _ClassVar[Media.VideoProperties.FieldType]
+            FIELD_TYPE_INTERLACED_UPPER_FIRST: _ClassVar[Media.VideoProperties.FieldType]
+            FIELD_TYPE_INTERLACED_LOWER_FIRST: _ClassVar[Media.VideoProperties.FieldType]
+        FIELD_TYPE_UNKNOWN: Media.VideoProperties.FieldType
+        FIELD_TYPE_PROGRESSIVE: Media.VideoProperties.FieldType
+        FIELD_TYPE_INTERLACED_UPPER_FIRST: Media.VideoProperties.FieldType
+        FIELD_TYPE_INTERLACED_LOWER_FIRST: Media.VideoProperties.FieldType
         FRAME_RATE_FIELD_NUMBER: _ClassVar[int]
         FIELD_TYPE_FIELD_NUMBER: _ClassVar[int]
         THUMBNAIL_POSITION_FIELD_NUMBER: _ClassVar[int]

@@ -1,18 +1,18 @@
-from . import background_pb2 as _background_pb2
-from . import collectionElementType_pb2 as _collectionElementType_pb2
-from . import color_pb2 as _color_pb2
-from . import effects_pb2 as _effects_pb2
-from . import graphicsData_pb2 as _graphicsData_pb2
-from . import input_pb2 as _input_pb2
-from . import intRange_pb2 as _intRange_pb2
-from . import layers_pb2 as _layers_pb2
-from . import messages_pb2 as _messages_pb2
-from . import propSlide_pb2 as _propSlide_pb2
-from . import presentationSlide_pb2 as _presentationSlide_pb2
-from . import stage_pb2 as _stage_pb2
-from . import timers_pb2 as _timers_pb2
-from . import url_pb2 as _url_pb2
-from . import uuid_pb2 as _uuid_pb2
+import background_pb2 as _background_pb2
+import collectionElementType_pb2 as _collectionElementType_pb2
+import color_pb2 as _color_pb2
+import effects_pb2 as _effects_pb2
+import graphicsData_pb2 as _graphicsData_pb2
+import input_pb2 as _input_pb2
+import intRange_pb2 as _intRange_pb2
+import layers_pb2 as _layers_pb2
+import messages_pb2 as _messages_pb2
+import propSlide_pb2 as _propSlide_pb2
+import presentationSlide_pb2 as _presentationSlide_pb2
+import stage_pb2 as _stage_pb2
+import timers_pb2 as _timers_pb2
+import url_pb2 as _url_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -23,6 +23,22 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Action(_message.Message):
     __slots__ = ("uuid", "name", "label", "delay_time", "old_type", "isEnabled", "layer_identification", "duration", "type", "collection_element", "playlist_item", "blend_mode", "transition", "media", "double_item", "effects", "slide", "background", "timer", "clear", "stage", "prop", "mask", "message", "communication", "multi_screen", "presentation_document", "external_presentation", "audience_look", "audio_input", "slide_destination", "macro", "clear_group", "transport_control", "capture")
+    class ContentDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        CONTENT_DESTINATION_GLOBAL: _ClassVar[Action.ContentDestination]
+        CONTENT_DESTINATION_ANNOUNCEMENTS: _ClassVar[Action.ContentDestination]
+    CONTENT_DESTINATION_GLOBAL: Action.ContentDestination
+    CONTENT_DESTINATION_ANNOUNCEMENTS: Action.ContentDestination
+    class LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        LAYER_TYPE_BACKGROUND: _ClassVar[Action.LayerType]
+        LAYER_TYPE_FOREGROUND: _ClassVar[Action.LayerType]
+        LAYER_TYPE_FILL: _ClassVar[Action.LayerType]
+        LAYER_TYPE_INPUT: _ClassVar[Action.LayerType]
+    LAYER_TYPE_BACKGROUND: Action.LayerType
+    LAYER_TYPE_FOREGROUND: Action.LayerType
+    LAYER_TYPE_FILL: Action.LayerType
+    LAYER_TYPE_INPUT: Action.LayerType
     class ActionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         ACTION_TYPE_UNKNOWN: _ClassVar[Action.ActionType]
@@ -123,67 +139,11 @@ class Action(_message.Message):
         def __init__(self, playlist_uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., playlist_name: _Optional[str] = ..., item_uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., item_name: _Optional[str] = ..., select_playlist: bool = ..., always_retrigger: bool = ...) -> None: ...
     class BlendModeType(_message.Message):
         __slots__ = ("blend_mode", "blend")
-        class BlendMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            BLEND_MODE_NORMAL: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_DISSOLVE: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_DARKEN: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_MULTIPLY: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_COLOR_BURN: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_LINEAR_BURN: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_DARKER_COLOR: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_LIGHTEN: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_SCREEN: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_COLOR_DODGE: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_LINEAR_DODGE: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_LIGHTER_COLOR: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_OVERLAY: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_SOFT_LIGHT: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_HARD_LIGHT: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_VIVID_LIGHT: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_LINEAR_LIGHT: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_PIN_LIGHT: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_HARD_MIX: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_DIFFERENCE: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_EXCLUSION: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_SUBTRACT: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_DIVIDE: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_HUE: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_SATURATION: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_COLOR: _ClassVar[Action.BlendModeType.BlendMode]
-            BLEND_MODE_LUMINOSITY: _ClassVar[Action.BlendModeType.BlendMode]
-        BLEND_MODE_NORMAL: Action.BlendModeType.BlendMode
-        BLEND_MODE_DISSOLVE: Action.BlendModeType.BlendMode
-        BLEND_MODE_DARKEN: Action.BlendModeType.BlendMode
-        BLEND_MODE_MULTIPLY: Action.BlendModeType.BlendMode
-        BLEND_MODE_COLOR_BURN: Action.BlendModeType.BlendMode
-        BLEND_MODE_LINEAR_BURN: Action.BlendModeType.BlendMode
-        BLEND_MODE_DARKER_COLOR: Action.BlendModeType.BlendMode
-        BLEND_MODE_LIGHTEN: Action.BlendModeType.BlendMode
-        BLEND_MODE_SCREEN: Action.BlendModeType.BlendMode
-        BLEND_MODE_COLOR_DODGE: Action.BlendModeType.BlendMode
-        BLEND_MODE_LINEAR_DODGE: Action.BlendModeType.BlendMode
-        BLEND_MODE_LIGHTER_COLOR: Action.BlendModeType.BlendMode
-        BLEND_MODE_OVERLAY: Action.BlendModeType.BlendMode
-        BLEND_MODE_SOFT_LIGHT: Action.BlendModeType.BlendMode
-        BLEND_MODE_HARD_LIGHT: Action.BlendModeType.BlendMode
-        BLEND_MODE_VIVID_LIGHT: Action.BlendModeType.BlendMode
-        BLEND_MODE_LINEAR_LIGHT: Action.BlendModeType.BlendMode
-        BLEND_MODE_PIN_LIGHT: Action.BlendModeType.BlendMode
-        BLEND_MODE_HARD_MIX: Action.BlendModeType.BlendMode
-        BLEND_MODE_DIFFERENCE: Action.BlendModeType.BlendMode
-        BLEND_MODE_EXCLUSION: Action.BlendModeType.BlendMode
-        BLEND_MODE_SUBTRACT: Action.BlendModeType.BlendMode
-        BLEND_MODE_DIVIDE: Action.BlendModeType.BlendMode
-        BLEND_MODE_HUE: Action.BlendModeType.BlendMode
-        BLEND_MODE_SATURATION: Action.BlendModeType.BlendMode
-        BLEND_MODE_COLOR: Action.BlendModeType.BlendMode
-        BLEND_MODE_LUMINOSITY: Action.BlendModeType.BlendMode
         BLEND_MODE_FIELD_NUMBER: _ClassVar[int]
         BLEND_FIELD_NUMBER: _ClassVar[int]
-        blend_mode: Action.BlendModeType.BlendMode
+        blend_mode: _layers_pb2.Layer.BlendMode
         blend: _layers_pb2.Layer.Blending
-        def __init__(self, blend_mode: _Optional[_Union[Action.BlendModeType.BlendMode, str]] = ..., blend: _Optional[_Union[_layers_pb2.Layer.Blending, _Mapping]] = ...) -> None: ...
+        def __init__(self, blend_mode: _Optional[_Union[_layers_pb2.Layer.BlendMode, str]] = ..., blend: _Optional[_Union[_layers_pb2.Layer.Blending, _Mapping]] = ...) -> None: ...
     class TransitionType(_message.Message):
         __slots__ = ("transition_name", "transition")
         TRANSITION_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -203,68 +163,48 @@ class Action(_message.Message):
         def __init__(self, effects: _Optional[_Iterable[_Union[_effects_pb2.Effect, _Mapping]]] = ...) -> None: ...
     class MediaType(_message.Message):
         __slots__ = ("transition_duration", "selected_effect_preset_uuid", "transition", "effects", "element", "layer_type", "always_retrigger", "markers", "image", "video", "audio", "live_video")
-        class LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        class PlaybackBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
-            LAYER_TYPE_BACKGROUND: _ClassVar[Action.MediaType.LayerType]
-            LAYER_TYPE_FOREGROUND: _ClassVar[Action.MediaType.LayerType]
-            LAYER_TYPE_FILL: _ClassVar[Action.MediaType.LayerType]
-            LAYER_TYPE_INPUT: _ClassVar[Action.MediaType.LayerType]
-        LAYER_TYPE_BACKGROUND: Action.MediaType.LayerType
-        LAYER_TYPE_FOREGROUND: Action.MediaType.LayerType
-        LAYER_TYPE_FILL: Action.MediaType.LayerType
-        LAYER_TYPE_INPUT: Action.MediaType.LayerType
+            PLAYBACK_BEHAVIOR_STOP: _ClassVar[Action.MediaType.PlaybackBehavior]
+            PLAYBACK_BEHAVIOR_LOOP: _ClassVar[Action.MediaType.PlaybackBehavior]
+            PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: _ClassVar[Action.MediaType.PlaybackBehavior]
+            PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: _ClassVar[Action.MediaType.PlaybackBehavior]
+        PLAYBACK_BEHAVIOR_STOP: Action.MediaType.PlaybackBehavior
+        PLAYBACK_BEHAVIOR_LOOP: Action.MediaType.PlaybackBehavior
+        PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: Action.MediaType.PlaybackBehavior
+        PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: Action.MediaType.PlaybackBehavior
+        class EndBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            END_BEHAVIOR_STOP: _ClassVar[Action.MediaType.EndBehavior]
+            END_BEHAVIOR_STOP_ON_BLACK: _ClassVar[Action.MediaType.EndBehavior]
+            END_BEHAVIOR_STOP_ON_CLEAR: _ClassVar[Action.MediaType.EndBehavior]
+            END_BEHAVIOR_FADE_TO_BLACK: _ClassVar[Action.MediaType.EndBehavior]
+            END_BEHAVIOR_FADE_TO_CLEAR: _ClassVar[Action.MediaType.EndBehavior]
+        END_BEHAVIOR_STOP: Action.MediaType.EndBehavior
+        END_BEHAVIOR_STOP_ON_BLACK: Action.MediaType.EndBehavior
+        END_BEHAVIOR_STOP_ON_CLEAR: Action.MediaType.EndBehavior
+        END_BEHAVIOR_FADE_TO_BLACK: Action.MediaType.EndBehavior
+        END_BEHAVIOR_FADE_TO_CLEAR: Action.MediaType.EndBehavior
         class Image(_message.Message):
             __slots__ = ()
             def __init__(self) -> None: ...
         class Video(_message.Message):
             __slots__ = ("playback_behavior", "end_behavior", "loop_time", "times_to_loop", "soft_loop", "soft_loop_duration")
-            class PlaybackBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                PLAYBACK_BEHAVIOR_STOP: _ClassVar[Action.MediaType.Video.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP: _ClassVar[Action.MediaType.Video.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: _ClassVar[Action.MediaType.Video.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: _ClassVar[Action.MediaType.Video.PlaybackBehavior]
-            PLAYBACK_BEHAVIOR_STOP: Action.MediaType.Video.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP: Action.MediaType.Video.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: Action.MediaType.Video.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: Action.MediaType.Video.PlaybackBehavior
-            class EndBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                END_BEHAVIOR_STOP: _ClassVar[Action.MediaType.Video.EndBehavior]
-                END_BEHAVIOR_STOP_ON_BLACK: _ClassVar[Action.MediaType.Video.EndBehavior]
-                END_BEHAVIOR_STOP_ON_CLEAR: _ClassVar[Action.MediaType.Video.EndBehavior]
-                END_BEHAVIOR_FADE_TO_BLACK: _ClassVar[Action.MediaType.Video.EndBehavior]
-                END_BEHAVIOR_FADE_TO_CLEAR: _ClassVar[Action.MediaType.Video.EndBehavior]
-            END_BEHAVIOR_STOP: Action.MediaType.Video.EndBehavior
-            END_BEHAVIOR_STOP_ON_BLACK: Action.MediaType.Video.EndBehavior
-            END_BEHAVIOR_STOP_ON_CLEAR: Action.MediaType.Video.EndBehavior
-            END_BEHAVIOR_FADE_TO_BLACK: Action.MediaType.Video.EndBehavior
-            END_BEHAVIOR_FADE_TO_CLEAR: Action.MediaType.Video.EndBehavior
             PLAYBACK_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
             END_BEHAVIOR_FIELD_NUMBER: _ClassVar[int]
             LOOP_TIME_FIELD_NUMBER: _ClassVar[int]
             TIMES_TO_LOOP_FIELD_NUMBER: _ClassVar[int]
             SOFT_LOOP_FIELD_NUMBER: _ClassVar[int]
             SOFT_LOOP_DURATION_FIELD_NUMBER: _ClassVar[int]
-            playback_behavior: Action.MediaType.Video.PlaybackBehavior
-            end_behavior: Action.MediaType.Video.EndBehavior
+            playback_behavior: Action.MediaType.PlaybackBehavior
+            end_behavior: Action.MediaType.EndBehavior
             loop_time: float
             times_to_loop: int
             soft_loop: bool
             soft_loop_duration: float
-            def __init__(self, playback_behavior: _Optional[_Union[Action.MediaType.Video.PlaybackBehavior, str]] = ..., end_behavior: _Optional[_Union[Action.MediaType.Video.EndBehavior, str]] = ..., loop_time: _Optional[float] = ..., times_to_loop: _Optional[int] = ..., soft_loop: bool = ..., soft_loop_duration: _Optional[float] = ...) -> None: ...
+            def __init__(self, playback_behavior: _Optional[_Union[Action.MediaType.PlaybackBehavior, str]] = ..., end_behavior: _Optional[_Union[Action.MediaType.EndBehavior, str]] = ..., loop_time: _Optional[float] = ..., times_to_loop: _Optional[int] = ..., soft_loop: bool = ..., soft_loop_duration: _Optional[float] = ...) -> None: ...
         class Audio(_message.Message):
             __slots__ = ("playback_behavior", "loop_time", "times_to_loop", "audio_type")
-            class PlaybackBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                PLAYBACK_BEHAVIOR_STOP: _ClassVar[Action.MediaType.Audio.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP: _ClassVar[Action.MediaType.Audio.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: _ClassVar[Action.MediaType.Audio.PlaybackBehavior]
-                PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: _ClassVar[Action.MediaType.Audio.PlaybackBehavior]
-            PLAYBACK_BEHAVIOR_STOP: Action.MediaType.Audio.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP: Action.MediaType.Audio.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP_FOR_COUNT: Action.MediaType.Audio.PlaybackBehavior
-            PLAYBACK_BEHAVIOR_LOOP_FOR_TIME: Action.MediaType.Audio.PlaybackBehavior
             class MediaActionAudioType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
                 __slots__ = ()
                 MEDIA_ACTION_AUDIO_TYPE_TUNE: _ClassVar[Action.MediaType.Audio.MediaActionAudioType]
@@ -275,11 +215,11 @@ class Action(_message.Message):
             LOOP_TIME_FIELD_NUMBER: _ClassVar[int]
             TIMES_TO_LOOP_FIELD_NUMBER: _ClassVar[int]
             AUDIO_TYPE_FIELD_NUMBER: _ClassVar[int]
-            playback_behavior: Action.MediaType.Audio.PlaybackBehavior
+            playback_behavior: Action.MediaType.PlaybackBehavior
             loop_time: float
             times_to_loop: int
             audio_type: Action.MediaType.Audio.MediaActionAudioType
-            def __init__(self, playback_behavior: _Optional[_Union[Action.MediaType.Audio.PlaybackBehavior, str]] = ..., loop_time: _Optional[float] = ..., times_to_loop: _Optional[int] = ..., audio_type: _Optional[_Union[Action.MediaType.Audio.MediaActionAudioType, str]] = ...) -> None: ...
+            def __init__(self, playback_behavior: _Optional[_Union[Action.MediaType.PlaybackBehavior, str]] = ..., loop_time: _Optional[float] = ..., times_to_loop: _Optional[int] = ..., audio_type: _Optional[_Union[Action.MediaType.Audio.MediaActionAudioType, str]] = ...) -> None: ...
         class LiveVideo(_message.Message):
             __slots__ = ()
             def __init__(self) -> None: ...
@@ -313,14 +253,14 @@ class Action(_message.Message):
         transition: _effects_pb2.Transition
         effects: _containers.RepeatedCompositeFieldContainer[_effects_pb2.Effect]
         element: _graphicsData_pb2.Media
-        layer_type: Action.MediaType.LayerType
+        layer_type: Action.LayerType
         always_retrigger: bool
         markers: _containers.RepeatedCompositeFieldContainer[Action.MediaType.PlaybackMarker]
         image: Action.MediaType.Image
         video: Action.MediaType.Video
         audio: Action.MediaType.Audio
         live_video: Action.MediaType.LiveVideo
-        def __init__(self, transition_duration: _Optional[float] = ..., selected_effect_preset_uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., transition: _Optional[_Union[_effects_pb2.Transition, _Mapping]] = ..., effects: _Optional[_Iterable[_Union[_effects_pb2.Effect, _Mapping]]] = ..., element: _Optional[_Union[_graphicsData_pb2.Media, _Mapping]] = ..., layer_type: _Optional[_Union[Action.MediaType.LayerType, str]] = ..., always_retrigger: bool = ..., markers: _Optional[_Iterable[_Union[Action.MediaType.PlaybackMarker, _Mapping]]] = ..., image: _Optional[_Union[Action.MediaType.Image, _Mapping]] = ..., video: _Optional[_Union[Action.MediaType.Video, _Mapping]] = ..., audio: _Optional[_Union[Action.MediaType.Audio, _Mapping]] = ..., live_video: _Optional[_Union[Action.MediaType.LiveVideo, _Mapping]] = ...) -> None: ...
+        def __init__(self, transition_duration: _Optional[float] = ..., selected_effect_preset_uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., transition: _Optional[_Union[_effects_pb2.Transition, _Mapping]] = ..., effects: _Optional[_Iterable[_Union[_effects_pb2.Effect, _Mapping]]] = ..., element: _Optional[_Union[_graphicsData_pb2.Media, _Mapping]] = ..., layer_type: _Optional[_Union[Action.LayerType, str]] = ..., always_retrigger: bool = ..., markers: _Optional[_Iterable[_Union[Action.MediaType.PlaybackMarker, _Mapping]]] = ..., image: _Optional[_Union[Action.MediaType.Image, _Mapping]] = ..., video: _Optional[_Union[Action.MediaType.Video, _Mapping]] = ..., audio: _Optional[_Union[Action.MediaType.Audio, _Mapping]] = ..., live_video: _Optional[_Union[Action.MediaType.LiveVideo, _Mapping]] = ...) -> None: ...
     class SlideType(_message.Message):
         __slots__ = ("presentation", "prop")
         PRESENTATION_FIELD_NUMBER: _ClassVar[int]
@@ -380,17 +320,11 @@ class Action(_message.Message):
         CLEAR_TARGET_LAYER_LOGO: Action.ClearType.ClearTargetLayer
         CLEAR_TARGET_LAYER_MESSAGES: Action.ClearType.ClearTargetLayer
         CLEAR_TARGET_LAYER_AUDIO_EFFECTS: Action.ClearType.ClearTargetLayer
-        class ContentDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            CONTENT_DESTINATION_GLOBAL: _ClassVar[Action.ClearType.ContentDestination]
-            CONTENT_DESTINATION_ANNOUNCEMENTS: _ClassVar[Action.ClearType.ContentDestination]
-        CONTENT_DESTINATION_GLOBAL: Action.ClearType.ContentDestination
-        CONTENT_DESTINATION_ANNOUNCEMENTS: Action.ClearType.ContentDestination
         TARGET_LAYER_FIELD_NUMBER: _ClassVar[int]
         CONTENT_DESTINATION_FIELD_NUMBER: _ClassVar[int]
         target_layer: Action.ClearType.ClearTargetLayer
-        content_destination: Action.ClearType.ContentDestination
-        def __init__(self, target_layer: _Optional[_Union[Action.ClearType.ClearTargetLayer, str]] = ..., content_destination: _Optional[_Union[Action.ClearType.ContentDestination, str]] = ...) -> None: ...
+        content_destination: Action.ContentDestination
+        def __init__(self, target_layer: _Optional[_Union[Action.ClearType.ClearTargetLayer, str]] = ..., content_destination: _Optional[_Union[Action.ContentDestination, str]] = ...) -> None: ...
     class ClearGroupType(_message.Message):
         __slots__ = ("identification",)
         IDENTIFICATION_FIELD_NUMBER: _ClassVar[int]
@@ -433,17 +367,9 @@ class Action(_message.Message):
         def __init__(self, stage_screen_assignments: _Optional[_Iterable[_Union[_stage_pb2.Stage.ScreenAssignment, _Mapping]]] = ..., slide_target: _Optional[_Union[Action.StageLayoutType.SlideTarget, str]] = ...) -> None: ...
     class SlideDestinationType(_message.Message):
         __slots__ = ("slide_target",)
-        class SlideTarget(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            SLIDE_TARGET_NO_CHANGE: _ClassVar[Action.SlideDestinationType.SlideTarget]
-            SLIDE_TARGET_STAGE_ONLY: _ClassVar[Action.SlideDestinationType.SlideTarget]
-            SLIDE_TARGET_ALL: _ClassVar[Action.SlideDestinationType.SlideTarget]
-        SLIDE_TARGET_NO_CHANGE: Action.SlideDestinationType.SlideTarget
-        SLIDE_TARGET_STAGE_ONLY: Action.SlideDestinationType.SlideTarget
-        SLIDE_TARGET_ALL: Action.SlideDestinationType.SlideTarget
         SLIDE_TARGET_FIELD_NUMBER: _ClassVar[int]
-        slide_target: Action.SlideDestinationType.SlideTarget
-        def __init__(self, slide_target: _Optional[_Union[Action.SlideDestinationType.SlideTarget, str]] = ...) -> None: ...
+        slide_target: Action.StageLayoutType.SlideTarget
+        def __init__(self, slide_target: _Optional[_Union[Action.StageLayoutType.SlideTarget, str]] = ...) -> None: ...
     class PropType(_message.Message):
         __slots__ = ("identification",)
         IDENTIFICATION_FIELD_NUMBER: _ClassVar[int]
@@ -562,19 +488,13 @@ class Action(_message.Message):
         def __init__(self, identification: _Optional[_Union[_collectionElementType_pb2.CollectionElementType, _Mapping]] = ...) -> None: ...
     class DocumentType(_message.Message):
         __slots__ = ("identification", "selected_arrangement", "content_destination")
-        class ContentDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            CONTENT_DESTINATION_GLOBAL: _ClassVar[Action.DocumentType.ContentDestination]
-            CONTENT_DESTINATION_ANNOUNCEMENTS: _ClassVar[Action.DocumentType.ContentDestination]
-        CONTENT_DESTINATION_GLOBAL: Action.DocumentType.ContentDestination
-        CONTENT_DESTINATION_ANNOUNCEMENTS: Action.DocumentType.ContentDestination
         IDENTIFICATION_FIELD_NUMBER: _ClassVar[int]
         SELECTED_ARRANGEMENT_FIELD_NUMBER: _ClassVar[int]
         CONTENT_DESTINATION_FIELD_NUMBER: _ClassVar[int]
         identification: _collectionElementType_pb2.CollectionElementType
         selected_arrangement: _uuid_pb2.UUID
-        content_destination: Action.DocumentType.ContentDestination
-        def __init__(self, identification: _Optional[_Union[_collectionElementType_pb2.CollectionElementType, _Mapping]] = ..., selected_arrangement: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., content_destination: _Optional[_Union[Action.DocumentType.ContentDestination, str]] = ...) -> None: ...
+        content_destination: Action.ContentDestination
+        def __init__(self, identification: _Optional[_Union[_collectionElementType_pb2.CollectionElementType, _Mapping]] = ..., selected_arrangement: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., content_destination: _Optional[_Union[Action.ContentDestination, str]] = ...) -> None: ...
     class ExternalPresentationType(_message.Message):
         __slots__ = ("url",)
         URL_FIELD_NUMBER: _ClassVar[int]

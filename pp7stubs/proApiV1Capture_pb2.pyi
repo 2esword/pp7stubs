@@ -1,5 +1,5 @@
-from . import proApiV1Size_pb2 as _proApiV1Size_pb2
-from . import uuid_pb2 as _uuid_pb2
+import proApiV1Size_pb2 as _proApiV1Size_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -7,6 +7,26 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class API_v1_CaptureDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    disk: _ClassVar[API_v1_CaptureDestination]
+    rtmp: _ClassVar[API_v1_CaptureDestination]
+    resi: _ClassVar[API_v1_CaptureDestination]
+
+class API_v1_CaptureStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    active: _ClassVar[API_v1_CaptureStatus]
+    inactive: _ClassVar[API_v1_CaptureStatus]
+    caution: _ClassVar[API_v1_CaptureStatus]
+    error: _ClassVar[API_v1_CaptureStatus]
+disk: API_v1_CaptureDestination
+rtmp: API_v1_CaptureDestination
+resi: API_v1_CaptureDestination
+active: API_v1_CaptureStatus
+inactive: API_v1_CaptureStatus
+caution: API_v1_CaptureStatus
+error: API_v1_CaptureStatus
 
 class API_v1_CaptureSettings(_message.Message):
     __slots__ = ("source", "audio_routing", "disk", "rtmp", "resi")
@@ -92,17 +112,9 @@ class API_v1_Capture_Request(_message.Message):
         def __init__(self, settings: _Optional[_Union[API_v1_CaptureSettings, _Mapping]] = ...) -> None: ...
     class Encodings(_message.Message):
         __slots__ = ("type",)
-        class API_v1_CaptureDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            disk: _ClassVar[API_v1_Capture_Request.Encodings.API_v1_CaptureDestination]
-            rtmp: _ClassVar[API_v1_Capture_Request.Encodings.API_v1_CaptureDestination]
-            resi: _ClassVar[API_v1_Capture_Request.Encodings.API_v1_CaptureDestination]
-        disk: API_v1_Capture_Request.Encodings.API_v1_CaptureDestination
-        rtmp: API_v1_Capture_Request.Encodings.API_v1_CaptureDestination
-        resi: API_v1_Capture_Request.Encodings.API_v1_CaptureDestination
         TYPE_FIELD_NUMBER: _ClassVar[int]
-        type: API_v1_Capture_Request.Encodings.API_v1_CaptureDestination
-        def __init__(self, type: _Optional[_Union[API_v1_Capture_Request.Encodings.API_v1_CaptureDestination, str]] = ...) -> None: ...
+        type: API_v1_CaptureDestination
+        def __init__(self, type: _Optional[_Union[API_v1_CaptureDestination, str]] = ...) -> None: ...
     GET_STATUS_FIELD_NUMBER: _ClassVar[int]
     OPERATION_FIELD_NUMBER: _ClassVar[int]
     GET_SETTINGS_FIELD_NUMBER: _ClassVar[int]
@@ -119,23 +131,13 @@ class API_v1_Capture_Response(_message.Message):
     __slots__ = ("get_status", "operation", "get_settings", "set_settings", "get_encodings")
     class GetStatus(_message.Message):
         __slots__ = ("status", "capture_time", "status_text")
-        class API_v1_CaptureStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            active: _ClassVar[API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus]
-            inactive: _ClassVar[API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus]
-            caution: _ClassVar[API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus]
-            error: _ClassVar[API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus]
-        active: API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus
-        inactive: API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus
-        caution: API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus
-        error: API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus
         STATUS_FIELD_NUMBER: _ClassVar[int]
         CAPTURE_TIME_FIELD_NUMBER: _ClassVar[int]
         STATUS_TEXT_FIELD_NUMBER: _ClassVar[int]
-        status: API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus
+        status: API_v1_CaptureStatus
         capture_time: str
         status_text: str
-        def __init__(self, status: _Optional[_Union[API_v1_Capture_Response.GetStatus.API_v1_CaptureStatus, str]] = ..., capture_time: _Optional[str] = ..., status_text: _Optional[str] = ...) -> None: ...
+        def __init__(self, status: _Optional[_Union[API_v1_CaptureStatus, str]] = ..., capture_time: _Optional[str] = ..., status_text: _Optional[str] = ...) -> None: ...
     class Operation(_message.Message):
         __slots__ = ()
         def __init__(self) -> None: ...

@@ -1,6 +1,5 @@
-from . import proApiV1LayerType_pb2 as _proApiV1LayerType_pb2
-from . import uuid_pb2 as _uuid_pb2
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
+import proApiV1LayerType_pb2 as _proApiV1LayerType_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -11,222 +10,62 @@ class API_v1_Transport_Request(_message.Message):
     __slots__ = ("play", "pause", "skip_backward", "skip_forward", "go_to_end", "get_time", "put_time", "get_auto_advance", "delete_auto_advance", "get_current_media")
     class Play(_message.Message):
         __slots__ = ("layer",)
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.Play.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.Play.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.Play.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.Play.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.Play.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.Play.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.Play.API_v1_LayerType]
-        audio: API_v1_Transport_Request.Play.API_v1_LayerType
-        props: API_v1_Transport_Request.Play.API_v1_LayerType
-        messages: API_v1_Transport_Request.Play.API_v1_LayerType
-        announcements: API_v1_Transport_Request.Play.API_v1_LayerType
-        slide: API_v1_Transport_Request.Play.API_v1_LayerType
-        media: API_v1_Transport_Request.Play.API_v1_LayerType
-        video_input: API_v1_Transport_Request.Play.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.Play.API_v1_LayerType
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.Play.API_v1_LayerType, str]] = ...) -> None: ...
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ...) -> None: ...
     class Pause(_message.Message):
         __slots__ = ("layer",)
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.Pause.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.Pause.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.Pause.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.Pause.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.Pause.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.Pause.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.Pause.API_v1_LayerType]
-        audio: API_v1_Transport_Request.Pause.API_v1_LayerType
-        props: API_v1_Transport_Request.Pause.API_v1_LayerType
-        messages: API_v1_Transport_Request.Pause.API_v1_LayerType
-        announcements: API_v1_Transport_Request.Pause.API_v1_LayerType
-        slide: API_v1_Transport_Request.Pause.API_v1_LayerType
-        media: API_v1_Transport_Request.Pause.API_v1_LayerType
-        video_input: API_v1_Transport_Request.Pause.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.Pause.API_v1_LayerType
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.Pause.API_v1_LayerType, str]] = ...) -> None: ...
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ...) -> None: ...
     class SkipBackward(_message.Message):
         __slots__ = ("layer", "seconds")
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.SkipBackward.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.SkipBackward.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.SkipBackward.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.SkipBackward.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.SkipBackward.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.SkipBackward.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.SkipBackward.API_v1_LayerType]
-        audio: API_v1_Transport_Request.SkipBackward.API_v1_LayerType
-        props: API_v1_Transport_Request.SkipBackward.API_v1_LayerType
-        messages: API_v1_Transport_Request.SkipBackward.API_v1_LayerType
-        announcements: API_v1_Transport_Request.SkipBackward.API_v1_LayerType
-        slide: API_v1_Transport_Request.SkipBackward.API_v1_LayerType
-        media: API_v1_Transport_Request.SkipBackward.API_v1_LayerType
-        video_input: API_v1_Transport_Request.SkipBackward.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
         SECONDS_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.SkipBackward.API_v1_LayerType
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
         seconds: float
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.SkipBackward.API_v1_LayerType, str]] = ..., seconds: _Optional[float] = ...) -> None: ...
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ..., seconds: _Optional[float] = ...) -> None: ...
     class SkipForward(_message.Message):
         __slots__ = ("layer", "seconds")
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.SkipForward.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.SkipForward.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.SkipForward.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.SkipForward.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.SkipForward.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.SkipForward.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.SkipForward.API_v1_LayerType]
-        audio: API_v1_Transport_Request.SkipForward.API_v1_LayerType
-        props: API_v1_Transport_Request.SkipForward.API_v1_LayerType
-        messages: API_v1_Transport_Request.SkipForward.API_v1_LayerType
-        announcements: API_v1_Transport_Request.SkipForward.API_v1_LayerType
-        slide: API_v1_Transport_Request.SkipForward.API_v1_LayerType
-        media: API_v1_Transport_Request.SkipForward.API_v1_LayerType
-        video_input: API_v1_Transport_Request.SkipForward.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
         SECONDS_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.SkipForward.API_v1_LayerType
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
         seconds: float
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.SkipForward.API_v1_LayerType, str]] = ..., seconds: _Optional[float] = ...) -> None: ...
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ..., seconds: _Optional[float] = ...) -> None: ...
     class GoToEnd(_message.Message):
         __slots__ = ("layer", "seconds")
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.GoToEnd.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.GoToEnd.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.GoToEnd.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.GoToEnd.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.GoToEnd.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.GoToEnd.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.GoToEnd.API_v1_LayerType]
-        audio: API_v1_Transport_Request.GoToEnd.API_v1_LayerType
-        props: API_v1_Transport_Request.GoToEnd.API_v1_LayerType
-        messages: API_v1_Transport_Request.GoToEnd.API_v1_LayerType
-        announcements: API_v1_Transport_Request.GoToEnd.API_v1_LayerType
-        slide: API_v1_Transport_Request.GoToEnd.API_v1_LayerType
-        media: API_v1_Transport_Request.GoToEnd.API_v1_LayerType
-        video_input: API_v1_Transport_Request.GoToEnd.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
         SECONDS_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.GoToEnd.API_v1_LayerType
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
         seconds: float
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.GoToEnd.API_v1_LayerType, str]] = ..., seconds: _Optional[float] = ...) -> None: ...
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ..., seconds: _Optional[float] = ...) -> None: ...
     class GetTime(_message.Message):
         __slots__ = ("layer",)
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.GetTime.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.GetTime.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.GetTime.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.GetTime.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.GetTime.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.GetTime.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.GetTime.API_v1_LayerType]
-        audio: API_v1_Transport_Request.GetTime.API_v1_LayerType
-        props: API_v1_Transport_Request.GetTime.API_v1_LayerType
-        messages: API_v1_Transport_Request.GetTime.API_v1_LayerType
-        announcements: API_v1_Transport_Request.GetTime.API_v1_LayerType
-        slide: API_v1_Transport_Request.GetTime.API_v1_LayerType
-        media: API_v1_Transport_Request.GetTime.API_v1_LayerType
-        video_input: API_v1_Transport_Request.GetTime.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.GetTime.API_v1_LayerType
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.GetTime.API_v1_LayerType, str]] = ...) -> None: ...
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ...) -> None: ...
     class PutTime(_message.Message):
         __slots__ = ("layer", "seconds")
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.PutTime.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.PutTime.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.PutTime.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.PutTime.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.PutTime.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.PutTime.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.PutTime.API_v1_LayerType]
-        audio: API_v1_Transport_Request.PutTime.API_v1_LayerType
-        props: API_v1_Transport_Request.PutTime.API_v1_LayerType
-        messages: API_v1_Transport_Request.PutTime.API_v1_LayerType
-        announcements: API_v1_Transport_Request.PutTime.API_v1_LayerType
-        slide: API_v1_Transport_Request.PutTime.API_v1_LayerType
-        media: API_v1_Transport_Request.PutTime.API_v1_LayerType
-        video_input: API_v1_Transport_Request.PutTime.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
         SECONDS_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.PutTime.API_v1_LayerType
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
         seconds: float
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.PutTime.API_v1_LayerType, str]] = ..., seconds: _Optional[float] = ...) -> None: ...
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ..., seconds: _Optional[float] = ...) -> None: ...
     class GetAutoAdvance(_message.Message):
         __slots__ = ("layer",)
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType]
-        audio: API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType
-        props: API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType
-        messages: API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType
-        announcements: API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType
-        slide: API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType
-        media: API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType
-        video_input: API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.GetAutoAdvance.API_v1_LayerType, str]] = ...) -> None: ...
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ...) -> None: ...
     class DeleteAutoAdvance(_message.Message):
         __slots__ = ("layer",)
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType]
-        audio: API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType
-        props: API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType
-        messages: API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType
-        announcements: API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType
-        slide: API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType
-        media: API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType
-        video_input: API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.DeleteAutoAdvance.API_v1_LayerType, str]] = ...) -> None: ...
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ...) -> None: ...
     class GetCurrentMedia(_message.Message):
         __slots__ = ("layer",)
-        class API_v1_LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            audio: _ClassVar[API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType]
-            props: _ClassVar[API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType]
-            messages: _ClassVar[API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType]
-            announcements: _ClassVar[API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType]
-            slide: _ClassVar[API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType]
-            media: _ClassVar[API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType]
-            video_input: _ClassVar[API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType]
-        audio: API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType
-        props: API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType
-        messages: API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType
-        announcements: API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType
-        slide: API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType
-        media: API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType
-        video_input: API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType
         LAYER_FIELD_NUMBER: _ClassVar[int]
-        layer: API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType
-        def __init__(self, layer: _Optional[_Union[API_v1_Transport_Request.GetCurrentMedia.API_v1_LayerType, str]] = ...) -> None: ...
+        layer: _proApiV1LayerType_pb2.API_v1_LayerType
+        def __init__(self, layer: _Optional[_Union[_proApiV1LayerType_pb2.API_v1_LayerType, str]] = ...) -> None: ...
     PLAY_FIELD_NUMBER: _ClassVar[int]
     PAUSE_FIELD_NUMBER: _ClassVar[int]
     SKIP_BACKWARD_FIELD_NUMBER: _ClassVar[int]

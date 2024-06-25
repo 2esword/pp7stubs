@@ -1,6 +1,6 @@
-from . import color_pb2 as _color_pb2
-from . import graphicsData_pb2 as _graphicsData_pb2
-from . import uuid_pb2 as _uuid_pb2
+import color_pb2 as _color_pb2
+import graphicsData_pb2 as _graphicsData_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -201,14 +201,6 @@ class EdgeBlend(_message.Message):
         EDGE_RIGHT: EdgeBlend.Screen.Edge
         EDGE_TOP: EdgeBlend.Screen.Edge
         EDGE_BOTTOM: EdgeBlend.Screen.Edge
-        class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            MODE_LINEAR: _ClassVar[EdgeBlend.Screen.Mode]
-            MODE_CUBIC: _ClassVar[EdgeBlend.Screen.Mode]
-            MODE_QUADRATIC: _ClassVar[EdgeBlend.Screen.Mode]
-        MODE_LINEAR: EdgeBlend.Screen.Mode
-        MODE_CUBIC: EdgeBlend.Screen.Mode
-        MODE_QUADRATIC: EdgeBlend.Screen.Mode
         UUID_FIELD_NUMBER: _ClassVar[int]
         EDGE_FIELD_NUMBER: _ClassVar[int]
         GAMMA_FIELD_NUMBER: _ClassVar[int]
@@ -220,10 +212,10 @@ class EdgeBlend(_message.Message):
         edge: EdgeBlend.Screen.Edge
         gamma: float
         black_level: float
-        mode: EdgeBlend.Screen.Mode
+        mode: EdgeBlend.Mode
         radius: float
         intensity: float
-        def __init__(self, uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., edge: _Optional[_Union[EdgeBlend.Screen.Edge, str]] = ..., gamma: _Optional[float] = ..., black_level: _Optional[float] = ..., mode: _Optional[_Union[EdgeBlend.Screen.Mode, str]] = ..., radius: _Optional[float] = ..., intensity: _Optional[float] = ...) -> None: ...
+        def __init__(self, uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., edge: _Optional[_Union[EdgeBlend.Screen.Edge, str]] = ..., gamma: _Optional[float] = ..., black_level: _Optional[float] = ..., mode: _Optional[_Union[EdgeBlend.Mode, str]] = ..., radius: _Optional[float] = ..., intensity: _Optional[float] = ...) -> None: ...
     UUID_FIELD_NUMBER: _ClassVar[int]
     RADIUS_FIELD_NUMBER: _ClassVar[int]
     INTENSITY_FIELD_NUMBER: _ClassVar[int]

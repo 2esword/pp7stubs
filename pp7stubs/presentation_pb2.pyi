@@ -1,14 +1,14 @@
-from . import action_pb2 as _action_pb2
-from . import applicationInfo_pb2 as _applicationInfo_pb2
-from . import background_pb2 as _background_pb2
-from . import cue_pb2 as _cue_pb2
-from . import effects_pb2 as _effects_pb2
-from . import groups_pb2 as _groups_pb2
-from . import intRange_pb2 as _intRange_pb2
-from . import musicKeyScale_pb2 as _musicKeyScale_pb2
-from . import rvtimestamp_pb2 as _rvtimestamp_pb2
-from . import url_pb2 as _url_pb2
-from . import uuid_pb2 as _uuid_pb2
+import action_pb2 as _action_pb2
+import applicationInfo_pb2 as _applicationInfo_pb2
+import background_pb2 as _background_pb2
+import cue_pb2 as _cue_pb2
+import effects_pb2 as _effects_pb2
+import groups_pb2 as _groups_pb2
+import intRange_pb2 as _intRange_pb2
+import musicKeyScale_pb2 as _musicKeyScale_pb2
+import rvtimestamp_pb2 as _rvtimestamp_pb2
+import url_pb2 as _url_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -19,12 +19,6 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Presentation(_message.Message):
     __slots__ = ("application_info", "uuid", "name", "last_date_used", "last_modified_date", "category", "notes", "background", "chord_chart", "selected_arrangement", "arrangements", "cue_groups", "cues", "ccli", "bible_reference", "timeline", "transition", "content_destination", "multi_tracks_licensing", "music_key", "music", "slide_show_duration")
-    class ContentDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        CONTENT_DESTINATION_GLOBAL: _ClassVar[Presentation.ContentDestination]
-        CONTENT_DESTINATION_ANNOUNCEMENTS: _ClassVar[Presentation.ContentDestination]
-    CONTENT_DESTINATION_GLOBAL: Presentation.ContentDestination
-    CONTENT_DESTINATION_ANNOUNCEMENTS: Presentation.ContentDestination
     class CCLI(_message.Message):
         __slots__ = ("author", "artist_credits", "song_title", "publisher", "copyright_year", "song_number", "display", "album", "artwork")
         AUTHOR_FIELD_NUMBER: _ClassVar[int]
@@ -178,9 +172,9 @@ class Presentation(_message.Message):
     bible_reference: Presentation.BibleReference
     timeline: Presentation.Timeline
     transition: _effects_pb2.Transition
-    content_destination: Presentation.ContentDestination
+    content_destination: _action_pb2.Action.ContentDestination
     multi_tracks_licensing: Presentation.MultiTracksLicensing
     music_key: str
     music: Presentation.Music
     slide_show_duration: float
-    def __init__(self, application_info: _Optional[_Union[_applicationInfo_pb2.ApplicationInfo, _Mapping]] = ..., uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., name: _Optional[str] = ..., last_date_used: _Optional[_Union[_rvtimestamp_pb2.Timestamp, _Mapping]] = ..., last_modified_date: _Optional[_Union[_rvtimestamp_pb2.Timestamp, _Mapping]] = ..., category: _Optional[str] = ..., notes: _Optional[str] = ..., background: _Optional[_Union[_background_pb2.Background, _Mapping]] = ..., chord_chart: _Optional[_Union[_url_pb2.URL, _Mapping]] = ..., selected_arrangement: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., arrangements: _Optional[_Iterable[_Union[Presentation.Arrangement, _Mapping]]] = ..., cue_groups: _Optional[_Iterable[_Union[Presentation.CueGroup, _Mapping]]] = ..., cues: _Optional[_Iterable[_Union[_cue_pb2.Cue, _Mapping]]] = ..., ccli: _Optional[_Union[Presentation.CCLI, _Mapping]] = ..., bible_reference: _Optional[_Union[Presentation.BibleReference, _Mapping]] = ..., timeline: _Optional[_Union[Presentation.Timeline, _Mapping]] = ..., transition: _Optional[_Union[_effects_pb2.Transition, _Mapping]] = ..., content_destination: _Optional[_Union[Presentation.ContentDestination, str]] = ..., multi_tracks_licensing: _Optional[_Union[Presentation.MultiTracksLicensing, _Mapping]] = ..., music_key: _Optional[str] = ..., music: _Optional[_Union[Presentation.Music, _Mapping]] = ..., slide_show_duration: _Optional[float] = ...) -> None: ...
+    def __init__(self, application_info: _Optional[_Union[_applicationInfo_pb2.ApplicationInfo, _Mapping]] = ..., uuid: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., name: _Optional[str] = ..., last_date_used: _Optional[_Union[_rvtimestamp_pb2.Timestamp, _Mapping]] = ..., last_modified_date: _Optional[_Union[_rvtimestamp_pb2.Timestamp, _Mapping]] = ..., category: _Optional[str] = ..., notes: _Optional[str] = ..., background: _Optional[_Union[_background_pb2.Background, _Mapping]] = ..., chord_chart: _Optional[_Union[_url_pb2.URL, _Mapping]] = ..., selected_arrangement: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., arrangements: _Optional[_Iterable[_Union[Presentation.Arrangement, _Mapping]]] = ..., cue_groups: _Optional[_Iterable[_Union[Presentation.CueGroup, _Mapping]]] = ..., cues: _Optional[_Iterable[_Union[_cue_pb2.Cue, _Mapping]]] = ..., ccli: _Optional[_Union[Presentation.CCLI, _Mapping]] = ..., bible_reference: _Optional[_Union[Presentation.BibleReference, _Mapping]] = ..., timeline: _Optional[_Union[Presentation.Timeline, _Mapping]] = ..., transition: _Optional[_Union[_effects_pb2.Transition, _Mapping]] = ..., content_destination: _Optional[_Union[_action_pb2.Action.ContentDestination, str]] = ..., multi_tracks_licensing: _Optional[_Union[Presentation.MultiTracksLicensing, _Mapping]] = ..., music_key: _Optional[str] = ..., music: _Optional[_Union[Presentation.Music, _Mapping]] = ..., slide_show_duration: _Optional[float] = ...) -> None: ...

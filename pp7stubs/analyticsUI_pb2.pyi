@@ -228,6 +228,14 @@ class UI(_message.Message):
             def __init__(self, shown: _Optional[_Union[UI.MainView.ReflowEditor.Shown, _Mapping]] = ...) -> None: ...
         class Bible(_message.Message):
             __slots__ = ("shown", "trigger", "generate_slides", "generate_next", "generate_previous", "save_slides", "lookup", "install", "remove", "startup")
+            class Location(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                __slots__ = ()
+                LOCATION_UNKNOWN: _ClassVar[UI.MainView.Bible.Location]
+                LOCATION_PRESENTATION: _ClassVar[UI.MainView.Bible.Location]
+                LOCATION_BIBLE_MODULE: _ClassVar[UI.MainView.Bible.Location]
+            LOCATION_UNKNOWN: UI.MainView.Bible.Location
+            LOCATION_PRESENTATION: UI.MainView.Bible.Location
+            LOCATION_BIBLE_MODULE: UI.MainView.Bible.Location
             class Shown(_message.Message):
                 __slots__ = ("source",)
                 class Source(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -243,17 +251,9 @@ class UI(_message.Message):
                 def __init__(self, source: _Optional[_Union[UI.MainView.Bible.Shown.Source, str]] = ...) -> None: ...
             class Trigger(_message.Message):
                 __slots__ = ("location",)
-                class Location(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    LOCATION_UNKNOWN: _ClassVar[UI.MainView.Bible.Trigger.Location]
-                    LOCATION_PRESENTATION: _ClassVar[UI.MainView.Bible.Trigger.Location]
-                    LOCATION_BIBLE_MODULE: _ClassVar[UI.MainView.Bible.Trigger.Location]
-                LOCATION_UNKNOWN: UI.MainView.Bible.Trigger.Location
-                LOCATION_PRESENTATION: UI.MainView.Bible.Trigger.Location
-                LOCATION_BIBLE_MODULE: UI.MainView.Bible.Trigger.Location
                 LOCATION_FIELD_NUMBER: _ClassVar[int]
-                location: UI.MainView.Bible.Trigger.Location
-                def __init__(self, location: _Optional[_Union[UI.MainView.Bible.Trigger.Location, str]] = ...) -> None: ...
+                location: UI.MainView.Bible.Location
+                def __init__(self, location: _Optional[_Union[UI.MainView.Bible.Location, str]] = ...) -> None: ...
             class GenerateSlides(_message.Message):
                 __slots__ = ("translation_count", "slide_count", "verse_location", "reference_location", "show_verse_numbers", "break_new_verse", "display_translation", "preserve_font_color", "reference_style")
                 class TextBoxLocation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -299,30 +299,14 @@ class UI(_message.Message):
                 def __init__(self, translation_count: _Optional[int] = ..., slide_count: _Optional[int] = ..., verse_location: _Optional[_Union[UI.MainView.Bible.GenerateSlides.TextBoxLocation, str]] = ..., reference_location: _Optional[_Union[UI.MainView.Bible.GenerateSlides.TextBoxLocation, str]] = ..., show_verse_numbers: bool = ..., break_new_verse: bool = ..., display_translation: bool = ..., preserve_font_color: bool = ..., reference_style: _Optional[_Union[UI.MainView.Bible.GenerateSlides.ReferenceType, str]] = ...) -> None: ...
             class GenerateNext(_message.Message):
                 __slots__ = ("location",)
-                class Location(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    LOCATION_UNKNOWN: _ClassVar[UI.MainView.Bible.GenerateNext.Location]
-                    LOCATION_PRESENTATION: _ClassVar[UI.MainView.Bible.GenerateNext.Location]
-                    LOCATION_BIBLE_MODULE: _ClassVar[UI.MainView.Bible.GenerateNext.Location]
-                LOCATION_UNKNOWN: UI.MainView.Bible.GenerateNext.Location
-                LOCATION_PRESENTATION: UI.MainView.Bible.GenerateNext.Location
-                LOCATION_BIBLE_MODULE: UI.MainView.Bible.GenerateNext.Location
                 LOCATION_FIELD_NUMBER: _ClassVar[int]
-                location: UI.MainView.Bible.GenerateNext.Location
-                def __init__(self, location: _Optional[_Union[UI.MainView.Bible.GenerateNext.Location, str]] = ...) -> None: ...
+                location: UI.MainView.Bible.Location
+                def __init__(self, location: _Optional[_Union[UI.MainView.Bible.Location, str]] = ...) -> None: ...
             class GeneratePrevious(_message.Message):
                 __slots__ = ("location",)
-                class Location(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    LOCATION_UNKNOWN: _ClassVar[UI.MainView.Bible.GeneratePrevious.Location]
-                    LOCATION_PRESENTATION: _ClassVar[UI.MainView.Bible.GeneratePrevious.Location]
-                    LOCATION_BIBLE_MODULE: _ClassVar[UI.MainView.Bible.GeneratePrevious.Location]
-                LOCATION_UNKNOWN: UI.MainView.Bible.GeneratePrevious.Location
-                LOCATION_PRESENTATION: UI.MainView.Bible.GeneratePrevious.Location
-                LOCATION_BIBLE_MODULE: UI.MainView.Bible.GeneratePrevious.Location
                 LOCATION_FIELD_NUMBER: _ClassVar[int]
-                location: UI.MainView.Bible.GeneratePrevious.Location
-                def __init__(self, location: _Optional[_Union[UI.MainView.Bible.GeneratePrevious.Location, str]] = ...) -> None: ...
+                location: UI.MainView.Bible.Location
+                def __init__(self, location: _Optional[_Union[UI.MainView.Bible.Location, str]] = ...) -> None: ...
             class SaveSlides(_message.Message):
                 __slots__ = ("destination",)
                 class SlideDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -780,6 +764,14 @@ class UI(_message.Message):
         def __init__(self, timers: _Optional[_Union[UI.LowerRight.Timers, _Mapping]] = ..., messages: _Optional[_Union[UI.LowerRight.Messages, _Mapping]] = ..., props: _Optional[_Union[UI.LowerRight.Props, _Mapping]] = ..., stage: _Optional[_Union[UI.LowerRight.Stage, _Mapping]] = ..., audio_bin: _Optional[_Union[UI.LowerRight.AudioBin, _Mapping]] = ..., macros: _Optional[_Union[UI.LowerRight.Macros, _Mapping]] = ...) -> None: ...
     class TextInspector(_message.Message):
         __slots__ = ("shown", "foreground", "underline_color", "background_color", "scrolling_text", "line_transform")
+        class SelectionMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            SELECTION_MODE_UNKNOWN: _ClassVar[UI.TextInspector.SelectionMode]
+            SELECTION_MODE_OBJECT: _ClassVar[UI.TextInspector.SelectionMode]
+            SELECTION_MODE_RANGE: _ClassVar[UI.TextInspector.SelectionMode]
+        SELECTION_MODE_UNKNOWN: UI.TextInspector.SelectionMode
+        SELECTION_MODE_OBJECT: UI.TextInspector.SelectionMode
+        SELECTION_MODE_RANGE: UI.TextInspector.SelectionMode
         class Shown(_message.Message):
             __slots__ = ()
             def __init__(self) -> None: ...
@@ -793,34 +785,18 @@ class UI(_message.Message):
             FILL_TYPE_UNKNOWN: UI.TextInspector.Foreground.FillType
             FILL_TYPE_SOLID: UI.TextInspector.Foreground.FillType
             FILL_TYPE_GRADIENT: UI.TextInspector.Foreground.FillType
-            class SelectionMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                SELECTION_MODE_UNKNOWN: _ClassVar[UI.TextInspector.Foreground.SelectionMode]
-                SELECTION_MODE_OBJECT: _ClassVar[UI.TextInspector.Foreground.SelectionMode]
-                SELECTION_MODE_RANGE: _ClassVar[UI.TextInspector.Foreground.SelectionMode]
-            SELECTION_MODE_UNKNOWN: UI.TextInspector.Foreground.SelectionMode
-            SELECTION_MODE_OBJECT: UI.TextInspector.Foreground.SelectionMode
-            SELECTION_MODE_RANGE: UI.TextInspector.Foreground.SelectionMode
             FILL_TYPE_FIELD_NUMBER: _ClassVar[int]
             SELECTION_MODE_FIELD_NUMBER: _ClassVar[int]
             fill_type: UI.TextInspector.Foreground.FillType
-            selection_mode: UI.TextInspector.Foreground.SelectionMode
-            def __init__(self, fill_type: _Optional[_Union[UI.TextInspector.Foreground.FillType, str]] = ..., selection_mode: _Optional[_Union[UI.TextInspector.Foreground.SelectionMode, str]] = ...) -> None: ...
+            selection_mode: UI.TextInspector.SelectionMode
+            def __init__(self, fill_type: _Optional[_Union[UI.TextInspector.Foreground.FillType, str]] = ..., selection_mode: _Optional[_Union[UI.TextInspector.SelectionMode, str]] = ...) -> None: ...
         class UnderlineColor(_message.Message):
             __slots__ = ("is_enabled", "selection_mode")
-            class SelectionMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                SELECTION_MODE_UNKNOWN: _ClassVar[UI.TextInspector.UnderlineColor.SelectionMode]
-                SELECTION_MODE_OBJECT: _ClassVar[UI.TextInspector.UnderlineColor.SelectionMode]
-                SELECTION_MODE_RANGE: _ClassVar[UI.TextInspector.UnderlineColor.SelectionMode]
-            SELECTION_MODE_UNKNOWN: UI.TextInspector.UnderlineColor.SelectionMode
-            SELECTION_MODE_OBJECT: UI.TextInspector.UnderlineColor.SelectionMode
-            SELECTION_MODE_RANGE: UI.TextInspector.UnderlineColor.SelectionMode
             IS_ENABLED_FIELD_NUMBER: _ClassVar[int]
             SELECTION_MODE_FIELD_NUMBER: _ClassVar[int]
             is_enabled: bool
-            selection_mode: UI.TextInspector.UnderlineColor.SelectionMode
-            def __init__(self, is_enabled: bool = ..., selection_mode: _Optional[_Union[UI.TextInspector.UnderlineColor.SelectionMode, str]] = ...) -> None: ...
+            selection_mode: UI.TextInspector.SelectionMode
+            def __init__(self, is_enabled: bool = ..., selection_mode: _Optional[_Union[UI.TextInspector.SelectionMode, str]] = ...) -> None: ...
         class BackgroundColor(_message.Message):
             __slots__ = ("color_type", "selection_mode")
             class ColorType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -831,19 +807,11 @@ class UI(_message.Message):
             COLOR_TYPE_UNKNOWN: UI.TextInspector.BackgroundColor.ColorType
             COLOR_TYPE_CLEAR: UI.TextInspector.BackgroundColor.ColorType
             COLOR_TYPE_OTHER: UI.TextInspector.BackgroundColor.ColorType
-            class SelectionMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                SELECTION_MODE_UNKNOWN: _ClassVar[UI.TextInspector.BackgroundColor.SelectionMode]
-                SELECTION_MODE_OBJECT: _ClassVar[UI.TextInspector.BackgroundColor.SelectionMode]
-                SELECTION_MODE_RANGE: _ClassVar[UI.TextInspector.BackgroundColor.SelectionMode]
-            SELECTION_MODE_UNKNOWN: UI.TextInspector.BackgroundColor.SelectionMode
-            SELECTION_MODE_OBJECT: UI.TextInspector.BackgroundColor.SelectionMode
-            SELECTION_MODE_RANGE: UI.TextInspector.BackgroundColor.SelectionMode
             COLOR_TYPE_FIELD_NUMBER: _ClassVar[int]
             SELECTION_MODE_FIELD_NUMBER: _ClassVar[int]
             color_type: UI.TextInspector.BackgroundColor.ColorType
-            selection_mode: UI.TextInspector.BackgroundColor.SelectionMode
-            def __init__(self, color_type: _Optional[_Union[UI.TextInspector.BackgroundColor.ColorType, str]] = ..., selection_mode: _Optional[_Union[UI.TextInspector.BackgroundColor.SelectionMode, str]] = ...) -> None: ...
+            selection_mode: UI.TextInspector.SelectionMode
+            def __init__(self, color_type: _Optional[_Union[UI.TextInspector.BackgroundColor.ColorType, str]] = ..., selection_mode: _Optional[_Union[UI.TextInspector.SelectionMode, str]] = ...) -> None: ...
         class ScrollingText(_message.Message):
             __slots__ = ("enable",)
             class Enable(_message.Message):

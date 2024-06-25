@@ -1,7 +1,7 @@
-from . import color_pb2 as _color_pb2
-from . import effects_pb2 as _effects_pb2
-from . import hotKey_pb2 as _hotKey_pb2
-from . import uuid_pb2 as _uuid_pb2
+import color_pb2 as _color_pb2
+import effects_pb2 as _effects_pb2
+import hotKey_pb2 as _hotKey_pb2
+import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -81,67 +81,11 @@ class Layer(_message.Message):
         __slots__ = ("standard", "matte")
         class Standard(_message.Message):
             __slots__ = ("mode", "opacity")
-            class BlendMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                BLEND_MODE_NORMAL: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_DISSOLVE: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_DARKEN: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_MULTIPLY: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_COLOR_BURN: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_LINEAR_BURN: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_DARKER_COLOR: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_LIGHTEN: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_SCREEN: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_COLOR_DODGE: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_LINEAR_DODGE: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_LIGHTER_COLOR: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_OVERLAY: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_SOFT_LIGHT: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_HARD_LIGHT: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_VIVID_LIGHT: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_LINEAR_LIGHT: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_PIN_LIGHT: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_HARD_MIX: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_DIFFERENCE: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_EXCLUSION: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_SUBTRACT: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_DIVIDE: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_HUE: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_SATURATION: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_COLOR: _ClassVar[Layer.Blending.Standard.BlendMode]
-                BLEND_MODE_LUMINOSITY: _ClassVar[Layer.Blending.Standard.BlendMode]
-            BLEND_MODE_NORMAL: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_DISSOLVE: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_DARKEN: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_MULTIPLY: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_COLOR_BURN: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_LINEAR_BURN: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_DARKER_COLOR: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_LIGHTEN: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_SCREEN: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_COLOR_DODGE: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_LINEAR_DODGE: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_LIGHTER_COLOR: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_OVERLAY: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_SOFT_LIGHT: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_HARD_LIGHT: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_VIVID_LIGHT: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_LINEAR_LIGHT: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_PIN_LIGHT: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_HARD_MIX: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_DIFFERENCE: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_EXCLUSION: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_SUBTRACT: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_DIVIDE: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_HUE: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_SATURATION: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_COLOR: Layer.Blending.Standard.BlendMode
-            BLEND_MODE_LUMINOSITY: Layer.Blending.Standard.BlendMode
             MODE_FIELD_NUMBER: _ClassVar[int]
             OPACITY_FIELD_NUMBER: _ClassVar[int]
-            mode: Layer.Blending.Standard.BlendMode
+            mode: Layer.BlendMode
             opacity: float
-            def __init__(self, mode: _Optional[_Union[Layer.Blending.Standard.BlendMode, str]] = ..., opacity: _Optional[float] = ...) -> None: ...
+            def __init__(self, mode: _Optional[_Union[Layer.BlendMode, str]] = ..., opacity: _Optional[float] = ...) -> None: ...
         class Matte(_message.Message):
             __slots__ = ("alpha", "luma", "white")
             class Alpha(_message.Message):

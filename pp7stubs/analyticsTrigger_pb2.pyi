@@ -1,4 +1,4 @@
-from . import analyticsTriggerMedia_pb2 as _analyticsTriggerMedia_pb2
+import analyticsTriggerMedia_pb2 as _analyticsTriggerMedia_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -12,6 +12,22 @@ class Trigger(_message.Message):
         __slots__ = ("slide",)
         class Slide(_message.Message):
             __slots__ = ("trigger", "scrolling_text_element", "rss_feed_element", "file_feed_element")
+            class DestinationLayer(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                __slots__ = ()
+                DESTINATION_LAYER_UNKNOWN: _ClassVar[Trigger.Cue.Slide.DestinationLayer]
+                DESTINATION_LAYER_ANNOUNCEMENT: _ClassVar[Trigger.Cue.Slide.DestinationLayer]
+                DESTINATION_LAYER_PRESENTATION: _ClassVar[Trigger.Cue.Slide.DestinationLayer]
+                DESTINATION_LAYER_STAGE: _ClassVar[Trigger.Cue.Slide.DestinationLayer]
+                DESTINATION_LAYER_PROPS: _ClassVar[Trigger.Cue.Slide.DestinationLayer]
+                DESTINATION_LAYER_MESSAGES: _ClassVar[Trigger.Cue.Slide.DestinationLayer]
+                DESTINATION_LAYER_MASK: _ClassVar[Trigger.Cue.Slide.DestinationLayer]
+            DESTINATION_LAYER_UNKNOWN: Trigger.Cue.Slide.DestinationLayer
+            DESTINATION_LAYER_ANNOUNCEMENT: Trigger.Cue.Slide.DestinationLayer
+            DESTINATION_LAYER_PRESENTATION: Trigger.Cue.Slide.DestinationLayer
+            DESTINATION_LAYER_STAGE: Trigger.Cue.Slide.DestinationLayer
+            DESTINATION_LAYER_PROPS: Trigger.Cue.Slide.DestinationLayer
+            DESTINATION_LAYER_MESSAGES: Trigger.Cue.Slide.DestinationLayer
+            DESTINATION_LAYER_MASK: Trigger.Cue.Slide.DestinationLayer
             class Trigger(_message.Message):
                 __slots__ = ("object_count", "scrolling_object_count", "background_fx_object_count", "action_count", "has_text_fx", "media_text_fill_object_count", "cut_out_text_fill_object_count", "background_blur_text_fill_object_count", "background_invert_text_fill_object_count")
                 OBJECT_COUNT_FIELD_NUMBER: _ClassVar[int]
@@ -69,22 +85,6 @@ class Trigger(_message.Message):
                 SPEED_MEDIUM: Trigger.Cue.Slide.ScrollingTextElement.Speed
                 SPEED_FAST: Trigger.Cue.Slide.ScrollingTextElement.Speed
                 SPEED_VERY_FAST: Trigger.Cue.Slide.ScrollingTextElement.Speed
-                class DestinationLayer(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    DESTINATION_LAYER_UNKNOWN: _ClassVar[Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer]
-                    DESTINATION_LAYER_ANNOUNCEMENT: _ClassVar[Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer]
-                    DESTINATION_LAYER_PRESENTATION: _ClassVar[Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer]
-                    DESTINATION_LAYER_STAGE: _ClassVar[Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer]
-                    DESTINATION_LAYER_PROPS: _ClassVar[Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer]
-                    DESTINATION_LAYER_MESSAGES: _ClassVar[Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer]
-                    DESTINATION_LAYER_MASK: _ClassVar[Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer]
-                DESTINATION_LAYER_UNKNOWN: Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer
-                DESTINATION_LAYER_ANNOUNCEMENT: Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer
-                DESTINATION_LAYER_PRESENTATION: Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer
-                DESTINATION_LAYER_STAGE: Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer
-                DESTINATION_LAYER_PROPS: Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer
-                DESTINATION_LAYER_MESSAGES: Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer
-                DESTINATION_LAYER_MASK: Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer
                 DIRECTION_FIELD_NUMBER: _ClassVar[int]
                 START_POSITION_FIELD_NUMBER: _ClassVar[int]
                 IS_REPEAT_ENABLED_FIELD_NUMBER: _ClassVar[int]
@@ -94,8 +94,8 @@ class Trigger(_message.Message):
                 start_position: Trigger.Cue.Slide.ScrollingTextElement.StartPosition
                 is_repeat_enabled: bool
                 speed: Trigger.Cue.Slide.ScrollingTextElement.Speed
-                destination_layer: Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer
-                def __init__(self, direction: _Optional[_Union[Trigger.Cue.Slide.ScrollingTextElement.Direction, str]] = ..., start_position: _Optional[_Union[Trigger.Cue.Slide.ScrollingTextElement.StartPosition, str]] = ..., is_repeat_enabled: bool = ..., speed: _Optional[_Union[Trigger.Cue.Slide.ScrollingTextElement.Speed, str]] = ..., destination_layer: _Optional[_Union[Trigger.Cue.Slide.ScrollingTextElement.DestinationLayer, str]] = ...) -> None: ...
+                destination_layer: Trigger.Cue.Slide.DestinationLayer
+                def __init__(self, direction: _Optional[_Union[Trigger.Cue.Slide.ScrollingTextElement.Direction, str]] = ..., start_position: _Optional[_Union[Trigger.Cue.Slide.ScrollingTextElement.StartPosition, str]] = ..., is_repeat_enabled: bool = ..., speed: _Optional[_Union[Trigger.Cue.Slide.ScrollingTextElement.Speed, str]] = ..., destination_layer: _Optional[_Union[Trigger.Cue.Slide.DestinationLayer, str]] = ...) -> None: ...
             class RSSFeedElement(_message.Message):
                 __slots__ = ("content", "is_delimiter_enabled", "destination_layer")
                 class Content(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -106,50 +106,18 @@ class Trigger(_message.Message):
                 CONTENT_UNKNOWN: Trigger.Cue.Slide.RSSFeedElement.Content
                 CONTENT_TITLE: Trigger.Cue.Slide.RSSFeedElement.Content
                 CONTENT_TITLE_AND_DESCRIPTION: Trigger.Cue.Slide.RSSFeedElement.Content
-                class DestinationLayer(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    DESTINATION_LAYER_UNKNOWN: _ClassVar[Trigger.Cue.Slide.RSSFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_ANNOUNCEMENT: _ClassVar[Trigger.Cue.Slide.RSSFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_PRESENTATION: _ClassVar[Trigger.Cue.Slide.RSSFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_STAGE: _ClassVar[Trigger.Cue.Slide.RSSFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_PROPS: _ClassVar[Trigger.Cue.Slide.RSSFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_MESSAGES: _ClassVar[Trigger.Cue.Slide.RSSFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_MASK: _ClassVar[Trigger.Cue.Slide.RSSFeedElement.DestinationLayer]
-                DESTINATION_LAYER_UNKNOWN: Trigger.Cue.Slide.RSSFeedElement.DestinationLayer
-                DESTINATION_LAYER_ANNOUNCEMENT: Trigger.Cue.Slide.RSSFeedElement.DestinationLayer
-                DESTINATION_LAYER_PRESENTATION: Trigger.Cue.Slide.RSSFeedElement.DestinationLayer
-                DESTINATION_LAYER_STAGE: Trigger.Cue.Slide.RSSFeedElement.DestinationLayer
-                DESTINATION_LAYER_PROPS: Trigger.Cue.Slide.RSSFeedElement.DestinationLayer
-                DESTINATION_LAYER_MESSAGES: Trigger.Cue.Slide.RSSFeedElement.DestinationLayer
-                DESTINATION_LAYER_MASK: Trigger.Cue.Slide.RSSFeedElement.DestinationLayer
                 CONTENT_FIELD_NUMBER: _ClassVar[int]
                 IS_DELIMITER_ENABLED_FIELD_NUMBER: _ClassVar[int]
                 DESTINATION_LAYER_FIELD_NUMBER: _ClassVar[int]
                 content: Trigger.Cue.Slide.RSSFeedElement.Content
                 is_delimiter_enabled: bool
-                destination_layer: Trigger.Cue.Slide.RSSFeedElement.DestinationLayer
-                def __init__(self, content: _Optional[_Union[Trigger.Cue.Slide.RSSFeedElement.Content, str]] = ..., is_delimiter_enabled: bool = ..., destination_layer: _Optional[_Union[Trigger.Cue.Slide.RSSFeedElement.DestinationLayer, str]] = ...) -> None: ...
+                destination_layer: Trigger.Cue.Slide.DestinationLayer
+                def __init__(self, content: _Optional[_Union[Trigger.Cue.Slide.RSSFeedElement.Content, str]] = ..., is_delimiter_enabled: bool = ..., destination_layer: _Optional[_Union[Trigger.Cue.Slide.DestinationLayer, str]] = ...) -> None: ...
             class FileFeedElement(_message.Message):
                 __slots__ = ("destination_layer",)
-                class DestinationLayer(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                    __slots__ = ()
-                    DESTINATION_LAYER_UNKNOWN: _ClassVar[Trigger.Cue.Slide.FileFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_ANNOUNCEMENT: _ClassVar[Trigger.Cue.Slide.FileFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_PRESENTATION: _ClassVar[Trigger.Cue.Slide.FileFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_STAGE: _ClassVar[Trigger.Cue.Slide.FileFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_PROPS: _ClassVar[Trigger.Cue.Slide.FileFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_MESSAGES: _ClassVar[Trigger.Cue.Slide.FileFeedElement.DestinationLayer]
-                    DESTINATION_LAYER_MASK: _ClassVar[Trigger.Cue.Slide.FileFeedElement.DestinationLayer]
-                DESTINATION_LAYER_UNKNOWN: Trigger.Cue.Slide.FileFeedElement.DestinationLayer
-                DESTINATION_LAYER_ANNOUNCEMENT: Trigger.Cue.Slide.FileFeedElement.DestinationLayer
-                DESTINATION_LAYER_PRESENTATION: Trigger.Cue.Slide.FileFeedElement.DestinationLayer
-                DESTINATION_LAYER_STAGE: Trigger.Cue.Slide.FileFeedElement.DestinationLayer
-                DESTINATION_LAYER_PROPS: Trigger.Cue.Slide.FileFeedElement.DestinationLayer
-                DESTINATION_LAYER_MESSAGES: Trigger.Cue.Slide.FileFeedElement.DestinationLayer
-                DESTINATION_LAYER_MASK: Trigger.Cue.Slide.FileFeedElement.DestinationLayer
                 DESTINATION_LAYER_FIELD_NUMBER: _ClassVar[int]
-                destination_layer: Trigger.Cue.Slide.FileFeedElement.DestinationLayer
-                def __init__(self, destination_layer: _Optional[_Union[Trigger.Cue.Slide.FileFeedElement.DestinationLayer, str]] = ...) -> None: ...
+                destination_layer: Trigger.Cue.Slide.DestinationLayer
+                def __init__(self, destination_layer: _Optional[_Union[Trigger.Cue.Slide.DestinationLayer, str]] = ...) -> None: ...
             TRIGGER_FIELD_NUMBER: _ClassVar[int]
             SCROLLING_TEXT_ELEMENT_FIELD_NUMBER: _ClassVar[int]
             RSS_FEED_ELEMENT_FIELD_NUMBER: _ClassVar[int]

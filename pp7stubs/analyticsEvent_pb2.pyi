@@ -1,17 +1,17 @@
-from . import analyticsApi_pb2 as _analyticsApi_pb2
-from . import analyticsCapture_pb2 as _analyticsCapture_pb2
-from . import analyticsCreate_pb2 as _analyticsCreate_pb2
-from . import analyticsImport_pb2 as _analyticsImport_pb2
-from . import analyticsPlaybackMarker_pb2 as _analyticsPlaybackMarker_pb2
-from . import analyticsProContent_pb2 as _analyticsProContent_pb2
-from . import analyticsStartup_pb2 as _analyticsStartup_pb2
-from . import analyticsSync_pb2 as _analyticsSync_pb2
-from . import analyticsTimecode_pb2 as _analyticsTimecode_pb2
-from . import analyticsTimeline_pb2 as _analyticsTimeline_pb2
-from . import analyticsTrigger_pb2 as _analyticsTrigger_pb2
-from . import analyticsUI_pb2 as _analyticsUI_pb2
-from . import analyticsUpdate_pb2 as _analyticsUpdate_pb2
-from . import analyticsWHMStore_pb2 as _analyticsWHMStore_pb2
+import analyticsApi_pb2 as _analyticsApi_pb2
+import analyticsCapture_pb2 as _analyticsCapture_pb2
+import analyticsCreate_pb2 as _analyticsCreate_pb2
+import analyticsImport_pb2 as _analyticsImport_pb2
+import analyticsPlaybackMarker_pb2 as _analyticsPlaybackMarker_pb2
+import analyticsProContent_pb2 as _analyticsProContent_pb2
+import analyticsStartup_pb2 as _analyticsStartup_pb2
+import analyticsSync_pb2 as _analyticsSync_pb2
+import analyticsTimecode_pb2 as _analyticsTimecode_pb2
+import analyticsTimeline_pb2 as _analyticsTimeline_pb2
+import analyticsTrigger_pb2 as _analyticsTrigger_pb2
+import analyticsUI_pb2 as _analyticsUI_pb2
+import analyticsUpdate_pb2 as _analyticsUpdate_pb2
+import analyticsWHMStore_pb2 as _analyticsWHMStore_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union

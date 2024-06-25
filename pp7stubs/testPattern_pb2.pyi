@@ -1,7 +1,7 @@
-from . import color_pb2 as _color_pb2
-from . import font_pb2 as _font_pb2
-from . import uuid_pb2 as _uuid_pb2
-from . import url_pb2 as _url_pb2
+import color_pb2 as _color_pb2
+import font_pb2 as _font_pb2
+import uuid_pb2 as _uuid_pb2
+import url_pb2 as _url_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -9,6 +9,15 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class LogoType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    LOGO_TYPE_NONE: _ClassVar[LogoType]
+    LOGO_TYPE_PROPRESENTER: _ClassVar[LogoType]
+    LOGO_TYPE_USER: _ClassVar[LogoType]
+LOGO_TYPE_NONE: LogoType
+LOGO_TYPE_PROPRESENTER: LogoType
+LOGO_TYPE_USER: LogoType
 
 class TestPattern(_message.Message):
     __slots__ = ("type", "blend_grid", "custom_color", "intensity")
@@ -173,14 +182,6 @@ class TestPatternDefinition(_message.Message):
 
 class TestPatternRenderSettings(_message.Message):
     __slots__ = ("pattern", "screen_name", "outputs", "logo_type", "logo_file", "render_width", "render_height", "enable_audio")
-    class LogoType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        LOGO_TYPE_NONE: _ClassVar[TestPatternRenderSettings.LogoType]
-        LOGO_TYPE_PROPRESENTER: _ClassVar[TestPatternRenderSettings.LogoType]
-        LOGO_TYPE_USER: _ClassVar[TestPatternRenderSettings.LogoType]
-    LOGO_TYPE_NONE: TestPatternRenderSettings.LogoType
-    LOGO_TYPE_PROPRESENTER: TestPatternRenderSettings.LogoType
-    LOGO_TYPE_USER: TestPatternRenderSettings.LogoType
     class Output(_message.Message):
         __slots__ = ("x", "y", "width", "height", "name", "frame_rate")
         X_FIELD_NUMBER: _ClassVar[int]
@@ -207,12 +208,12 @@ class TestPatternRenderSettings(_message.Message):
     pattern: TestPatternDefinition
     screen_name: str
     outputs: _containers.RepeatedCompositeFieldContainer[TestPatternRenderSettings.Output]
-    logo_type: TestPatternRenderSettings.LogoType
+    logo_type: LogoType
     logo_file: str
     render_width: int
     render_height: int
     enable_audio: bool
-    def __init__(self, pattern: _Optional[_Union[TestPatternDefinition, _Mapping]] = ..., screen_name: _Optional[str] = ..., outputs: _Optional[_Iterable[_Union[TestPatternRenderSettings.Output, _Mapping]]] = ..., logo_type: _Optional[_Union[TestPatternRenderSettings.LogoType, str]] = ..., logo_file: _Optional[str] = ..., render_width: _Optional[int] = ..., render_height: _Optional[int] = ..., enable_audio: bool = ...) -> None: ...
+    def __init__(self, pattern: _Optional[_Union[TestPatternDefinition, _Mapping]] = ..., screen_name: _Optional[str] = ..., outputs: _Optional[_Iterable[_Union[TestPatternRenderSettings.Output, _Mapping]]] = ..., logo_type: _Optional[_Union[LogoType, str]] = ..., logo_file: _Optional[str] = ..., render_width: _Optional[int] = ..., render_height: _Optional[int] = ..., enable_audio: bool = ...) -> None: ...
 
 class TestPatternState(_message.Message):
     __slots__ = ("pattern", "show_pattern", "display_location", "specific_screen", "identify_screens", "logo_type", "user_logo_location")
@@ -226,14 +227,6 @@ class TestPatternState(_message.Message):
     DISPLAY_LOCATION_AUDIENCE_SCREENS: TestPatternState.DisplayLocation
     DISPLAY_LOCATION_STAGE_SCREENS: TestPatternState.DisplayLocation
     DISPLAY_LOCATION_SPECIFIC_SCREEN: TestPatternState.DisplayLocation
-    class LogoType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        LOGO_TYPE_NONE: _ClassVar[TestPatternState.LogoType]
-        LOGO_TYPE_PROPRESENTER: _ClassVar[TestPatternState.LogoType]
-        LOGO_TYPE_USER: _ClassVar[TestPatternState.LogoType]
-    LOGO_TYPE_NONE: TestPatternState.LogoType
-    LOGO_TYPE_PROPRESENTER: TestPatternState.LogoType
-    LOGO_TYPE_USER: TestPatternState.LogoType
     PATTERN_FIELD_NUMBER: _ClassVar[int]
     SHOW_PATTERN_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_LOCATION_FIELD_NUMBER: _ClassVar[int]
@@ -246,32 +239,14 @@ class TestPatternState(_message.Message):
     display_location: TestPatternState.DisplayLocation
     specific_screen: _uuid_pb2.UUID
     identify_screens: bool
-    logo_type: TestPatternState.LogoType
+    logo_type: LogoType
     user_logo_location: _url_pb2.URL
-    def __init__(self, pattern: _Optional[_Union[TestPatternDefinition, _Mapping]] = ..., show_pattern: bool = ..., display_location: _Optional[_Union[TestPatternState.DisplayLocation, str]] = ..., specific_screen: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., identify_screens: bool = ..., logo_type: _Optional[_Union[TestPatternState.LogoType, str]] = ..., user_logo_location: _Optional[_Union[_url_pb2.URL, _Mapping]] = ...) -> None: ...
+    def __init__(self, pattern: _Optional[_Union[TestPatternDefinition, _Mapping]] = ..., show_pattern: bool = ..., display_location: _Optional[_Union[TestPatternState.DisplayLocation, str]] = ..., specific_screen: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., identify_screens: bool = ..., logo_type: _Optional[_Union[LogoType, str]] = ..., user_logo_location: _Optional[_Union[_url_pb2.URL, _Mapping]] = ...) -> None: ...
 
 class TestPatternDocument(_message.Message):
     __slots__ = ("state", "patterns")
     class TestPatternStateData(_message.Message):
         __slots__ = ("test_pattern_id", "test_pattern_name_localization_key", "display_location", "specific_screen", "identify_screens", "logo_type", "user_logo_location")
-        class DisplayLocation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            DISPLAY_LOCATION_ALL_SCREENS: _ClassVar[TestPatternDocument.TestPatternStateData.DisplayLocation]
-            DISPLAY_LOCATION_AUDIENCE_SCREENS: _ClassVar[TestPatternDocument.TestPatternStateData.DisplayLocation]
-            DISPLAY_LOCATION_STAGE_SCREENS: _ClassVar[TestPatternDocument.TestPatternStateData.DisplayLocation]
-            DISPLAY_LOCATION_SPECIFIC_SCREEN: _ClassVar[TestPatternDocument.TestPatternStateData.DisplayLocation]
-        DISPLAY_LOCATION_ALL_SCREENS: TestPatternDocument.TestPatternStateData.DisplayLocation
-        DISPLAY_LOCATION_AUDIENCE_SCREENS: TestPatternDocument.TestPatternStateData.DisplayLocation
-        DISPLAY_LOCATION_STAGE_SCREENS: TestPatternDocument.TestPatternStateData.DisplayLocation
-        DISPLAY_LOCATION_SPECIFIC_SCREEN: TestPatternDocument.TestPatternStateData.DisplayLocation
-        class LogoType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            LOGO_TYPE_NONE: _ClassVar[TestPatternDocument.TestPatternStateData.LogoType]
-            LOGO_TYPE_PROPRESENTER: _ClassVar[TestPatternDocument.TestPatternStateData.LogoType]
-            LOGO_TYPE_USER: _ClassVar[TestPatternDocument.TestPatternStateData.LogoType]
-        LOGO_TYPE_NONE: TestPatternDocument.TestPatternStateData.LogoType
-        LOGO_TYPE_PROPRESENTER: TestPatternDocument.TestPatternStateData.LogoType
-        LOGO_TYPE_USER: TestPatternDocument.TestPatternStateData.LogoType
         TEST_PATTERN_ID_FIELD_NUMBER: _ClassVar[int]
         TEST_PATTERN_NAME_LOCALIZATION_KEY_FIELD_NUMBER: _ClassVar[int]
         DISPLAY_LOCATION_FIELD_NUMBER: _ClassVar[int]
@@ -281,12 +256,12 @@ class TestPatternDocument(_message.Message):
         USER_LOGO_LOCATION_FIELD_NUMBER: _ClassVar[int]
         test_pattern_id: _uuid_pb2.UUID
         test_pattern_name_localization_key: str
-        display_location: TestPatternDocument.TestPatternStateData.DisplayLocation
+        display_location: TestPatternState.DisplayLocation
         specific_screen: _uuid_pb2.UUID
         identify_screens: bool
-        logo_type: TestPatternDocument.TestPatternStateData.LogoType
+        logo_type: LogoType
         user_logo_location: _url_pb2.URL
-        def __init__(self, test_pattern_id: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., test_pattern_name_localization_key: _Optional[str] = ..., display_location: _Optional[_Union[TestPatternDocument.TestPatternStateData.DisplayLocation, str]] = ..., specific_screen: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., identify_screens: bool = ..., logo_type: _Optional[_Union[TestPatternDocument.TestPatternStateData.LogoType, str]] = ..., user_logo_location: _Optional[_Union[_url_pb2.URL, _Mapping]] = ...) -> None: ...
+        def __init__(self, test_pattern_id: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., test_pattern_name_localization_key: _Optional[str] = ..., display_location: _Optional[_Union[TestPatternState.DisplayLocation, str]] = ..., specific_screen: _Optional[_Union[_uuid_pb2.UUID, _Mapping]] = ..., identify_screens: bool = ..., logo_type: _Optional[_Union[LogoType, str]] = ..., user_logo_location: _Optional[_Union[_url_pb2.URL, _Mapping]] = ...) -> None: ...
     class TestPatternData(_message.Message):
         __slots__ = ("uuid", "name_localization_key", "properties")
         class ColorProperty(_message.Message):

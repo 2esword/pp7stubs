@@ -1,29 +1,29 @@
-from . import action_pb2 as _action_pb2
-from . import alphaType_pb2 as _alphaType_pb2
-from . import ccli_pb2 as _ccli_pb2
-from . import cue_pb2 as _cue_pb2
-from . import effects_pb2 as _effects_pb2
-from . import graphicsData_pb2 as _graphicsData_pb2
-from . import input_pb2 as _input_pb2
-from . import macros_pb2 as _macros_pb2
-from . import messages_pb2 as _messages_pb2
-from . import playlist_pb2 as _playlist_pb2
-from . import preferences_pb2 as _preferences_pb2
-from . import presentation_pb2 as _presentation_pb2
-from . import proCoreTestPatterns_pb2 as _proCoreTestPatterns_pb2
-from . import propDocument_pb2 as _propDocument_pb2
-from . import propresenter_pb2 as _propresenter_pb2
-from . import slide_pb2 as _slide_pb2
-from . import recording_pb2 as _recording_pb2
-from . import stage_pb2 as _stage_pb2
-from . import timers_pb2 as _timers_pb2
-from . import url_pb2 as _url_pb2
-from . import uuid_pb2 as _uuid_pb2
-from . import proworkspace_pb2 as _proworkspace_pb2
-from . import digitalAudio_pb2 as _digitalAudio_pb2
-from . import proAudienceLook_pb2 as _proAudienceLook_pb2
-from . import proMask_pb2 as _proMask_pb2
-from . import timedPlayback_pb2 as _timedPlayback_pb2
+import action_pb2 as _action_pb2
+import alphaType_pb2 as _alphaType_pb2
+import ccli_pb2 as _ccli_pb2
+import cue_pb2 as _cue_pb2
+import effects_pb2 as _effects_pb2
+import graphicsData_pb2 as _graphicsData_pb2
+import input_pb2 as _input_pb2
+import macros_pb2 as _macros_pb2
+import messages_pb2 as _messages_pb2
+import playlist_pb2 as _playlist_pb2
+import preferences_pb2 as _preferences_pb2
+import presentation_pb2 as _presentation_pb2
+import proCoreTestPatterns_pb2 as _proCoreTestPatterns_pb2
+import propDocument_pb2 as _propDocument_pb2
+import propresenter_pb2 as _propresenter_pb2
+import slide_pb2 as _slide_pb2
+import recording_pb2 as _recording_pb2
+import stage_pb2 as _stage_pb2
+import timers_pb2 as _timers_pb2
+import url_pb2 as _url_pb2
+import uuid_pb2 as _uuid_pb2
+import proworkspace_pb2 as _proworkspace_pb2
+import digitalAudio_pb2 as _digitalAudio_pb2
+import proAudienceLook_pb2 as _proAudienceLook_pb2
+import proMask_pb2 as _proMask_pb2
+import timedPlayback_pb2 as _timedPlayback_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -34,24 +34,6 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class MediaMetadataRequestInfo(_message.Message):
     __slots__ = ("file_path", "time", "width", "height", "effects", "crop_insets", "native_rotation", "flipped_horizontally", "flipped_vertically", "alpha_type")
-    class NativeRotationType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        NATIVE_ROTATION_TYPE_ROTATE_STANDARD: _ClassVar[MediaMetadataRequestInfo.NativeRotationType]
-        NATIVE_ROTATION_TYPE_ROTATE_90: _ClassVar[MediaMetadataRequestInfo.NativeRotationType]
-        NATIVE_ROTATION_TYPE_ROTATE_180: _ClassVar[MediaMetadataRequestInfo.NativeRotationType]
-        NATIVE_ROTATION_TYPE_ROTATE_270: _ClassVar[MediaMetadataRequestInfo.NativeRotationType]
-    NATIVE_ROTATION_TYPE_ROTATE_STANDARD: MediaMetadataRequestInfo.NativeRotationType
-    NATIVE_ROTATION_TYPE_ROTATE_90: MediaMetadataRequestInfo.NativeRotationType
-    NATIVE_ROTATION_TYPE_ROTATE_180: MediaMetadataRequestInfo.NativeRotationType
-    NATIVE_ROTATION_TYPE_ROTATE_270: MediaMetadataRequestInfo.NativeRotationType
-    class AlphaType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALPHA_TYPE_UNKNOWN: _ClassVar[MediaMetadataRequestInfo.AlphaType]
-        ALPHA_TYPE_STRAIGHT: _ClassVar[MediaMetadataRequestInfo.AlphaType]
-        ALPHA_TYPE_PREMULTIPLIED: _ClassVar[MediaMetadataRequestInfo.AlphaType]
-    ALPHA_TYPE_UNKNOWN: MediaMetadataRequestInfo.AlphaType
-    ALPHA_TYPE_STRAIGHT: MediaMetadataRequestInfo.AlphaType
-    ALPHA_TYPE_PREMULTIPLIED: MediaMetadataRequestInfo.AlphaType
     FILE_PATH_FIELD_NUMBER: _ClassVar[int]
     TIME_FIELD_NUMBER: _ClassVar[int]
     WIDTH_FIELD_NUMBER: _ClassVar[int]
@@ -68,11 +50,11 @@ class MediaMetadataRequestInfo(_message.Message):
     height: int
     effects: _containers.RepeatedCompositeFieldContainer[_effects_pb2.Effect]
     crop_insets: _graphicsData_pb2.Graphics.EdgeInsets
-    native_rotation: MediaMetadataRequestInfo.NativeRotationType
+    native_rotation: _graphicsData_pb2.Media.DrawingProperties.NativeRotationType
     flipped_horizontally: bool
     flipped_vertically: bool
-    alpha_type: MediaMetadataRequestInfo.AlphaType
-    def __init__(self, file_path: _Optional[str] = ..., time: _Optional[float] = ..., width: _Optional[int] = ..., height: _Optional[int] = ..., effects: _Optional[_Iterable[_Union[_effects_pb2.Effect, _Mapping]]] = ..., crop_insets: _Optional[_Union[_graphicsData_pb2.Graphics.EdgeInsets, _Mapping]] = ..., native_rotation: _Optional[_Union[MediaMetadataRequestInfo.NativeRotationType, str]] = ..., flipped_horizontally: bool = ..., flipped_vertically: bool = ..., alpha_type: _Optional[_Union[MediaMetadataRequestInfo.AlphaType, str]] = ...) -> None: ...
+    alpha_type: _alphaType_pb2.AlphaType
+    def __init__(self, file_path: _Optional[str] = ..., time: _Optional[float] = ..., width: _Optional[int] = ..., height: _Optional[int] = ..., effects: _Optional[_Iterable[_Union[_effects_pb2.Effect, _Mapping]]] = ..., crop_insets: _Optional[_Union[_graphicsData_pb2.Graphics.EdgeInsets, _Mapping]] = ..., native_rotation: _Optional[_Union[_graphicsData_pb2.Media.DrawingProperties.NativeRotationType, str]] = ..., flipped_horizontally: bool = ..., flipped_vertically: bool = ..., alpha_type: _Optional[_Union[_alphaType_pb2.AlphaType, str]] = ...) -> None: ...
 
 class MediaMetadataRequestResponse(_message.Message):
     __slots__ = ("metadata", "generated_bitmap_info")
@@ -139,12 +121,6 @@ class NetworkIdentifier(_message.Message):
 
 class TriggerOptions(_message.Message):
     __slots__ = ("content_destination", "suppress_auto_start_video", "suppress_media_background", "force_retrigger", "reset_chord_chart", "from_playlist_library", "from_timeline", "ignore_analytics", "start_position", "trigger_source", "network_identifier", "request_client_context")
-    class ContentDestination(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        CONTENT_DESTINATION_GLOBAL: _ClassVar[TriggerOptions.ContentDestination]
-        CONTENT_DESTINATION_ANNOUNCEMENTS: _ClassVar[TriggerOptions.ContentDestination]
-    CONTENT_DESTINATION_GLOBAL: TriggerOptions.ContentDestination
-    CONTENT_DESTINATION_ANNOUNCEMENTS: TriggerOptions.ContentDestination
     CONTENT_DESTINATION_FIELD_NUMBER: _ClassVar[int]
     SUPPRESS_AUTO_START_VIDEO_FIELD_NUMBER: _ClassVar[int]
     SUPPRESS_MEDIA_BACKGROUND_FIELD_NUMBER: _ClassVar[int]
@@ -157,7 +133,7 @@ class TriggerOptions(_message.Message):
     TRIGGER_SOURCE_FIELD_NUMBER: _ClassVar[int]
     NETWORK_IDENTIFIER_FIELD_NUMBER: _ClassVar[int]
     REQUEST_CLIENT_CONTEXT_FIELD_NUMBER: _ClassVar[int]
-    content_destination: TriggerOptions.ContentDestination
+    content_destination: _action_pb2.Action.ContentDestination
     suppress_auto_start_video: bool
     suppress_media_background: bool
     force_retrigger: bool
@@ -169,7 +145,7 @@ class TriggerOptions(_message.Message):
     trigger_source: _timedPlayback_pb2.TriggerSource
     network_identifier: NetworkIdentifier
     request_client_context: bool
-    def __init__(self, content_destination: _Optional[_Union[TriggerOptions.ContentDestination, str]] = ..., suppress_auto_start_video: bool = ..., suppress_media_background: bool = ..., force_retrigger: bool = ..., reset_chord_chart: bool = ..., from_playlist_library: bool = ..., from_timeline: bool = ..., ignore_analytics: bool = ..., start_position: _Optional[float] = ..., trigger_source: _Optional[_Union[_timedPlayback_pb2.TriggerSource, _Mapping]] = ..., network_identifier: _Optional[_Union[NetworkIdentifier, _Mapping]] = ..., request_client_context: bool = ...) -> None: ...
+    def __init__(self, content_destination: _Optional[_Union[_action_pb2.Action.ContentDestination, str]] = ..., suppress_auto_start_video: bool = ..., suppress_media_background: bool = ..., force_retrigger: bool = ..., reset_chord_chart: bool = ..., from_playlist_library: bool = ..., from_timeline: bool = ..., ignore_analytics: bool = ..., start_position: _Optional[float] = ..., trigger_source: _Optional[_Union[_timedPlayback_pb2.TriggerSource, _Mapping]] = ..., network_identifier: _Optional[_Union[NetworkIdentifier, _Mapping]] = ..., request_client_context: bool = ...) -> None: ...
 
 class ControlTransport(_message.Message):
     __slots__ = ("play", "pause", "rewind", "fastforward", "skip_back", "skip_forward", "step_back", "step_forward", "go_to_start", "go_to_end", "jump_to_time", "jump_to_percent", "mark_in", "mark_out", "set_scale_mode", "set_flipped_mode", "set_play_rate", "set_rotation", "toggle_playback", "set_effects", "update_effect", "begin_scrub", "end_scrub", "scrub_to_time", "scrub_to_percent", "set_audio_fade", "set_audio_properties", "set_alpha_type")
@@ -233,43 +209,13 @@ class ControlTransport(_message.Message):
         def __init__(self, time: _Optional[float] = ...) -> None: ...
     class SetScaleModeControlType(_message.Message):
         __slots__ = ("mode", "is_blurred", "alignment")
-        class ScaleBehavior(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            SCALE_BEHAVIOR_FIT: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleBehavior]
-            SCALE_BEHAVIOR_FILL: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleBehavior]
-            SCALE_BEHAVIOR_STRETCH: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleBehavior]
-            SCALE_BEHAVIOR_CUSTOM: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleBehavior]
-        SCALE_BEHAVIOR_FIT: ControlTransport.SetScaleModeControlType.ScaleBehavior
-        SCALE_BEHAVIOR_FILL: ControlTransport.SetScaleModeControlType.ScaleBehavior
-        SCALE_BEHAVIOR_STRETCH: ControlTransport.SetScaleModeControlType.ScaleBehavior
-        SCALE_BEHAVIOR_CUSTOM: ControlTransport.SetScaleModeControlType.ScaleBehavior
-        class ScaleAlignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            SCALE_ALIGNMENT_MIDDLE_CENTER: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleAlignment]
-            SCALE_ALIGNMENT_TOP_LEFT: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleAlignment]
-            SCALE_ALIGNMENT_TOP_CENTER: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleAlignment]
-            SCALE_ALIGNMENT_TOP_RIGHT: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleAlignment]
-            SCALE_ALIGNMENT_MIDDLE_RIGHT: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleAlignment]
-            SCALE_ALIGNMENT_BOTTOM_RIGHT: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleAlignment]
-            SCALE_ALIGNMENT_BOTTOM_CENTER: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleAlignment]
-            SCALE_ALIGNMENT_BOTTOM_LEFT: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleAlignment]
-            SCALE_ALIGNMENT_MIDDLE_LEFT: _ClassVar[ControlTransport.SetScaleModeControlType.ScaleAlignment]
-        SCALE_ALIGNMENT_MIDDLE_CENTER: ControlTransport.SetScaleModeControlType.ScaleAlignment
-        SCALE_ALIGNMENT_TOP_LEFT: ControlTransport.SetScaleModeControlType.ScaleAlignment
-        SCALE_ALIGNMENT_TOP_CENTER: ControlTransport.SetScaleModeControlType.ScaleAlignment
-        SCALE_ALIGNMENT_TOP_RIGHT: ControlTransport.SetScaleModeControlType.ScaleAlignment
-        SCALE_ALIGNMENT_MIDDLE_RIGHT: ControlTransport.SetScaleModeControlType.ScaleAlignment
-        SCALE_ALIGNMENT_BOTTOM_RIGHT: ControlTransport.SetScaleModeControlType.ScaleAlignment
-        SCALE_ALIGNMENT_BOTTOM_CENTER: ControlTransport.SetScaleModeControlType.ScaleAlignment
-        SCALE_ALIGNMENT_BOTTOM_LEFT: ControlTransport.SetScaleModeControlType.ScaleAlignment
-        SCALE_ALIGNMENT_MIDDLE_LEFT: ControlTransport.SetScaleModeControlType.ScaleAlignment
         MODE_FIELD_NUMBER: _ClassVar[int]
         IS_BLURRED_FIELD_NUMBER: _ClassVar[int]
         ALIGNMENT_FIELD_NUMBER: _ClassVar[int]
-        mode: ControlTransport.SetScaleModeControlType.ScaleBehavior
+        mode: _graphicsData_pb2.Media.ScaleBehavior
         is_blurred: bool
-        alignment: ControlTransport.SetScaleModeControlType.ScaleAlignment
-        def __init__(self, mode: _Optional[_Union[ControlTransport.SetScaleModeControlType.ScaleBehavior, str]] = ..., is_blurred: bool = ..., alignment: _Optional[_Union[ControlTransport.SetScaleModeControlType.ScaleAlignment, str]] = ...) -> None: ...
+        alignment: _graphicsData_pb2.Media.ScaleAlignment
+        def __init__(self, mode: _Optional[_Union[_graphicsData_pb2.Media.ScaleBehavior, str]] = ..., is_blurred: bool = ..., alignment: _Optional[_Union[_graphicsData_pb2.Media.ScaleAlignment, str]] = ...) -> None: ...
     class SetFlippedModeControlType(_message.Message):
         __slots__ = ("horizontal", "vertical")
         HORIZONTAL_FIELD_NUMBER: _ClassVar[int]
@@ -284,32 +230,14 @@ class ControlTransport(_message.Message):
         def __init__(self, play_rate: _Optional[float] = ...) -> None: ...
     class SetNativeRotationControlType(_message.Message):
         __slots__ = ("rotation",)
-        class NativeRotationType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            NATIVE_ROTATION_TYPE_ROTATE_STANDARD: _ClassVar[ControlTransport.SetNativeRotationControlType.NativeRotationType]
-            NATIVE_ROTATION_TYPE_ROTATE_90: _ClassVar[ControlTransport.SetNativeRotationControlType.NativeRotationType]
-            NATIVE_ROTATION_TYPE_ROTATE_180: _ClassVar[ControlTransport.SetNativeRotationControlType.NativeRotationType]
-            NATIVE_ROTATION_TYPE_ROTATE_270: _ClassVar[ControlTransport.SetNativeRotationControlType.NativeRotationType]
-        NATIVE_ROTATION_TYPE_ROTATE_STANDARD: ControlTransport.SetNativeRotationControlType.NativeRotationType
-        NATIVE_ROTATION_TYPE_ROTATE_90: ControlTransport.SetNativeRotationControlType.NativeRotationType
-        NATIVE_ROTATION_TYPE_ROTATE_180: ControlTransport.SetNativeRotationControlType.NativeRotationType
-        NATIVE_ROTATION_TYPE_ROTATE_270: ControlTransport.SetNativeRotationControlType.NativeRotationType
         ROTATION_FIELD_NUMBER: _ClassVar[int]
-        rotation: ControlTransport.SetNativeRotationControlType.NativeRotationType
-        def __init__(self, rotation: _Optional[_Union[ControlTransport.SetNativeRotationControlType.NativeRotationType, str]] = ...) -> None: ...
+        rotation: _graphicsData_pb2.Media.DrawingProperties.NativeRotationType
+        def __init__(self, rotation: _Optional[_Union[_graphicsData_pb2.Media.DrawingProperties.NativeRotationType, str]] = ...) -> None: ...
     class SetAlphaTypeControlType(_message.Message):
         __slots__ = ("alpha_type",)
-        class AlphaType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            ALPHA_TYPE_UNKNOWN: _ClassVar[ControlTransport.SetAlphaTypeControlType.AlphaType]
-            ALPHA_TYPE_STRAIGHT: _ClassVar[ControlTransport.SetAlphaTypeControlType.AlphaType]
-            ALPHA_TYPE_PREMULTIPLIED: _ClassVar[ControlTransport.SetAlphaTypeControlType.AlphaType]
-        ALPHA_TYPE_UNKNOWN: ControlTransport.SetAlphaTypeControlType.AlphaType
-        ALPHA_TYPE_STRAIGHT: ControlTransport.SetAlphaTypeControlType.AlphaType
-        ALPHA_TYPE_PREMULTIPLIED: ControlTransport.SetAlphaTypeControlType.AlphaType
         ALPHA_TYPE_FIELD_NUMBER: _ClassVar[int]
-        alpha_type: ControlTransport.SetAlphaTypeControlType.AlphaType
-        def __init__(self, alpha_type: _Optional[_Union[ControlTransport.SetAlphaTypeControlType.AlphaType, str]] = ...) -> None: ...
+        alpha_type: _alphaType_pb2.AlphaType
+        def __init__(self, alpha_type: _Optional[_Union[_alphaType_pb2.AlphaType, str]] = ...) -> None: ...
     class TogglePlaybackControlType(_message.Message):
         __slots__ = ()
         def __init__(self) -> None: ...
@@ -516,29 +444,29 @@ class NetworkTriggerDataItem(_message.Message):
 
 class SlideElementTextRenderInfo(_message.Message):
     __slots__ = ("layers",)
+    class LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        LAYER_TYPE_COMPOSITE: _ClassVar[SlideElementTextRenderInfo.LayerType]
+        LAYER_TYPE_MASK: _ClassVar[SlideElementTextRenderInfo.LayerType]
+        LAYER_TYPE_OVER: _ClassVar[SlideElementTextRenderInfo.LayerType]
+        LAYER_TYPE_UNDER: _ClassVar[SlideElementTextRenderInfo.LayerType]
+    LAYER_TYPE_COMPOSITE: SlideElementTextRenderInfo.LayerType
+    LAYER_TYPE_MASK: SlideElementTextRenderInfo.LayerType
+    LAYER_TYPE_OVER: SlideElementTextRenderInfo.LayerType
+    LAYER_TYPE_UNDER: SlideElementTextRenderInfo.LayerType
     class Layer(_message.Message):
         __slots__ = ("layer_type", "text_build_index", "cut_out_fill", "media_fill", "background_effect")
-        class LayerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            LAYER_TYPE_COMPOSITE: _ClassVar[SlideElementTextRenderInfo.Layer.LayerType]
-            LAYER_TYPE_MASK: _ClassVar[SlideElementTextRenderInfo.Layer.LayerType]
-            LAYER_TYPE_OVER: _ClassVar[SlideElementTextRenderInfo.Layer.LayerType]
-            LAYER_TYPE_UNDER: _ClassVar[SlideElementTextRenderInfo.Layer.LayerType]
-        LAYER_TYPE_COMPOSITE: SlideElementTextRenderInfo.Layer.LayerType
-        LAYER_TYPE_MASK: SlideElementTextRenderInfo.Layer.LayerType
-        LAYER_TYPE_OVER: SlideElementTextRenderInfo.Layer.LayerType
-        LAYER_TYPE_UNDER: SlideElementTextRenderInfo.Layer.LayerType
         LAYER_TYPE_FIELD_NUMBER: _ClassVar[int]
         TEXT_BUILD_INDEX_FIELD_NUMBER: _ClassVar[int]
         CUT_OUT_FILL_FIELD_NUMBER: _ClassVar[int]
         MEDIA_FILL_FIELD_NUMBER: _ClassVar[int]
         BACKGROUND_EFFECT_FIELD_NUMBER: _ClassVar[int]
-        layer_type: SlideElementTextRenderInfo.Layer.LayerType
+        layer_type: SlideElementTextRenderInfo.LayerType
         text_build_index: int
         cut_out_fill: _graphicsData_pb2.Graphics.Text.CutOutFill
         media_fill: _graphicsData_pb2.Graphics.Text.MediaFill
         background_effect: _graphicsData_pb2.Graphics.BackgroundEffect
-        def __init__(self, layer_type: _Optional[_Union[SlideElementTextRenderInfo.Layer.LayerType, str]] = ..., text_build_index: _Optional[int] = ..., cut_out_fill: _Optional[_Union[_graphicsData_pb2.Graphics.Text.CutOutFill, _Mapping]] = ..., media_fill: _Optional[_Union[_graphicsData_pb2.Graphics.Text.MediaFill, _Mapping]] = ..., background_effect: _Optional[_Union[_graphicsData_pb2.Graphics.BackgroundEffect, _Mapping]] = ...) -> None: ...
+        def __init__(self, layer_type: _Optional[_Union[SlideElementTextRenderInfo.LayerType, str]] = ..., text_build_index: _Optional[int] = ..., cut_out_fill: _Optional[_Union[_graphicsData_pb2.Graphics.Text.CutOutFill, _Mapping]] = ..., media_fill: _Optional[_Union[_graphicsData_pb2.Graphics.Text.MediaFill, _Mapping]] = ..., background_effect: _Optional[_Union[_graphicsData_pb2.Graphics.BackgroundEffect, _Mapping]] = ...) -> None: ...
     LAYERS_FIELD_NUMBER: _ClassVar[int]
     layers: _containers.RepeatedCompositeFieldContainer[SlideElementTextRenderInfo.Layer]
     def __init__(self, layers: _Optional[_Iterable[_Union[SlideElementTextRenderInfo.Layer, _Mapping]]] = ...) -> None: ...
@@ -607,139 +535,11 @@ class MacroIcons(_message.Message):
     __slots__ = ("icons",)
     class MacroIcon(_message.Message):
         __slots__ = ("image_type", "image_data")
-        class ImageType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            ImageTypeDefault: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeOne: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeTwo: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeThree: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeFour: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeFive: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeSix: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeSeven: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeEight: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeNine: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeZero: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeArrow: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeAudio: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeBell: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeBulb: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeCloud: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeCupcake: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeExclamation: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeFlask: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeFlower: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeGlasses: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeHashtag: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeHat: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeHeart: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeMegaphone: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeMessage: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypePaperclip: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypePlay: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeSlide: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeStar: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeSun: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeSunglasses: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeTarget: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeTimer: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeVideoInput: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeXClear: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterA: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterB: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterC: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterD: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterE: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterF: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterG: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterH: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterI: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterJ: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterK: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterL: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterM: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterN: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterO: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterP: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterQ: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterR: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterS: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterT: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterU: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterV: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterW: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterX: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterY: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeLetterZ: _ClassVar[MacroIcons.MacroIcon.ImageType]
-            ImageTypeCustom: _ClassVar[MacroIcons.MacroIcon.ImageType]
-        ImageTypeDefault: MacroIcons.MacroIcon.ImageType
-        ImageTypeOne: MacroIcons.MacroIcon.ImageType
-        ImageTypeTwo: MacroIcons.MacroIcon.ImageType
-        ImageTypeThree: MacroIcons.MacroIcon.ImageType
-        ImageTypeFour: MacroIcons.MacroIcon.ImageType
-        ImageTypeFive: MacroIcons.MacroIcon.ImageType
-        ImageTypeSix: MacroIcons.MacroIcon.ImageType
-        ImageTypeSeven: MacroIcons.MacroIcon.ImageType
-        ImageTypeEight: MacroIcons.MacroIcon.ImageType
-        ImageTypeNine: MacroIcons.MacroIcon.ImageType
-        ImageTypeZero: MacroIcons.MacroIcon.ImageType
-        ImageTypeArrow: MacroIcons.MacroIcon.ImageType
-        ImageTypeAudio: MacroIcons.MacroIcon.ImageType
-        ImageTypeBell: MacroIcons.MacroIcon.ImageType
-        ImageTypeBulb: MacroIcons.MacroIcon.ImageType
-        ImageTypeCloud: MacroIcons.MacroIcon.ImageType
-        ImageTypeCupcake: MacroIcons.MacroIcon.ImageType
-        ImageTypeExclamation: MacroIcons.MacroIcon.ImageType
-        ImageTypeFlask: MacroIcons.MacroIcon.ImageType
-        ImageTypeFlower: MacroIcons.MacroIcon.ImageType
-        ImageTypeGlasses: MacroIcons.MacroIcon.ImageType
-        ImageTypeHashtag: MacroIcons.MacroIcon.ImageType
-        ImageTypeHat: MacroIcons.MacroIcon.ImageType
-        ImageTypeHeart: MacroIcons.MacroIcon.ImageType
-        ImageTypeMegaphone: MacroIcons.MacroIcon.ImageType
-        ImageTypeMessage: MacroIcons.MacroIcon.ImageType
-        ImageTypePaperclip: MacroIcons.MacroIcon.ImageType
-        ImageTypePlay: MacroIcons.MacroIcon.ImageType
-        ImageTypeSlide: MacroIcons.MacroIcon.ImageType
-        ImageTypeStar: MacroIcons.MacroIcon.ImageType
-        ImageTypeSun: MacroIcons.MacroIcon.ImageType
-        ImageTypeSunglasses: MacroIcons.MacroIcon.ImageType
-        ImageTypeTarget: MacroIcons.MacroIcon.ImageType
-        ImageTypeTimer: MacroIcons.MacroIcon.ImageType
-        ImageTypeVideoInput: MacroIcons.MacroIcon.ImageType
-        ImageTypeXClear: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterA: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterB: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterC: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterD: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterE: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterF: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterG: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterH: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterI: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterJ: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterK: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterL: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterM: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterN: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterO: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterP: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterQ: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterR: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterS: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterT: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterU: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterV: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterW: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterX: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterY: MacroIcons.MacroIcon.ImageType
-        ImageTypeLetterZ: MacroIcons.MacroIcon.ImageType
-        ImageTypeCustom: MacroIcons.MacroIcon.ImageType
         IMAGE_TYPE_FIELD_NUMBER: _ClassVar[int]
         IMAGE_DATA_FIELD_NUMBER: _ClassVar[int]
-        image_type: MacroIcons.MacroIcon.ImageType
+        image_type: _macros_pb2.MacrosDocument.Macro.ImageType
         image_data: bytes
-        def __init__(self, image_type: _Optional[_Union[MacroIcons.MacroIcon.ImageType, str]] = ..., image_data: _Optional[bytes] = ...) -> None: ...
+        def __init__(self, image_type: _Optional[_Union[_macros_pb2.MacrosDocument.Macro.ImageType, str]] = ..., image_data: _Optional[bytes] = ...) -> None: ...
     ICONS_FIELD_NUMBER: _ClassVar[int]
     icons: _containers.RepeatedCompositeFieldContainer[MacroIcons.MacroIcon]
     def __init__(self, icons: _Optional[_Iterable[_Union[MacroIcons.MacroIcon, _Mapping]]] = ...) -> None: ...
