@@ -1,18 +1,18 @@
-import background_pb2 as _background_pb2
-import collectionElementType_pb2 as _collectionElementType_pb2
-import color_pb2 as _color_pb2
-import effects_pb2 as _effects_pb2
-import graphicsData_pb2 as _graphicsData_pb2
-import input_pb2 as _input_pb2
-import intRange_pb2 as _intRange_pb2
-import layers_pb2 as _layers_pb2
-import messages_pb2 as _messages_pb2
-import propSlide_pb2 as _propSlide_pb2
-import presentationSlide_pb2 as _presentationSlide_pb2
-import stage_pb2 as _stage_pb2
-import timers_pb2 as _timers_pb2
-import url_pb2 as _url_pb2
-import uuid_pb2 as _uuid_pb2
+from . import background_pb2 as _background_pb2
+from . import collectionElementType_pb2 as _collectionElementType_pb2
+from . import color_pb2 as _color_pb2
+from . import effects_pb2 as _effects_pb2
+from . import graphicsData_pb2 as _graphicsData_pb2
+from . import input_pb2 as _input_pb2
+from . import intRange_pb2 as _intRange_pb2
+from . import layers_pb2 as _layers_pb2
+from . import messages_pb2 as _messages_pb2
+from . import propSlide_pb2 as _propSlide_pb2
+from . import presentationSlide_pb2 as _presentationSlide_pb2
+from . import stage_pb2 as _stage_pb2
+from . import timers_pb2 as _timers_pb2
+from . import url_pb2 as _url_pb2
+from . import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

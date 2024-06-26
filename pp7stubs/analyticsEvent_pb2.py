@@ -22,20 +22,20 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import analyticsApi_pb2 as analyticsApi__pb2
-import analyticsCapture_pb2 as analyticsCapture__pb2
-import analyticsCreate_pb2 as analyticsCreate__pb2
-import analyticsImport_pb2 as analyticsImport__pb2
-import analyticsPlaybackMarker_pb2 as analyticsPlaybackMarker__pb2
-import analyticsProContent_pb2 as analyticsProContent__pb2
-import analyticsStartup_pb2 as analyticsStartup__pb2
-import analyticsSync_pb2 as analyticsSync__pb2
-import analyticsTimecode_pb2 as analyticsTimecode__pb2
-import analyticsTimeline_pb2 as analyticsTimeline__pb2
-import analyticsTrigger_pb2 as analyticsTrigger__pb2
-import analyticsUI_pb2 as analyticsUI__pb2
-import analyticsUpdate_pb2 as analyticsUpdate__pb2
-import analyticsWHMStore_pb2 as analyticsWHMStore__pb2
+from . import analyticsApi_pb2 as analyticsApi__pb2
+from . import analyticsCapture_pb2 as analyticsCapture__pb2
+from . import analyticsCreate_pb2 as analyticsCreate__pb2
+from . import analyticsImport_pb2 as analyticsImport__pb2
+from . import analyticsPlaybackMarker_pb2 as analyticsPlaybackMarker__pb2
+from . import analyticsProContent_pb2 as analyticsProContent__pb2
+from . import analyticsStartup_pb2 as analyticsStartup__pb2
+from . import analyticsSync_pb2 as analyticsSync__pb2
+from . import analyticsTimecode_pb2 as analyticsTimecode__pb2
+from . import analyticsTimeline_pb2 as analyticsTimeline__pb2
+from . import analyticsTrigger_pb2 as analyticsTrigger__pb2
+from . import analyticsUI_pb2 as analyticsUI__pb2
+from . import analyticsUpdate_pb2 as analyticsUpdate__pb2
+from . import analyticsWHMStore_pb2 as analyticsWHMStore__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61nalyticsEvent.proto\x12\x0crv.analytics\x1a\x12\x61nalyticsApi.proto\x1a\x16\x61nalyticsCapture.proto\x1a\x15\x61nalyticsCreate.proto\x1a\x15\x61nalyticsImport.proto\x1a\x1d\x61nalyticsPlaybackMarker.proto\x1a\x19\x61nalyticsProContent.proto\x1a\x16\x61nalyticsStartup.proto\x1a\x13\x61nalyticsSync.proto\x1a\x17\x61nalyticsTimecode.proto\x1a\x17\x61nalyticsTimeline.proto\x1a\x16\x61nalyticsTrigger.proto\x1a\x11\x61nalyticsUI.proto\x1a\x15\x61nalyticsUpdate.proto\x1a\x17\x61nalyticsWHMStore.proto\"\xe0\x04\n\x05\x45vent\x12\x1e\n\x02ui\x18\x01 \x01(\x0b\x32\x10.rv.analytics.UIH\x00\x12(\n\x07startup\x18\x02 \x01(\x0b\x32\x15.rv.analytics.StartupH\x00\x12(\n\x07trigger\x18\x03 \x01(\x0b\x32\x15.rv.analytics.TriggerH\x00\x12&\n\x06\x63reate\x18\x04 \x01(\x0b\x32\x14.rv.analytics.CreateH\x00\x12&\n\x06import\x18\x05 \x01(\x0b\x32\x14.rv.analytics.ImportH\x00\x12*\n\x08timeline\x18\x06 \x01(\x0b\x32\x16.rv.analytics.TimelineH\x00\x12\"\n\x04sync\x18\x07 \x01(\x0b\x32\x12.rv.analytics.SyncH\x00\x12 \n\x03\x61pi\x18\x08 \x01(\x0b\x32\x11.rv.analytics.APIH\x00\x12*\n\x08timecode\x18\t \x01(\x0b\x32\x16.rv.analytics.TimecodeH\x00\x12\x37\n\x0fplayback_marker\x18\n \x01(\x0b\x32\x1c.rv.analytics.PlaybackMarkerH\x00\x12&\n\x06update\x18\x0b \x01(\x0b\x32\x14.rv.analytics.UpdateH\x00\x12+\n\twhm_store\x18\x0c \x01(\x0b\x32\x16.rv.analytics.WHMStoreH\x00\x12.\n\nproContent\x18\r \x01(\x0b\x32\x18.rv.analytics.ProContentH\x00\x12(\n\x07\x63\x61pture\x18\x0e \x01(\x0b\x32\x15.rv.analytics.CaptureH\x00\x42\r\n\x0bInteractionBA\xf8\x01\x01\xaa\x02.Pro.SerializationInterop.RVProtoData.Analytics\xba\x02\nAnalytics_b\x06proto3')

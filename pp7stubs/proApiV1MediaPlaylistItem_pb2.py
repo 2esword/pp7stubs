@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
+from . import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fproApiV1MediaPlaylistItem.proto\x12\x07rv.data\x1a\x18proApiV1Identifier.proto\"\xf3\x01\n\x18\x41PI_v1_MediaPlaylistItem\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.rv.data.API_v1_Identifier\x12L\n\x04type\x18\x02 \x01(\x0e\x32>.rv.data.API_v1_MediaPlaylistItem.API_v1_MediaPlaylistItemType\x12\x0e\n\x06\x61rtist\x18\x03 \x01(\t\x12\x10\n\x08\x64uration\x18\x04 \x01(\r\"?\n\x1c\x41PI_v1_MediaPlaylistItemType\x12\t\n\x05\x61udio\x10\x00\x12\t\n\x05image\x10\x01\x12\t\n\x05video\x10\x02\x42\x34\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

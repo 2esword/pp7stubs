@@ -22,10 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import applicationInfo_pb2 as applicationInfo__pb2
-import collectionElementType_pb2 as collectionElementType__pb2
-import uuid_pb2 as uuid__pb2
-import slide_pb2 as slide__pb2
+from . import applicationInfo_pb2 as applicationInfo__pb2
+from . import collectionElementType_pb2 as collectionElementType__pb2
+from . import uuid_pb2 as uuid__pb2
+from . import slide_pb2 as slide__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bstage.proto\x12\x07rv.data\x1a\x15\x61pplicationInfo.proto\x1a\x1b\x63ollectionElementType.proto\x1a\nuuid.proto\x1a\x0bslide.proto\"\xb7\x02\n\x05Stage\x1aR\n\x06Layout\x12\x1b\n\x04uuid\x18\x01 \x01(\x0b\x32\r.rv.data.UUID\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1d\n\x05slide\x18\x03 \x01(\x0b\x32\x0e.rv.data.Slide\x1a\x66\n\x08\x44ocument\x12\x32\n\x10\x61pplication_info\x18\x01 \x01(\x0b\x32\x18.rv.data.ApplicationInfo\x12&\n\x07layouts\x18\x02 \x03(\x0b\x32\x15.rv.data.Stage.Layout\x1ar\n\x10ScreenAssignment\x12.\n\x06screen\x18\x01 \x01(\x0b\x32\x1e.rv.data.CollectionElementType\x12.\n\x06layout\x18\x02 \x01(\x0b\x32\x1e.rv.data.CollectionElementTypeB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

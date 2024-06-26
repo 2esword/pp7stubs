@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
+from . import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13proApiV1Masks.proto\x12\x07rv.data\x1a\x18proApiV1Identifier.proto\"\xa4\x02\n\x14\x41PI_v1_Masks_Request\x12\x34\n\x05masks\x18\x01 \x01(\x0b\x32#.rv.data.API_v1_Masks_Request.MasksH\x00\x12\x39\n\x08get_mask\x18\x02 \x01(\x0b\x32%.rv.data.API_v1_Masks_Request.GetMaskH\x00\x12\x43\n\rget_thumbnail\x18\x03 \x01(\x0b\x32*.rv.data.API_v1_Masks_Request.GetThumbnailH\x00\x1a\x07\n\x05Masks\x1a\x15\n\x07GetMask\x12\n\n\x02id\x18\x01 \x01(\t\x1a+\n\x0cGetThumbnail\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07quality\x18\x02 \x01(\x05\x42\t\n\x07Request\"\xe1\x02\n\x15\x41PI_v1_Masks_Response\x12\x35\n\x05masks\x18\x01 \x01(\x0b\x32$.rv.data.API_v1_Masks_Response.MasksH\x00\x12:\n\x08get_mask\x18\x02 \x01(\x0b\x32&.rv.data.API_v1_Masks_Response.GetMaskH\x00\x12\x44\n\rget_thumbnail\x18\x03 \x01(\x0b\x32+.rv.data.API_v1_Masks_Response.GetThumbnailH\x00\x1a\x32\n\x05Masks\x12)\n\x05masks\x18\x01 \x03(\x0b\x32\x1a.rv.data.API_v1_Identifier\x1a\x31\n\x07GetMask\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.rv.data.API_v1_Identifier\x1a\x1c\n\x0cGetThumbnail\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x42\n\n\x08ResponseB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

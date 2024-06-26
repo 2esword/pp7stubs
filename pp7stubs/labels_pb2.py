@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import action_pb2 as action__pb2
+from . import action_pb2 as action__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0clabels.proto\x12\x07rv.data\x1a\x0c\x61\x63tion.proto\":\n\x11ProLabelsDocument\x12%\n\x06labels\x18\x01 \x03(\x0b\x32\x15.rv.data.Action.LabelB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

@@ -22,9 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import color_pb2 as color__pb2
-import screens_pb2 as screens__pb2
-import uuid_pb2 as uuid__pb2
+from . import color_pb2 as color__pb2
+from . import screens_pb2 as screens__pb2
+from . import uuid_pb2 as uuid__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fproscreen.proto\x12\x07rv.data\x1a\x0b\x63olor.proto\x1a\rscreens.proto\x1a\nuuid.proto\"\xa9\x06\n\x12ProPresenterScreen\x12\x0c\n\x04name\x18\x01 \x01(\t\x12;\n\x0bscreen_type\x18\x02 \x01(\x0e\x32&.rv.data.ProPresenterScreen.ScreenType\x12(\n\x10\x62\x61\x63kground_color\x18\x06 \x01(\x0b\x32\x0e.rv.data.Color\x12\x1b\n\x04uuid\x18\x07 \x01(\x0b\x32\r.rv.data.UUID\x12 \n\x18\x62\x61\x63kground_color_enabled\x18\x08 \x01(\x08\x12K\n\x12\x61rrangement_single\x18\x03 \x01(\x0b\x32-.rv.data.ProPresenterScreen.SingleArrangementH\x00\x12O\n\x14\x61rrangement_combined\x18\x04 \x01(\x0b\x32/.rv.data.ProPresenterScreen.CombinedArrangementH\x00\x12R\n\x16\x61rrangement_edge_blend\x18\x05 \x01(\x0b\x32\x30.rv.data.ProPresenterScreen.EdgeBlendArrangementH\x00\x1a\x35\n\x11SingleArrangement\x12 \n\x07screens\x18\x01 \x03(\x0b\x32\x0f.rv.data.Screen\x1aV\n\x13\x43ombinedArrangement\x12 \n\x07screens\x18\x01 \x03(\x0b\x32\x0f.rv.data.Screen\x12\x0c\n\x04rows\x18\x02 \x01(\r\x12\x0f\n\x07\x63olumns\x18\x03 \x01(\r\x1aw\n\x14\x45\x64geBlendArrangement\x12\x14\n\x0cscreen_count\x18\x01 \x01(\r\x12 \n\x07screens\x18\x02 \x03(\x0b\x32\x0f.rv.data.Screen\x12\'\n\x0b\x65\x64ge_blends\x18\x03 \x03(\x0b\x32\x12.rv.data.EdgeBlend\"V\n\nScreenType\x12\x17\n\x13SCREEN_TYPE_UNKNOWN\x10\x00\x12\x18\n\x14SCREEN_TYPE_AUDIENCE\x10\x01\x12\x15\n\x11SCREEN_TYPE_STAGE\x10\x02\x42\r\n\x0b\x41rrangementB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

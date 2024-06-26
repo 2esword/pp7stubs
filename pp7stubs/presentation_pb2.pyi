@@ -1,14 +1,14 @@
-import action_pb2 as _action_pb2
-import applicationInfo_pb2 as _applicationInfo_pb2
-import background_pb2 as _background_pb2
-import cue_pb2 as _cue_pb2
-import effects_pb2 as _effects_pb2
-import groups_pb2 as _groups_pb2
-import intRange_pb2 as _intRange_pb2
-import musicKeyScale_pb2 as _musicKeyScale_pb2
-import rvtimestamp_pb2 as _rvtimestamp_pb2
-import url_pb2 as _url_pb2
-import uuid_pb2 as _uuid_pb2
+from . import action_pb2 as _action_pb2
+from . import applicationInfo_pb2 as _applicationInfo_pb2
+from . import background_pb2 as _background_pb2
+from . import cue_pb2 as _cue_pb2
+from . import effects_pb2 as _effects_pb2
+from . import groups_pb2 as _groups_pb2
+from . import intRange_pb2 as _intRange_pb2
+from . import musicKeyScale_pb2 as _musicKeyScale_pb2
+from . import rvtimestamp_pb2 as _rvtimestamp_pb2
+from . import url_pb2 as _url_pb2
+from . import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

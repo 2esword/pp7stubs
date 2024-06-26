@@ -22,8 +22,8 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import applicationInfo_pb2 as applicationInfo__pb2
-import proApi_pb2 as proApi__pb2
+from . import applicationInfo_pb2 as applicationInfo__pb2
+from . import proApi_pb2 as proApi__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11networklink.proto\x12\x07rv.data\x1a\x15\x61pplicationInfo.proto\x1a\x0cproApi.protob\x06proto3')

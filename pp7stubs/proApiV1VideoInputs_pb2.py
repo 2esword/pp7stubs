@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
+from . import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19proApiV1VideoInputs.proto\x12\x07rv.data\x1a\x18proApiV1Identifier.proto\"\xca\x01\n\x1b\x41PI_v1_Video_Inputs_Request\x12>\n\x07get_all\x18\x01 \x01(\x0b\x32+.rv.data.API_v1_Video_Inputs_Request.GetAllH\x00\x12?\n\x07trigger\x18\x02 \x01(\x0b\x32,.rv.data.API_v1_Video_Inputs_Request.TriggerH\x00\x1a\x08\n\x06GetAll\x1a\x15\n\x07Trigger\x12\n\n\x02id\x18\x01 \x01(\tB\t\n\x07Request\"\xed\x01\n\x1c\x41PI_v1_Video_Inputs_Response\x12?\n\x07get_all\x18\x01 \x01(\x0b\x32,.rv.data.API_v1_Video_Inputs_Response.GetAllH\x00\x12@\n\x07trigger\x18\x02 \x01(\x0b\x32-.rv.data.API_v1_Video_Inputs_Response.TriggerH\x00\x1a\x34\n\x06GetAll\x12*\n\x06inputs\x18\x01 \x03(\x0b\x32\x1a.rv.data.API_v1_Identifier\x1a\t\n\x07TriggerB\t\n\x07RequestB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

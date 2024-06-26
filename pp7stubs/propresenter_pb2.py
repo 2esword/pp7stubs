@@ -22,9 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import action_pb2 as action__pb2
-import applicationInfo_pb2 as applicationInfo__pb2
-import playlist_pb2 as playlist__pb2
+from . import action_pb2 as action__pb2
+from . import applicationInfo_pb2 as applicationInfo__pb2
+from . import playlist_pb2 as playlist__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12propresenter.proto\x12\x07rv.data\x1a\x0c\x61\x63tion.proto\x1a\x15\x61pplicationInfo.proto\x1a\x0eplaylist.proto\"\xef\x02\n\x10PlaylistDocument\x12\x32\n\x10\x61pplication_info\x18\x01 \x01(\x0b\x32\x18.rv.data.ApplicationInfo\x12,\n\x04type\x18\x02 \x01(\x0e\x32\x1e.rv.data.PlaylistDocument.Type\x12$\n\troot_node\x18\x03 \x01(\x0b\x32\x11.rv.data.Playlist\x12#\n\x04tags\x18\x04 \x03(\x0b\x32\x15.rv.data.Playlist.Tag\x12.\n\x13live_video_playlist\x18\x05 \x01(\x0b\x32\x11.rv.data.Playlist\x12-\n\x12\x64ownloads_playlist\x18\x06 \x01(\x0b\x32\x11.rv.data.Playlist\"O\n\x04Type\x12\x10\n\x0cTYPE_UNKNOWN\x10\x00\x12\x15\n\x11TYPE_PRESENTATION\x10\x01\x12\x0e\n\nTYPE_MEDIA\x10\x02\x12\x0e\n\nTYPE_AUDIO\x10\x03\"?\n\x10SettingsDocument\x12%\n\x06labels\x18\x02 \x03(\x0b\x32\x15.rv.data.Action.LabelJ\x04\x08\x01\x10\x02\x42\x34\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

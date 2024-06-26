@@ -1,29 +1,29 @@
-import action_pb2 as _action_pb2
-import alphaType_pb2 as _alphaType_pb2
-import ccli_pb2 as _ccli_pb2
-import cue_pb2 as _cue_pb2
-import effects_pb2 as _effects_pb2
-import graphicsData_pb2 as _graphicsData_pb2
-import input_pb2 as _input_pb2
-import macros_pb2 as _macros_pb2
-import messages_pb2 as _messages_pb2
-import playlist_pb2 as _playlist_pb2
-import preferences_pb2 as _preferences_pb2
-import presentation_pb2 as _presentation_pb2
-import proCoreTestPatterns_pb2 as _proCoreTestPatterns_pb2
-import propDocument_pb2 as _propDocument_pb2
-import propresenter_pb2 as _propresenter_pb2
-import slide_pb2 as _slide_pb2
-import recording_pb2 as _recording_pb2
-import stage_pb2 as _stage_pb2
-import timers_pb2 as _timers_pb2
-import url_pb2 as _url_pb2
-import uuid_pb2 as _uuid_pb2
-import proworkspace_pb2 as _proworkspace_pb2
-import digitalAudio_pb2 as _digitalAudio_pb2
-import proAudienceLook_pb2 as _proAudienceLook_pb2
-import proMask_pb2 as _proMask_pb2
-import timedPlayback_pb2 as _timedPlayback_pb2
+from . import action_pb2 as _action_pb2
+from . import alphaType_pb2 as _alphaType_pb2
+from . import ccli_pb2 as _ccli_pb2
+from . import cue_pb2 as _cue_pb2
+from . import effects_pb2 as _effects_pb2
+from . import graphicsData_pb2 as _graphicsData_pb2
+from . import input_pb2 as _input_pb2
+from . import macros_pb2 as _macros_pb2
+from . import messages_pb2 as _messages_pb2
+from . import playlist_pb2 as _playlist_pb2
+from . import preferences_pb2 as _preferences_pb2
+from . import presentation_pb2 as _presentation_pb2
+from . import proCoreTestPatterns_pb2 as _proCoreTestPatterns_pb2
+from . import propDocument_pb2 as _propDocument_pb2
+from . import propresenter_pb2 as _propresenter_pb2
+from . import slide_pb2 as _slide_pb2
+from . import recording_pb2 as _recording_pb2
+from . import stage_pb2 as _stage_pb2
+from . import timers_pb2 as _timers_pb2
+from . import url_pb2 as _url_pb2
+from . import uuid_pb2 as _uuid_pb2
+from . import proworkspace_pb2 as _proworkspace_pb2
+from . import digitalAudio_pb2 as _digitalAudio_pb2
+from . import proAudienceLook_pb2 as _proAudienceLook_pb2
+from . import proMask_pb2 as _proMask_pb2
+from . import timedPlayback_pb2 as _timedPlayback_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

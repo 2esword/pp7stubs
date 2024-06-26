@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import slide_pb2 as slide__pb2
+from . import slide_pb2 as slide__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rproMask.proto\x12\x07rv.data\x1a\x0bslide.proto\";\n\x07ProMask\x12\"\n\nbase_slide\x18\x01 \x01(\x0b\x32\x0e.rv.data.Slide\x12\x0c\n\x04name\x18\x02 \x01(\t\"6\n\x0eMaskCollection\x12$\n\ncollection\x18\x01 \x03(\x0b\x32\x10.rv.data.ProMaskB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

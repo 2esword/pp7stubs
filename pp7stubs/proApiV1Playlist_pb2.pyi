@@ -1,8 +1,8 @@
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
-import proApiV1Color_pb2 as _proApiV1Color_pb2
-import proApiV1ContentType_pb2 as _proApiV1ContentType_pb2
-import proApiV1Identifier_pb2 as _proApiV1Identifier_pb2
-import proApiV1PresentationPlaylistItem_pb2 as _proApiV1PresentationPlaylistItem_pb2
+from . import proApiV1Color_pb2 as _proApiV1Color_pb2
+from . import proApiV1ContentType_pb2 as _proApiV1ContentType_pb2
+from . import proApiV1Identifier_pb2 as _proApiV1Identifier_pb2
+from . import proApiV1PresentationPlaylistItem_pb2 as _proApiV1PresentationPlaylistItem_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

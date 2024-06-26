@@ -1,8 +1,8 @@
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
-import proApiV1Identifier_pb2 as _proApiV1Identifier_pb2
-import proApiV1MediaPlaylistItem_pb2 as _proApiV1MediaPlaylistItem_pb2
-import proApiV1Playlist_pb2 as _proApiV1Playlist_pb2
-import uuid_pb2 as _uuid_pb2
+from . import proApiV1Identifier_pb2 as _proApiV1Identifier_pb2
+from . import proApiV1MediaPlaylistItem_pb2 as _proApiV1MediaPlaylistItem_pb2
+from . import proApiV1Playlist_pb2 as _proApiV1Playlist_pb2
+from . import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

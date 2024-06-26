@@ -1,10 +1,10 @@
-import action_pb2 as _action_pb2
-import cue_pb2 as _cue_pb2
-import graphicsData_pb2 as _graphicsData_pb2
-import groups_pb2 as _groups_pb2
-import labels_pb2 as _labels_pb2
-import proClockSource_pb2 as _proClockSource_pb2
-import url_pb2 as _url_pb2
+from . import action_pb2 as _action_pb2
+from . import cue_pb2 as _cue_pb2
+from . import graphicsData_pb2 as _graphicsData_pb2
+from . import groups_pb2 as _groups_pb2
+from . import labels_pb2 as _labels_pb2
+from . import proClockSource_pb2 as _proClockSource_pb2
+from . import url_pb2 as _url_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

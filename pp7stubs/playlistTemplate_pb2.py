@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import playlist_pb2 as playlist__pb2
+from . import playlist_pb2 as playlist__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16playlistTemplate.proto\x12\x07rv.data\x1a\x0eplaylist.proto\"\x92\x01\n\x10PlaylistTemplate\x12\x35\n\ttemplates\x18\x01 \x03(\x0b\x32\".rv.data.PlaylistTemplate.Template\x1aG\n\x08Template\x12\x0c\n\x04name\x18\x01 \x01(\t\x12-\n\x0eplaylist_items\x18\x02 \x03(\x0b\x32\x15.rv.data.PlaylistItemb\x06proto3')

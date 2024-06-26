@@ -1,5 +1,5 @@
-import slide_pb2 as _slide_pb2
-import effects_pb2 as _effects_pb2
+from . import slide_pb2 as _slide_pb2
+from . import effects_pb2 as _effects_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union

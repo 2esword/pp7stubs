@@ -22,9 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import action_pb2 as action__pb2
-import applicationInfo_pb2 as applicationInfo__pb2
-import slide_pb2 as slide__pb2
+from . import action_pb2 as action__pb2
+from . import applicationInfo_pb2 as applicationInfo__pb2
+from . import slide_pb2 as slide__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0etemplate.proto\x12\x07rv.data\x1a\x0c\x61\x63tion.proto\x1a\x15\x61pplicationInfo.proto\x1a\x0bslide.proto\"\xd6\x01\n\x08Template\x1a[\n\x05Slide\x12\"\n\nbase_slide\x18\x01 \x01(\x0b\x32\x0e.rv.data.Slide\x12\x0c\n\x04name\x18\x02 \x01(\t\x12 \n\x07\x61\x63tions\x18\x03 \x03(\x0b\x32\x0f.rv.data.Action\x1am\n\x08\x44ocument\x12\x32\n\x10\x61pplication_info\x18\x01 \x01(\x0b\x32\x18.rv.data.ApplicationInfo\x12\'\n\x06slides\x18\x03 \x03(\x0b\x32\x17.rv.data.Template.SlideJ\x04\x08\x02\x10\x03\x42\x34\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

@@ -1,11 +1,11 @@
-import audio_pb2 as _audio_pb2
-import digitalAudio_pb2 as _digitalAudio_pb2
-import input_pb2 as _input_pb2
-import proAudienceLook_pb2 as _proAudienceLook_pb2
-import proscreen_pb2 as _proscreen_pb2
-import proMask_pb2 as _proMask_pb2
-import recording_pb2 as _recording_pb2
-import stage_pb2 as _stage_pb2
+from . import audio_pb2 as _audio_pb2
+from . import digitalAudio_pb2 as _digitalAudio_pb2
+from . import input_pb2 as _input_pb2
+from . import proAudienceLook_pb2 as _proAudienceLook_pb2
+from . import proscreen_pb2 as _proscreen_pb2
+from . import proMask_pb2 as _proMask_pb2
+from . import recording_pb2 as _recording_pb2
+from . import stage_pb2 as _stage_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

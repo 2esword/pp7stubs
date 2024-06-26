@@ -1,12 +1,12 @@
-import alphaType_pb2 as _alphaType_pb2
-import color_pb2 as _color_pb2
-import digitalAudio_pb2 as _digitalAudio_pb2
-import effects_pb2 as _effects_pb2
-import fileProperties_pb2 as _fileProperties_pb2
-import font_pb2 as _font_pb2
-import intRange_pb2 as _intRange_pb2
-import url_pb2 as _url_pb2
-import uuid_pb2 as _uuid_pb2
+from . import alphaType_pb2 as _alphaType_pb2
+from . import color_pb2 as _color_pb2
+from . import digitalAudio_pb2 as _digitalAudio_pb2
+from . import effects_pb2 as _effects_pb2
+from . import fileProperties_pb2 as _fileProperties_pb2
+from . import font_pb2 as _font_pb2
+from . import intRange_pb2 as _intRange_pb2
+from . import url_pb2 as _url_pb2
+from . import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

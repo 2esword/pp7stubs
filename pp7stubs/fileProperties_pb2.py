@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import url_pb2 as url__pb2
+from . import url_pb2 as url__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x66ileProperties.proto\x12\x07rv.data\x1a\turl.proto\"\xff\x01\n\x0e\x46ileProperties\x12\x1f\n\tlocal_url\x18\x01 \x01(\x0b\x32\x0c.rv.data.URL\x12\x43\n\x11remote_properties\x18\x02 \x01(\x0b\x32(.rv.data.FileProperties.RemoteProperties\x1a\x86\x01\n\x10RemoteProperties\x12G\n\nprocontent\x18\x01 \x01(\x0b\x32\x33.rv.data.FileProperties.RemoteProperties.ProContent\x1a)\n\nProContent\x12\x1b\n\x13\x64ownload_identifier\x18\x01 \x01(\tB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

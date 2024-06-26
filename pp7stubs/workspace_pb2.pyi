@@ -1,16 +1,16 @@
-import alignmentGuide_pb2 as _alignmentGuide_pb2
-import calendar_pb2 as _calendar_pb2
-import effects_pb2 as _effects_pb2
-import graphicsData_pb2 as _graphicsData_pb2
-import hotKey_pb2 as _hotKey_pb2
-import layers_pb2 as _layers_pb2
-import liveVideoPlaylist_pb2 as _liveVideoPlaylist_pb2
-import masks_pb2 as _masks_pb2
-import playlist_pb2 as _playlist_pb2
-import screens_pb2 as _screens_pb2
-import targets_pb2 as _targets_pb2
-import url_pb2 as _url_pb2
-import uuid_pb2 as _uuid_pb2
+from . import alignmentGuide_pb2 as _alignmentGuide_pb2
+from . import calendar_pb2 as _calendar_pb2
+from . import effects_pb2 as _effects_pb2
+from . import graphicsData_pb2 as _graphicsData_pb2
+from . import hotKey_pb2 as _hotKey_pb2
+from . import layers_pb2 as _layers_pb2
+from . import liveVideoPlaylist_pb2 as _liveVideoPlaylist_pb2
+from . import masks_pb2 as _masks_pb2
+from . import playlist_pb2 as _playlist_pb2
+from . import screens_pb2 as _screens_pb2
+from . import targets_pb2 as _targets_pb2
+from . import url_pb2 as _url_pb2
+from . import uuid_pb2 as _uuid_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

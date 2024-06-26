@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
+from . import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15proApiV1Library.proto\x12\x07rv.data\x1a\x18proApiV1Identifier.proto\"\xc6\x02\n\x16\x41PI_v1_Library_Request\x12>\n\tlibraries\x18\x01 \x01(\x0b\x32).rv.data.API_v1_Library_Request.LibrariesH\x00\x12:\n\x07library\x18\x02 \x01(\x0b\x32\'.rv.data.API_v1_Library_Request.LibraryH\x00\x12:\n\x07trigger\x18\x03 \x01(\x0b\x32\'.rv.data.API_v1_Library_Request.TriggerH\x00\x1a\x0b\n\tLibraries\x1a\x15\n\x07Library\x12\n\n\x02id\x18\x01 \x01(\t\x1a\x45\n\x07Trigger\x12\x12\n\nlibrary_id\x18\x01 \x01(\t\x12\x17\n\x0fpresentation_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\rB\t\n\x07Request\"\xd5\x03\n\x17\x41PI_v1_Library_Response\x12?\n\tlibraries\x18\x01 \x01(\x0b\x32*.rv.data.API_v1_Library_Response.LibrariesH\x00\x12;\n\x07library\x18\x02 \x01(\x0b\x32(.rv.data.API_v1_Library_Response.LibraryH\x00\x12<\n\x08triggger\x18\x03 \x01(\x0b\x32(.rv.data.API_v1_Library_Response.TriggerH\x00\x1a:\n\tLibraries\x12-\n\tlibraries\x18\x01 \x03(\x0b\x32\x1a.rv.data.API_v1_Identifier\x1a\xaa\x01\n\x07Library\x12H\n\x0bupdate_type\x18\x01 \x01(\x0e\x32\x33.rv.data.API_v1_Library_Response.Library.UpdateType\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.rv.data.API_v1_Identifier\"*\n\nUpdateType\x12\x07\n\x03\x61ll\x10\x00\x12\x07\n\x03\x61\x64\x64\x10\x01\x12\n\n\x06remove\x10\x02\x1a\t\n\x07TriggerB\n\n\x08ResponseB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

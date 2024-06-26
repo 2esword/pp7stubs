@@ -1,6 +1,6 @@
-import applicationInfo_pb2 as _applicationInfo_pb2
-import cue_pb2 as _cue_pb2
-import effects_pb2 as _effects_pb2
+from . import applicationInfo_pb2 as _applicationInfo_pb2
+from . import cue_pb2 as _cue_pb2
+from . import effects_pb2 as _effects_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

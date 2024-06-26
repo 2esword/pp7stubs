@@ -22,8 +22,8 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import slide_pb2 as slide__pb2
-import effects_pb2 as effects__pb2
+from . import slide_pb2 as slide__pb2
+from . import effects_pb2 as effects__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fpropSlide.proto\x12\x07rv.data\x1a\x0bslide.proto\x1a\reffects.proto\"X\n\tPropSlide\x12\"\n\nbase_slide\x18\x01 \x01(\x0b\x32\x0e.rv.data.Slide\x12\'\n\ntransition\x18\x02 \x01(\x0b\x32\x13.rv.data.TransitionB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

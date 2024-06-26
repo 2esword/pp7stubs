@@ -22,9 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import color_pb2 as color__pb2
-import graphicsData_pb2 as graphicsData__pb2
-import uuid_pb2 as uuid__pb2
+from . import color_pb2 as color__pb2
+from . import graphicsData_pb2 as graphicsData__pb2
+from . import uuid_pb2 as uuid__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bmasks.proto\x12\x07rv.data\x1a\x0b\x63olor.proto\x1a\x12graphicsData.proto\x1a\nuuid.proto\"\xc9\x01\n\x04Mask\x12\x1b\n\x04uuid\x18\x01 \x01(\x0b\x32\r.rv.data.UUID\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1d\n\x05\x63olor\x18\x03 \x01(\x0b\x32\x0e.rv.data.Color\x12 \n\x04mode\x18\x04 \x01(\x0e\x32\x12.rv.data.Mask.Mode\x12)\n\x06shapes\x18\x05 \x03(\x0b\x32\x19.rv.data.Graphics.Element\"*\n\x04Mode\x12\x10\n\x0cMODE_OVERLAY\x10\x00\x12\x10\n\x0cMODE_KEYHOLE\x10\x01\x62\x06proto3')

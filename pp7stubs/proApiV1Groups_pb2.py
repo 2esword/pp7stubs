@@ -22,8 +22,8 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import proApiV1Color_pb2 as proApiV1Color__pb2
-import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
+from . import proApiV1Color_pb2 as proApiV1Color__pb2
+from . import proApiV1Identifier_pb2 as proApiV1Identifier__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14proApiV1Groups.proto\x12\x07rv.data\x1a\x13proApiV1Color.proto\x1a\x18proApiV1Identifier.proto\"\xdd\x01\n\x15\x41PI_v1_Groups_Request\x12\x46\n\x0egroups_request\x18\x01 \x01(\x0b\x32,.rv.data.API_v1_Groups_Request.GroupsRequestH\x00\x12\x44\n\rtrigger_group\x18\x02 \x01(\x0b\x32+.rv.data.API_v1_Groups_Request.TriggerGroupH\x00\x1a\x0f\n\rGroupsRequest\x1a\x1a\n\x0cTriggerGroup\x12\n\n\x02id\x18\x01 \x01(\tB\t\n\x07Request\"\xea\x02\n\x16\x41PI_v1_Groups_Response\x12?\n\x06groups\x18\x01 \x01(\x0b\x32-.rv.data.API_v1_Groups_Response.GroupsRequestH\x00\x12\x45\n\rtrigger_group\x18\x02 \x01(\x0b\x32,.rv.data.API_v1_Groups_Response.TriggerGroupH\x00\x1a\xab\x01\n\rGroupsRequest\x12\x43\n\x06groups\x18\x01 \x03(\x0b\x32\x33.rv.data.API_v1_Groups_Response.GroupsRequest.Group\x1aU\n\x05Group\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.rv.data.API_v1_Identifier\x12$\n\x05\x63olor\x18\x02 \x01(\x0b\x32\x15.rv.data.API_v1_Color\x1a\x0e\n\x0cTriggerGroupB\n\n\x08ResponseB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

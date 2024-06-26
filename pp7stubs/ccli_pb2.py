@@ -22,8 +22,8 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import applicationInfo_pb2 as applicationInfo__pb2
-import template_pb2 as template__pb2
+from . import applicationInfo_pb2 as applicationInfo__pb2
+from . import template_pb2 as template__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nccli.proto\x12\x07rv.data\x1a\x15\x61pplicationInfo.proto\x1a\x0etemplate.proto\"\xe8\x02\n\x0c\x43\x43LIDocument\x12\x32\n\x10\x61pplication_info\x18\x01 \x01(\x0b\x32\x18.rv.data.ApplicationInfo\x12\x1b\n\x13\x65nable_ccli_display\x18\x02 \x01(\x08\x12\x14\n\x0c\x63\x63li_license\x18\x03 \x01(\t\x12\x37\n\x0c\x64isplay_type\x18\x04 \x01(\x0e\x32!.rv.data.CCLIDocument.DisplayType\x12)\n\x08template\x18\x05 \x01(\x0b\x32\x17.rv.data.Template.Slide\"\x8c\x01\n\x0b\x44isplayType\x12\x1c\n\x18\x44ISPLAY_TYPE_FIRST_SLIDE\x10\x00\x12\x1b\n\x17\x44ISPLAY_TYPE_LAST_SLIDE\x10\x01\x12%\n!DISPLAY_TYPE_FIRST_AND_LAST_SLIDE\x10\x02\x12\x1b\n\x17\x44ISPLAY_TYPE_ALL_SLIDES\x10\x03\"\x8f\x02\n\x0f\x43opyrightLayout\x12.\n\x06tokens\x18\x02 \x03(\x0b\x32\x1e.rv.data.CopyrightLayout.Token\x1aM\n\x05Token\x12\x36\n\ntoken_type\x18\x01 \x01(\x0e\x32\".rv.data.CopyrightLayout.TokenType\x12\x0c\n\x04text\x18\x02 \x01(\t\"}\n\tTokenType\x12\x08\n\x04Text\x10\x00\x12\n\n\x06\x41rtist\x10\x01\x12\n\n\x06\x41uthor\x10\x02\x12\r\n\tPublisher\x10\x03\x12\t\n\x05Title\x10\x04\x12\x11\n\rCopyrightYear\x10\x05\x12\x11\n\rLicenseNumber\x10\x06\x12\x0e\n\nSongNumber\x10\x07\x42\x34\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

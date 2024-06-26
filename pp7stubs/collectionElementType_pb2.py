@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import uuid_pb2 as uuid__pb2
+from . import uuid_pb2 as uuid__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x63ollectionElementType.proto\x12\x07rv.data\x1a\nuuid.proto\"\x91\x01\n\x15\x43ollectionElementType\x12%\n\x0eparameter_uuid\x18\x01 \x01(\x0b\x32\r.rv.data.UUID\x12\x16\n\x0eparameter_name\x18\x02 \x01(\t\x12\x39\n\x11parent_collection\x18\x03 \x01(\x0b\x32\x1e.rv.data.CollectionElementTypeB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')

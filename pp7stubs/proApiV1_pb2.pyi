@@ -1,28 +1,28 @@
-import proApiV1Announcement_pb2 as _proApiV1Announcement_pb2
-import proApiV1Audio_pb2 as _proApiV1Audio_pb2
-import proApiV1Capture_pb2 as _proApiV1Capture_pb2
-import proApiV1Clear_pb2 as _proApiV1Clear_pb2
-import proApiV1ErrorResponse_pb2 as _proApiV1ErrorResponse_pb2
-import proApiV1Groups_pb2 as _proApiV1Groups_pb2
-import proApiV1Link_pb2 as _proApiV1Link_pb2
-import proApiV1Library_pb2 as _proApiV1Library_pb2
-import proApiV1Looks_pb2 as _proApiV1Looks_pb2
-import proApiV1Macro_pb2 as _proApiV1Macro_pb2
-import proApiV1Masks_pb2 as _proApiV1Masks_pb2
-import proApiV1Media_pb2 as _proApiV1Media_pb2
-import proApiV1Message_pb2 as _proApiV1Message_pb2
-import proApiV1Miscellaneous_pb2 as _proApiV1Miscellaneous_pb2
-import proApiV1Playlist_pb2 as _proApiV1Playlist_pb2
-import proApiV1Preroll_pb2 as _proApiV1Preroll_pb2
-import proApiV1Presentation_pb2 as _proApiV1Presentation_pb2
-import proApiV1Prop_pb2 as _proApiV1Prop_pb2
-import proApiV1Stage_pb2 as _proApiV1Stage_pb2
-import proApiV1Status_pb2 as _proApiV1Status_pb2
-import proApiV1Theme_pb2 as _proApiV1Theme_pb2
-import proApiV1Timer_pb2 as _proApiV1Timer_pb2
-import proApiV1Transport_pb2 as _proApiV1Transport_pb2
-import proApiV1Trigger_pb2 as _proApiV1Trigger_pb2
-import proApiV1VideoInputs_pb2 as _proApiV1VideoInputs_pb2
+from . import proApiV1Announcement_pb2 as _proApiV1Announcement_pb2
+from . import proApiV1Audio_pb2 as _proApiV1Audio_pb2
+from . import proApiV1Capture_pb2 as _proApiV1Capture_pb2
+from . import proApiV1Clear_pb2 as _proApiV1Clear_pb2
+from . import proApiV1ErrorResponse_pb2 as _proApiV1ErrorResponse_pb2
+from . import proApiV1Groups_pb2 as _proApiV1Groups_pb2
+from . import proApiV1Link_pb2 as _proApiV1Link_pb2
+from . import proApiV1Library_pb2 as _proApiV1Library_pb2
+from . import proApiV1Looks_pb2 as _proApiV1Looks_pb2
+from . import proApiV1Macro_pb2 as _proApiV1Macro_pb2
+from . import proApiV1Masks_pb2 as _proApiV1Masks_pb2
+from . import proApiV1Media_pb2 as _proApiV1Media_pb2
+from . import proApiV1Message_pb2 as _proApiV1Message_pb2
+from . import proApiV1Miscellaneous_pb2 as _proApiV1Miscellaneous_pb2
+from . import proApiV1Playlist_pb2 as _proApiV1Playlist_pb2
+from . import proApiV1Preroll_pb2 as _proApiV1Preroll_pb2
+from . import proApiV1Presentation_pb2 as _proApiV1Presentation_pb2
+from . import proApiV1Prop_pb2 as _proApiV1Prop_pb2
+from . import proApiV1Stage_pb2 as _proApiV1Stage_pb2
+from . import proApiV1Status_pb2 as _proApiV1Status_pb2
+from . import proApiV1Theme_pb2 as _proApiV1Theme_pb2
+from . import proApiV1Timer_pb2 as _proApiV1Timer_pb2
+from . import proApiV1Transport_pb2 as _proApiV1Transport_pb2
+from . import proApiV1Trigger_pb2 as _proApiV1Trigger_pb2
+from . import proApiV1VideoInputs_pb2 as _proApiV1VideoInputs_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union

@@ -22,8 +22,8 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import action_pb2 as action__pb2
-import uuid_pb2 as uuid__pb2
+from . import action_pb2 as action__pb2
+from . import uuid_pb2 as uuid__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17liveVideoPlaylist.proto\x12\x07rv.data\x1a\x0c\x61\x63tion.proto\x1a\nuuid.proto\"~\n\x11LiveVideoPlaylist\x12 \n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\x0f.rv.data.Action\x12*\n\x13targeted_layer_UUID\x18\x02 \x01(\x0b\x32\r.rv.data.UUID\x12\x1b\n\x04uuid\x18\x03 \x01(\x0b\x32\r.rv.data.UUIDb\x06proto3')

@@ -22,9 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-import applicationInfo_pb2 as applicationInfo__pb2
-import cue_pb2 as cue__pb2
-import effects_pb2 as effects__pb2
+from . import applicationInfo_pb2 as applicationInfo__pb2
+from . import cue_pb2 as cue__pb2
+from . import effects_pb2 as effects__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12propDocument.proto\x12\x07rv.data\x1a\x15\x61pplicationInfo.proto\x1a\tcue.proto\x1a\reffects.proto\"\x87\x01\n\x0cPropDocument\x12\x32\n\x10\x61pplication_info\x18\x01 \x01(\x0b\x32\x18.rv.data.ApplicationInfo\x12\x1a\n\x04\x63ues\x18\x02 \x03(\x0b\x32\x0c.rv.data.Cue\x12\'\n\ntransition\x18\x03 \x01(\x0b\x32\x13.rv.data.TransitionB4\xf8\x01\x01\xaa\x02$Pro.SerializationInterop.RVProtoData\xba\x02\x07RVData_b\x06proto3')
